@@ -3,13 +3,15 @@ layout: default
 title: "William Huster"
 ---
 
-<h3>Latest Posts</h3>
+<main>
+  <h3>Latest Posts</h3>
 
-<!-- Show last 5 posts here -->
-<ul>
-{% for post in site.posts %}
-  <li>
-    <a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+  <!-- Show last 5 posts here -->
+  <ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+</main>

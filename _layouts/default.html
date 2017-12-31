@@ -5,7 +5,7 @@
         <meta charset="utf-8"/>
         <title>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{site.baseurl}}/style.css" />
+        <link rel="stylesheet" href="{{site.baseurl}}/static/css/style.css" />
         <meta name="description" content="{{site.description}}"/>
         <meta name="author" content="{{site.author}}"/>
         <link rel="author" href="humans.txt"/>
@@ -35,11 +35,11 @@
             <address>
                 <p>
                     &copy; <time>{{ site.time | date: '%Y' }}</time>
-                    {{site.author}}
-                    <a href="mailto:{{site.author_email}}">{{site.author_email}}</a>
+                    {{site.author}} |
+                    <a href="mailto:{{site.author_email}}">{{site.author_email}}</a> |
+                    <a href="{{site.baseurl}}/about">About</a>
                 </p>
             </address>
-            <a href="{{site.baseurl}}/gpg.txt">GPG</a>
         </footer>
 
         <!-- <script src="{{site.baseurl}}/scripts.js"></script> -->

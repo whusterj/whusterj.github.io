@@ -1,5 +1,13 @@
+/* Post Styles */
+.category {
+  display: inline-block;
+  background: gray;
+  padding: 0.2rem;
+  border-radius: 3px;
+  margin-right: 0.25rem;
+}
 
-/*  */
+/* Custom syntax highlighting styles  */
 div.highlight {
   overflow-y: auto;
   overflow-x: auto;

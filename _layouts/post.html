@@ -2,22 +2,21 @@
 layout: default
 ---
 
-<nav>
-  <a href="/">Home</a>
-</nav>
+{% include nav.html %}
 
 <main>
   <article>
     <header>
       <h1>{{ page.title }}</h1>
       <span><i class="icon-clock"></i><time datetime="{{page.date|date:"%F"}}">{{page.date|date:"%b %d, %Y"}}</time></span><br/>
-      <span class="category">{{ page.categories | category_links }}</span>
     </header>
 
     <div class="entry">
       {{ content }}
     </div>
 
-    <footer><!-- additional post info --></footer>
+    <footer>
+      <span class="category">{{ page.categories | category_links }}</span>
+    </footer>
   </article>
 </main>
