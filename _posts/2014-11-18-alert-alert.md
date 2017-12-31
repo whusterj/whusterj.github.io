@@ -11,7 +11,7 @@ You’ll need to compile the LESS CSS before use … I’ll eventually add a Gru
 It’s very simple to use:
 
 ```javascript
-    Alert.alert('info', 'A message', {timeout: 7000});
+Alert.alert('info', 'A message', {timeout: 7000});
 ```
 
 The last param is optional. If a timeout is given, the notification will disappear after the given number of milliseconds.

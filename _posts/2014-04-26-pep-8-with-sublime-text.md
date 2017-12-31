@@ -13,7 +13,7 @@ First, make sure you have SublimeText 3 and SublimeText 3 Package Control instal
 Next, we’ll install the pep8 package, which includes the linter. install the pep8 package system-wide (that is, make sure you deactivate any active virtualenvs)
 
 ```bash
-    $ sudo pip install pep8
+$ sudo pip install pep8
 ```
 
 Now, open SublimeText 3, and:
@@ -41,9 +41,9 @@ Preferences > Package Settings > SublimeLinter > Default Settings
 Then add the following inside of the “default” object:
 
 ```json
-    "linters": {
-        "pep8": {
-            "max-line-length": 100
-        }
+"linters": {
+    "pep8": {
+        "max-line-length": 100
     }
+}
 ```

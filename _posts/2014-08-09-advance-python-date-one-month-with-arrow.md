@@ -7,27 +7,27 @@ date: 2014-08-09 12:00
 Here’s a nice one-liner using the Arrow library to advance a Python datetime.date object by one month:
 
 ```python
-    >>> (arrow.get(<datetime object>).replace(months=1)).date()
+>>> (arrow.get(<datetime object>).replace(months=1)).date()
 ```
 
 Let’s break this apart to see what’s going on here:
 
 ```python
-    # First, 'get' creates an arrow object from the date object
-    >>> a = arrow.get(<datetime object>)
+# First, 'get' creates an arrow object from the date object
+>>> a = arrow.get(<datetime object>)
 
-    # This allows us to use arrow's replace() method to
-    # advance the date by one month. Note this is not a
-    # transform. It returns a new arrow object:
-    >>> a2 = a.replace(months=1)
+# This allows us to use arrow's replace() method to
+# advance the date by one month. Note this is not a
+# transform. It returns a new arrow object:
+>>> a2 = a.replace(months=1)
 
-    # Note also that  you need to use 'months=#' (plural!)
-    # and not 'month=#' (singular!)
-    # The latter actually sets the month to the number provided,
-    # while the former adds or subtracts the given number
+# Note also that  you need to use 'months=#' (plural!)
+# and not 'month=#' (singular!)
+# The latter actually sets the month to the number provided,
+# while the former adds or subtracts the given number
 
-    # Finally, we can pull the date
-    >>> a2.date()
+# Finally, we can get the date
+>>> a2.date()
 ```
 
 This is great because it takes care of edge cases like:
