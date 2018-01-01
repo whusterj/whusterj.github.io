@@ -17,14 +17,14 @@
         <meta property="og:url" content="{{site.url}}">
         <meta property="og:title" content="{{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}">
         <meta property="og:description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}">
-        <meta property="og:image" content="{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}">
+        <meta property="og:image" content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}">
         
         <!-- Default Twitter Card tags (additive to FB tags) -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:domain" value="{{site.url}}" />
         <meta name="twitter:title" value="{{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}" />
         <meta name="twitter:description" value="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}" />
-        <meta name="twitter:image" content="{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}" />
+        <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}" />
         <meta name="twitter:url" value="{{site.url}}" />
 
         <!-- Favicon -->
