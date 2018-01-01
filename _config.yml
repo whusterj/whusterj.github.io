@@ -7,7 +7,7 @@ url: https://williamhuster.com
 
 # Custom tag for default site image
 # Post pages will typically override this with a "featured" image.
-image: /static/images/apple-touch-icon.png
+image: /static/images/william-portrait-profile-headshot-square.jpg
 
 # Uncomment if you are planning to run the blog in a subdirectory
 # Note - if you enable this, and attempt to view your site locally you have to use the baseurl in your local path.
