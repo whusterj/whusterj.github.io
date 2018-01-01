@@ -16,7 +16,9 @@ layout: default
     </div>
 
     <footer>
-      <span class="category">{{ page.categories | category_links }}</span>
+      {% for category in page.categories %}
+      <span class="category">{{ category }}</span>
+      {% endfor %}
     </footer>
   </article>
 </main>

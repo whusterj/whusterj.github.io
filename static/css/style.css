@@ -1,7 +1,7 @@
 /* Post Styles */
 .category {
   display: inline-block;
-  background: gray;
+  background: rgb(230, 230, 230);
   padding: 0.2rem;
   border-radius: 3px;
   margin-right: 0.25rem;

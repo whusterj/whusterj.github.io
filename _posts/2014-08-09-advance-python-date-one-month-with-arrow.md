@@ -2,6 +2,7 @@
 layout: post
 title: "Easily Advance a Python datetime.date by One Month with Arrow"
 date: 2014-08-09 12:00
+categories: python programming
 ---
 
 Here’s a nice one-liner using the Arrow library to advance a Python datetime.date object by one month:

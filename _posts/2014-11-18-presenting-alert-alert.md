@@ -2,7 +2,7 @@
 layout: post
 title: Presenting Alert! Alert!
 date: 2014-11-18 12:00
-categories: 
+categories: javascript programming
 ---
 
 I built a little, dependency-free JavaScript library to add UI notifications to any web project:
