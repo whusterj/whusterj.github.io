@@ -1,10 +1,14 @@
 ---
 layout: post
-title: "Alert! Alert!"
+title: Presenting Alert! Alert!
 date: 2014-11-18 12:00
+categories: 
 ---
 
-I built a little library to add UI notifications to any project. [Check it out on Github](https://github.com/whusterj/alert-alert).
+I built a little, dependency-free JavaScript library to add UI notifications to any web project:
+
+ - [Demo on Codepen](https://codepen.io/whusterj/pen/qEWMwG).
+ - [Code on Github](https://github.com/whusterj/alert-alert).
 
 You’ll need to compile the LESS CSS before use … I’ll eventually add a Gruntfile or something.
 
