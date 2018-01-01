@@ -2,7 +2,9 @@
 layout: post
 title: "PEP 8 Linting with SublimeText"
 date: 2014-04-26 12:00
-categories: python programming tools
+description: PEP 8 sets out some style guidelines for Python. Rather than commit these to memory, use a linter! Here's how to do it in SublimeText.
+category: blog
+tags: python programming tools
 ---
 
 With Django, PEP 8 is the recommended set of style guidelines. You can commit these guidelines to memory, or you can find a “linter” for your text editor, and let it take care of remembering all the rules. Which option do you suppose is better? SublimeText 3 has a very convenient linter, **SublimeLinter 3** with a plug-in that instantly adds PEP 8 support. Here’s how to get up and running with PEP 8 linting in SublimeText right away.
