@@ -7,9 +7,9 @@ description: The short answer is *don't*. Here's how to use the html2text librar
 tags: python django programming
 ---
 
-Short answer: **don’t**. Managing whitespace in plain text templates is a headache-and-a-half….
+Short answer: **don’t**. Managing whitespace in plain text templates is a headache-and-a-half...
 
-God forbid you want to add some if statements or for loops! Suddenly you have a steamy, tangled mess on your hands.
+God forbid you should want your template to have some `if` statements or `for` loops! Suddenly you have a steamy, tangled mess on your hands.
 
 Writing and maintaining templates in non-whitespace-sensitive HTML is faaar more sane. So my advice: write your template in HTML, render it to a string, and then use the html2text library to convert the rendered HTML to plaintext.
 

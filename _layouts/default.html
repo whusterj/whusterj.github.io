@@ -41,24 +41,28 @@
     </head>
 
     <body>
-        <header>
-            <p>William Huster, Software Architect</p>
+        <header class="header">
+            <div class="row-wrap">
+                <h4>William Huster, Software Architect</h4>
+            </div>
         </header>
 
         {{ content }}
 
-        <footer>
-            <hr>
-            <address>
+        <footer class="footer">
+            <address class="row-wrap footer__address">
                 <p>
                     &copy; <time>{{ site.time | date: '%Y' }}</time>
                     {{site.author}} |
-                    <a href="mailto:{{site.author_email}}">{{site.author_email}}</a> |
-                    <a href="{{site.baseurl}}/about">About</a>
+                    <a href="mailto:{{site.author_email}}" class="footer__link">
+                        {{site.author_email}}
+                    </a> |
+                    <a href="{{site.baseurl}}/about" class="footer__link">
+                        About
+                    </a>
                 </p>
             </address>
         </footer>
-
         <!-- <script src="{{site.baseurl}}/scripts.js"></script> -->
     </body>
 

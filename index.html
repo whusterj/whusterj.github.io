@@ -4,30 +4,65 @@ title: Home
 ---
 
 <main>
-  <h3>Latest Posts</h3>
+  <div class="row-wrap">
+    <h2>
+      <u class="header-underline">Latest Posts</u>
+    </h3>
+  </div>
 
   <!-- Show last 5 posts here -->
-  <ul>
   {% for post in site.posts %}
-    <li>
-      <a href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
-    </li>
+  <a href="{{site.baseurl}}{{post.url}}" class="block-link">
+    <article class="row-wrap post-preview">
+      <h3 class="post-preview__title">{{ post.title }}</h3>
+      <p class="post-preview__body">{{ post.description }}</p>
+    </article>
+  </a>
   {% endfor %}
-  </ul>
 
-  <h3>Popular Work</h3>
-  <ul>
-    <li>
-      <a href="https://codepen.io/whusterj/full/jbGGyQ" target="_blank">AngularJS TimePicker</a>
-    </li>
-    <li>
-      <a href="https://codepen.io/whusterj/full/qEWMwG/" target="_blank">Alert! Alert!</a>
-    </li>
-    <li>
-      <a href="https://codepen.io/whusterj/full/VLJgQj/" target="_blank">InfoDots</a>
-    </li>
-    <li>
-      <a href="https://codepen.io/whusterj/full/vEYVpG" target="_blank">Basic JavaScript Game Engine</a>
-    </li>
-  </ul>
+  <div class="row-wrap">
+    <h2>
+      <u class="header-underline">Popular Work</u>
+    </h3>
+  </div>
+
+  <a href="https://codepen.io/whusterj/full/jbGGyQ"
+     class="block-link" target="_blank">
+    <article class="row-wrap post-preview">
+      <h3 class="post-preview__title">AngularJS TimePicker [Codepen]</h3>
+      <p class="post-preview__body">
+        This is a timepicker component partly inspired by the Google Calendar timepicker. It allows for flexible time entry by typing or by selecting a time from a dropdown menu. It also works with the AngularJS ng-model and form validation.
+      </p>
+    </article>
+  </a>
+  
+  <a href="https://codepen.io/whusterj/full/qEWMwG/"
+     class="block-link" target="_blank">
+    <article class="row-wrap post-preview">
+      <h3 class="post-preview__title">Alert! Alert! [Codepen|Github]</h3>
+      <p class="post-preview__body">
+        Alert! Alert! is a tiny, dependency-free JavaScript library to add UI notifications to any web project. The notifications stack on the side of the screen and can be dismissed with a click or configured to disappear after a pre-set time.
+      </p>
+    </article>
+  </a>
+
+  <a href="https://codepen.io/whusterj/full/VLJgQj/"
+     class="block-link" target="_blank">
+    <article class="row-wrap post-preview">
+      <h3 class="post-preview__title">InfoDots [Codepen]</h3>
+      <p class="post-preview__body">
+        Info Dots are a dependency-free UI Component you can use to annotate bits of your web site or web app interface. They appear as small, pulsing anchors that you can attach to practically any DOM Element. Hovering over an info-dot reveals a tooltip.
+      </p>
+    </article>
+  </a>
+
+  <a href="https://codepen.io/whusterj/full/vEYVpG"
+     class="block-link" target="_blank">
+    <article class="row-wrap post-preview">
+      <h3 class="post-preview__title">Basic JavaScript Game Engine [Codepen]</h3>
+      <p class="post-preview__body">
+        An experimental game engine from scratch, written in JavaScript. The engine provides components for building game objects, handling keyboard input, and rendering to a canvas using SVG. This demo also features "Player" and "Enemy" classes with composable mix-ins for movement and basic AI.
+      </p>
+    </article>
+  </a>
 </main>

@@ -1,17 +1,141 @@
+/* General Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  color: rgb(60, 60, 60);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.95rem;
+}
+
+/* Text Styles */
+h1 { font-size: 2.75rem; }
+h2 { font-size: 2rem; }
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+  line-height: 1;
+  word-wrap: break-word;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.header-underline {
+  text-decoration: none;
+  border-bottom: 4px solid red;
+}
+
+/* Layout Styles */
+.row-wrap {
+  margin: 0 auto;
+  max-width: 46rem;
+  padding: 0.5rem;
+}
+
+.block-link {
+  color: inherit;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.2s linear;
+}
+.block-link:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.header {
+  text-align: center;
+  background-color: rgb(42, 201, 196);
+  color: white;
+}
+
+.footer {
+  background-color: rgb(42, 201, 196);
+  color: white;
+  text-align: center;
+  padding: 2rem 0 6rem;
+}
+.footer__address {
+  font-style: normal;
+}
+.footer__link {
+  color: white;
+}
+
+/* About Page Styles */
+.bio {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
 /* Post Styles */
-.label {
+.post-preview {
+  padding: 1.25rem;
+}
+.post-preview__title {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+.post-preview__body {
+  margin: 0;
+}
+
+
+.post-body {
+  margin-bottom: 2rem;
+}
+
+.post-header {
+  /*margin-bottom: 0.5rem;*/
+}
+
+.post-date {
+  text-transform: uppercase;
+  color: #d7294a;
+  font-weight: 600;
+}
+
+.post-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-footer {
+  margin: 1rem 0;
+}
+
+.post-category-label {
+  font-size: 0.75rem;
   display: inline-block;
   background: rgb(230, 230, 230);
-  padding: 0.2rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 3px;
   margin-right: 0.25rem;
 }
 
 /* Custom syntax highlighting styles  */
 div.highlight {
+  padding: 0 0.5rem;
   overflow-y: auto;
   overflow-x: auto;
   max-height: 100rem;
+  line-height: 1.1rem;
+}
+
+/* Use for markdown with backticks, ex: `some_code_thing` */
+code.highlighter-rouge {
+  background-color: rgb(230, 230, 230);
+  font-weight: 600;
+  line-height: 1;
+  font-size: 1rem;
+  padding: 0.1rem 0.25rem;
+  color: #1f779a;
 }
 
 /* Pygment Syntax Highlighting CSS */
