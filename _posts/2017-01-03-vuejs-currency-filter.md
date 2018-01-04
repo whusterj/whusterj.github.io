@@ -11,13 +11,11 @@ Displaying formatted currency amounts is a common requirement of web apps. Unlik
 
 ## Using the currency-formatter NPM Package
 
-
+If you are using webpack or a similar build tool and have access to node.js packages, then simply install the currency-formatter package from npm. By the way, I highly recommend using the [VueJS Webpack Template](https://github.com/vuejs-templates/webpack) for your projects.
 
 ```bash
 npm install currency-formatter --save
 ```
-
-If you are not using the Vue webpack template or you mistrust external dependencies, you might try using the Number.toLocalString() method below or [take a peek at currency-formatter source code on Github](https://github.com/smirzaei/currency-formatter/blob/master/index.js) and borrow from it.
 
 Once you have chosen your preferred method of currency formatting, create the VueJS filter in your app code like so:
 
@@ -35,6 +33,8 @@ function formatNumberAsUSD (value) {
 ```
 
 ## Using Number.prototype.toLocaleString()
+
+If you are not using a build tool with access to node.js packages, or you mistrust external dependencies, you might try using the Number.toLocalString() method below or [take a peek at currency-formatter source code on Github](https://github.com/smirzaei/currency-formatter/blob/master/index.js) and borrow from it. Note that while this is supported in modern browsers, it may not be available in older browsers you might need to target.
 
 ```javascript
 import Vue from 'vue'
