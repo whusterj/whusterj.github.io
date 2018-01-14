@@ -10,6 +10,9 @@ body {
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
     "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  /* TODO: For "writerly" posts, we can use these more book-like fonts:
+  font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
+  */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.95rem;
