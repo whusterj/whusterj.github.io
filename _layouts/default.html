@@ -64,6 +64,9 @@
             </address>
         </footer>
         <!-- <script src="{{site.baseurl}}/scripts.js"></script> -->
+        {% if jekyll.environment == 'production' %}
+        {% include analytics.html %}
+        {% endif %}
     </body>
 
 </html>
