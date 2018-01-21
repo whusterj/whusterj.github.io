@@ -15,7 +15,7 @@ body {
   */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 /* Text Styles */
@@ -29,6 +29,30 @@ h1, h2, h3, h4, h5 {
 
 p {
   line-height: 1.5;
+  margin: 1.5rem 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background: rgba(34, 194, 255, 0.3);
+  transition: background 0.1s linear;
+}
+a:hover {
+  background: rgba(34, 194, 255, 0.6);
+}
+a:visited {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 4px solid rgba(180, 255, 180, 0.75);
+  margin: 1.5rem 0;
+  padding: 0 1rem;
 }
 
 .header-underline {
@@ -39,7 +63,7 @@ p {
 /* Layout Styles */
 .row-wrap {
   margin: 0 auto;
-  max-width: 46rem;
+  max-width: 40rem;
   padding: 0.5rem;
 }
 
@@ -47,6 +71,7 @@ p {
   color: inherit;
   display: block;
   text-decoration: none;
+  background-color: white;
   transition: background-color 0.2s linear;
 }
 .block-link:hover {
