@@ -5,6 +5,7 @@ date: 2018-01-20 18:00
 description: Use JavaScript to validate user input in real time without a framework.
 category: blog
 tags: javascript programming vanillajs
+image: /static/images/posts/2018-01-19-form-validation-mockup.png
 ---
 
 This post demonstrates a straightforward method for writing "live" client-side form validation. It is intended for intermediates or advanced beginners who understand the fundamentals of HTML and modern JavaScript (ES2015). Code samples in this post use ES2015 features and APIs that should be supported in the latest versions of major browsers, but will not work in older browsers.
