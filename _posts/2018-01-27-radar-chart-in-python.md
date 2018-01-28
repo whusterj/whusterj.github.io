@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Create a Radar Chart with Python and matplotlib"
+title: "Create Radar Charts with Python and matplotlib"
 date: 2018-01-27 22:00
 description: Radar charts are a great way to visually compare sets of numbers. They also help us gain an intuitive understanding of the data structures and pattern matching processes that underpin almost all automated matching, pattern recognition, and machine learning algorithms.
 category: blog
