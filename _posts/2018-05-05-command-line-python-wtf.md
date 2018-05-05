@@ -8,7 +8,7 @@ tags: python programming command-line
 image: /static/images/posts/2018-05-05_wtf_table_flip.png
 ---
 
-[Source Code on Github](https://williamhuster.com/command-line-python-wtf/)
+[Source Code on Github](https://github.com/whusterj/wtf)
 
 Most programmers are familiar with this iconic comic:
 
