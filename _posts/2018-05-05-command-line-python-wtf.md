@@ -285,9 +285,9 @@ More than one WTF per minute? Oh, boy... That's a pretty bad score. I might have
 
 ## Next Steps
 
-If this seems like an exceptionally exhaustive explanation of a really simple tool, then congratulations, you are beyond
+Yes, this is a pretty exhaustive explanation of a fairly simple tool, but I hope it helps a few beginners understand the power of the command line and a simple text file. This is easy to forget in a world of web apps, frameworks, database servers, containerization, etc, etc. By staying focused on just the basics, you can whip up something useful to you in a matter of minutes.
 
-A few simple features combined can quickly become complex!
-
-Turn this into a web or mobile app
- - Geolocation
+And what more could be done with this? Here are a couple ideas:
+ - Add an option for specifying the name of the output file (instead of just wtfs.txt)
+ - Integrate this with a text editor like sublime text to record comments against actual lines of code.
+ - Turn this into a social web or mobile app. What if people could share their WTF moments throughout the day with some richer media: geolocation, images, video, etc.?
