@@ -60,7 +60,7 @@ Both `toLocaleString` and the currency-formatter package can handle currencies b
 
 No matter the approach you chose, you have now created a 'currency' filter that you can use in your VueJS templates like this:
 
-```vue
+```
 <template>
   <span>{{ 12 | currency }}</span>
 </template>
