@@ -7,17 +7,19 @@ category: blog
 tags: javascript programming vuejs
 ---
 
-Displaying formatted currency amounts is a common requirement of web apps. Unlike AngularJS, though, VueJS does not provide any filters out of the box. So here's what you can do if you need to add a currency filter to your Vue project.
+Displaying formatted currency amounts is a common requirement of web apps, but VueJS does not provide any filters out of the box. So here’s what you can do if you need to add a currency filter to your Vue project.
+
+First, you'll need to know about VueJS filters and how they work. Read more here: https://vuejs.org/v2/guide/filters.html
 
 ## Using the currency-formatter NPM Package
 
-If you are using webpack or a similar build tool and have access to node.js packages, then simply install the currency-formatter package from npm. By the way, I highly recommend using the [VueJS Webpack Template](https://github.com/vuejs-templates/webpack) for your projects.
+If you are using webpack or a similar build tool and have access to node.js packages, then you can install the currency-formatter package from npm. By the way, I highly recommend using the [Vue CLI](https://cli.vuejs.org/) for your projects.
 
 ```bash
 npm install currency-formatter --save
 ```
 
-Once you have chosen your preferred method of currency formatting, create the VueJS filter in your app code like so:
+Then you can create a VueJS filter in your app code like so:
 
 ```javascript
 import Vue from 'vue'
@@ -31,6 +33,8 @@ function formatNumberAsUSD (value) {
   return currencyFormatter.format(value, { code: 'USD' })
 }
 ```
+
+`Vue.filter` registers a new global Vue filter called 'currency' and `formatNumberAsUSD` function does the work. The formatting function does three things, it (a) makes sure it has a truthy value and returns a blank string if not, (b) attempts to convert the value to a `Number`, and (c) uses `currencyFormatter.format` to format the number as USD.
 
 ## Using Number.prototype.toLocaleString()
 
@@ -50,4 +54,22 @@ function formatNumberAsUSD (value) {
 }
 ```
 
-Note that both ``toLocaleString`` and the currency-formatter package can handle currencies besides USD, too. [Check out the currency-formatter npm page](https://www.npmjs.com/package/currency-formatter) for more details.
+Both `toLocaleString` and the currency-formatter package can handle currencies besides USD, too. [Check out the currency-formatter npm page](https://www.npmjs.com/package/currency-formatter) for more details.
+
+## Summary
+
+No matter the approach you chose, you have now created a 'currency' filter that you can use in your VueJS templates like this:
+
+```vue
+<template>
+  <span>{{ 12 | currency }}</span>
+</template>
+```
+
+And the output should look like this:
+
+```text
+$12.00
+```
+
+Excellent!
