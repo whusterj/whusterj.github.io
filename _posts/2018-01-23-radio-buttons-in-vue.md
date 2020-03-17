@@ -44,6 +44,8 @@ But when I updated my interface to render only one question at a time, the radio
 
 Through all this, the VueJS debugger reported that the data model was updating properly. The component was definitely updating everything else, so it was definitely just a rendering issue with checkbox.
 
+## The Solution
+
 After a lot of trial and error, I figured out that the problem was the `:name` attribute. I guess it conflicts with how Vue handles v-model on multiple radio buttons internally. Changing my mark-up to this fixed it:
 
 ```html
