@@ -5,6 +5,7 @@ date: 2014-08-09 12:00
 description: Here’s a nice one-liner using the Arrow library to advance a Python datetime.date object by one month.
 category: blog
 tags: python programming
+readtime: 1 min
 ---
 
 Here’s a nice one-liner using the Arrow library to advance a Python datetime.date object by one month:
@@ -35,8 +36,8 @@ Let’s break this apart to see what’s going on here:
 
 This is great because it takes care of edge cases like:
 
- * What date comes one month after Dec. 1, 2014? (Jan. 1, 2015)
- * What date comes one month after Jan. 31, 2014? (Feb. 28, 2014)
+- What date comes one month after Dec. 1, 2014? (Jan. 1, 2015)
+- What date comes one month after Jan. 31, 2014? (Feb. 28, 2014)
 
 The second bullet above deserves special attention, because it may or may not be appropriate for your use case. For me, this was perfect because I wanted to reliably calculate the end of a one-month “service period” from a given start date. This needed to be a month based on ‘human logic,’ rather than a simple time delta.
 

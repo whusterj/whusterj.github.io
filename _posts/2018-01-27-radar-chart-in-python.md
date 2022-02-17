@@ -6,6 +6,7 @@ description: Radar charts are a great way to visually compare sets of numbers. T
 category: blog
 tags: python programming
 image: /static/images/posts/2018-01-27_radar_chart.png
+readtime: 5 min
 ---
 
 Radar charts[^1] can be a great way to visually compare sets of numbers, particularly when those numbers represent the features of a real-world person or object.
@@ -75,7 +76,6 @@ user_b_skills = {
 
 We can begin working with this data by importing it into pandas as a data frame. This isn't strictly necessary, but it will let us manipulate it more freely:
 
-
 ```python
 import pandas as pd
 
@@ -142,7 +142,6 @@ Next, we'll retrieve our data from the data frame. First, it might be helpful to
 Notice how pandas was able to digest the two dictionaries and now renders them together like a spreadsheet. This is a really nifty feature for crunching numbers, since you often need to move back and forth from Python data structures to spreadsheets. In this particular situation, using pandas is probably overkill, but it's worth trying out!
 
 Let's now retrieve the data from our dataframe as lists that are ready to plot:
-
 
 ```python
 series_1_values = df.loc[0] \
@@ -224,5 +223,4 @@ So what can we see? I see almost immediately that these two people have somewhat
 ---
 
 [^1]: Radar charts are also sometimes referred to as 'kite' charts, 'polar' charts, or 'spider' charts... All fine choices, although for some reason I really dislike the term 'spider' chart.
-
 [^2]: [workshape.io](http://workshape.io) is a great example of using radar charts to compare people's skills, not only with other people, but also the skill requirements for job openings.

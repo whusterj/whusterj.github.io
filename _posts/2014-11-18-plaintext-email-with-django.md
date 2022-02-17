@@ -5,6 +5,7 @@ date: 2014-11-18 12:00
 category: blog
 description: The short answer is *don't*. Here's how to use the html2text library to auto-generate plaintext emails.
 tags: python django programming
+readtime: 1 min
 ---
 
 Short answer: **don’t**. Managing whitespace in plain text templates is a headache-and-a-half...

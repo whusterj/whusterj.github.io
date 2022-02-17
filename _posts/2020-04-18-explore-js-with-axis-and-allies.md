@@ -5,6 +5,7 @@ date: 2020-04-18 12:00
 description: Use JavaScript to write a Monte Carlo simulation to estimate the probabilities of winning combat scenarios in Axis & Allies.
 category: blog
 tags: javascript programming
+readtime: 30 min
 ---
 
 Over many years, I've come together with a particular group of friends to play _Axis & Allies (A&A)_, a World War II inspired board game.
@@ -70,17 +71,17 @@ Let's look at how we might structure data for our simulation. Each unit in _A&A_
 
 ```javascript
 const Infantry = {
-    name: 'Infantry',
-    ipc: 3,
-    attack: 1,
-    defense: 2,
-}
+  name: "Infantry",
+  ipc: 3,
+  attack: 1,
+  defense: 2,
+};
 const Tank = {
-    name: 'Tank',
-    ipc: 6,
-    attack: 3,
-    defense: 3,
-}
+  name: "Tank",
+  ipc: 6,
+  attack: 3,
+  defense: 3,
+};
 ```
 
 I think that makes a lot of sense and is easy to read. So now we have objects to represent units. _Axis & Allies_ has many more units than this and some special rules, but we'll focus on these to keep our code samples small.
@@ -89,46 +90,46 @@ Now let's create some data structures to represent the _lists_ of units being us
 
 ```javascript
 const attackerUnits = [
-    {
-        name: 'Infantry',
-        ipc: 3,
-        attack: 1,
-        defense: 2,
-    },
-    {
-        name: 'Tank',
-        ipc: 6,
-        attack: 3,
-        defense: 3,
-    }
-]
+  {
+    name: "Infantry",
+    ipc: 3,
+    attack: 1,
+    defense: 2,
+  },
+  {
+    name: "Tank",
+    ipc: 6,
+    attack: 3,
+    defense: 3,
+  },
+];
 const defenderUnits = [
-    {
-        name: 'Infantry',
-        ipc: 3,
-        attack: 1,
-        defense: 2,
-    },
-]
+  {
+    name: "Infantry",
+    ipc: 3,
+    attack: 1,
+    defense: 2,
+  },
+];
 ```
 
 Here we arrive at our first interesting data modeling decision. Do you know the difference between the above code and this?
 
 ```javascript
 const Infantry = {
-    name: 'Infantry',
-    ipc: 3,
-    attack: 1,
-    defense: 2,
-}
+  name: "Infantry",
+  ipc: 3,
+  attack: 1,
+  defense: 2,
+};
 const Tank = {
-    name: 'Tank',
-    ipc: 6,
-    attack: 3,
-    defense: 3,
-}
-const attackerUnits = [Infantry, Tank]
-const defenderUnits = [Infantry]
+  name: "Tank",
+  ipc: 6,
+  attack: 3,
+  defense: 3,
+};
+const attackerUnits = [Infantry, Tank];
+const defenderUnits = [Infantry];
 ```
 
 Besides being a bit shorter, this code snippet has another very important attribute: both the `attackerUnits` and `defenderUnits` lists contain a **reference** to the same `Infantry` object, while in the first example, the lists referenced entirely different objects. This is because the object literal syntax (the curly braces `{}`) creates a new object in memory whenever it is used.
@@ -139,12 +140,12 @@ Now suppose we decide to refactor a bit and create a formal class to represent u
 
 ```javascript
 class Unit {
-    constructor(name, ipc, attack, defense) {
-        this.name = name
-        this.ipc = ipc
-        this.attack = attack
-        this.defense
-    }
+  constructor(name, ipc, attack, defense) {
+    this.name = name;
+    this.ipc = ipc;
+    this.attack = attack;
+    this.defense;
+  }
 }
 ```
 
@@ -153,18 +154,16 @@ Given that class, we could do either of the following:
 ```javascript
 // (1) Separate object instances in memory
 const attackerUnits = [
-    new Unit('Infantry', 3, 1, 2),
-    new Unit('Tank', 6, 3, 3),
-]
-const defenderUnits = [
-    new Unit('Infantry', 3, 1, 2),
-]
+  new Unit("Infantry", 3, 1, 2),
+  new Unit("Tank", 6, 3, 3),
+];
+const defenderUnits = [new Unit("Infantry", 3, 1, 2)];
 
 // (2) References to the same instances in memory,
-const Infantry = new Unit('Infantry', 3, 1, 2)
-const Tank = new Unit('Tank', 6, 3, 3)
-const attackerUnits = [Infantry, Tank]
-const defenderUnits = [Infantry]
+const Infantry = new Unit("Infantry", 3, 1, 2);
+const Tank = new Unit("Tank", 6, 3, 3);
+const attackerUnits = [Infantry, Tank];
+const defenderUnits = [Infantry];
 ```
 
 This is essentially the same comparison we made before, except that this time we are using the `new` keyword with a class. And once again, the second example will take up less memory than the first. With only three units in play, there isn't much of a difference, but in a scenario where both sides have, say, ten units, there would be more than a tenfold difference in memory use between these two approaches.
@@ -174,6 +173,7 @@ This is essentially the same comparison we made before, except that this time we
 Before writing code, it's always helpful to break down the problem at hand by writing some "pseudo-code" to describe the steps we need to take. We know that a combat goes in "rounds," so let's start there and write out the steps in each round:
 
 **Steps in a Round**
+
 1. Attacker rolls one die for each attacking unit
 2. Attacker compares each die roll to the unit's attack stat
 3. Attacker records a hit for each die roll equal to or less than the unit's attack stat
@@ -187,6 +187,7 @@ Phew, that's actually a lot of steps! But it's not too bad. You can probably alr
 Now let's "go up a level" and see how we can use the above routine to simulate an entire combat:
 
 **Steps in a Combat**
+
 1. Set up the attacker and defender unit lists
 2. Do a round
 3. Check for win, loss, or draw
@@ -197,6 +198,7 @@ Alright, this is a bit more straightforward. We've already decided how we'll do 
 Finally, there's one more level to consider. Remember, we don't just want to run the combat once. We want to run it thousands of times and keep track of wins and losses. So we also need to outline the steps for the Monte Carlo Simulation.
 
 **Steps in a Monte Carlo Simulation of Many Combats**
+
 1. Set up the attacker units, defender units, and `x` number of simulations to run
 2. Run a combat
 3. Record the combat result (win, loss, or draw)
@@ -211,19 +213,19 @@ And that appears to be everything we'll need. So let's now take these checklists
 // STEPS IN A MONTE CARLO SIMULATION
 // 1. Set up the attacker units, defender units, and `x` number of simulations to run
 // 2. Run a combat
-    // STEPS IN A COMBAT
-    // 1. Set up the attacker and defender unit lists
-    // 2. Do a round
-        // STEPS IN A ROUND
-        // 1. Attacker rolls one die for each attacking unit
-        // 2. Attacker compares each die roll to the unit's attack stat
-        // 3. Attacker records a hit for each die roll equal to or less than the unit's attack stat
-        // 4. Defender rolls one die for each defending unit
-        // 5. Defender compares each die roll to the unit's defense stat
-        // 6. Defender records a hit for each die roll equal to or less than the unit's defense stat
-        // 7. Attacker and defender remove units that were "hit"
-    // 3. Check for win, loss, or draw
-    // 4. End on a win, loss, or draw, otherwise repeat from Step 2
+// STEPS IN A COMBAT
+// 1. Set up the attacker and defender unit lists
+// 2. Do a round
+// STEPS IN A ROUND
+// 1. Attacker rolls one die for each attacking unit
+// 2. Attacker compares each die roll to the unit's attack stat
+// 3. Attacker records a hit for each die roll equal to or less than the unit's attack stat
+// 4. Defender rolls one die for each defending unit
+// 5. Defender compares each die roll to the unit's defense stat
+// 6. Defender records a hit for each die roll equal to or less than the unit's defense stat
+// 7. Attacker and defender remove units that were "hit"
+// 3. Check for win, loss, or draw
+// 4. End on a win, loss, or draw, otherwise repeat from Step 2
 // 3. Record the combat result (win, loss, or draw)
 // 4. Repeat from Step 2 until we have run `x` number of times
 // 5. Display results
@@ -236,15 +238,15 @@ Each level of indentation represents a different checklist, and perhaps you can 
 Let's zoom in on the inner-most code for playing a round of combat. Up to now we've explored a couple ways of setting up our virtual game board for combat. Going forward, let's stick with the `Unit` class above and these two unit instances:
 
 ```javascript
-const Infantry = new Unit('Infantry', 3, 1, 2)
-const Tank = new Unit('Tank', 6, 3, 3)
+const Infantry = new Unit("Infantry", 3, 1, 2);
+const Tank = new Unit("Tank", 6, 3, 3);
 ```
 
 Let's also set up the combat again, by giving each our players a list of units:
 
 ```javascript
-const attackerUnits = [Infantry, Tank]
-const defenderUnits = [Infantry]
+const attackerUnits = [Infantry, Tank];
+const defenderUnits = [Infantry];
 ```
 
 Now, Step 1 calls for rolling a die, and rolling dice is pretty central to running a round, so let's start by writing a function for that:
@@ -261,29 +263,29 @@ So to simulate a six-sided die roll, we would have to call `randBetween(1, 6)`. 
 
 ```javascript
 // In traditional `function` syntax:
-function rollD6 () {
-    return randBetween(1, 6)
+function rollD6() {
+  return randBetween(1, 6);
 }
 
 // Or in new "fat arrow" syntax:
-const rollD6 = () => randBetween(1, 6)
+const rollD6 = () => randBetween(1, 6);
 ```
 
 Now that we can roll dice, let's look at a couple ways we might do Steps 1-3. Since we need to roll for each attacking unit, perhaps a `for` loop comes to mind:
 
 ```javascript
 // 1. Attacker rolls one die for each attacking unit
-let attackerHits = 0
-for (let i=0; i<attackerUnits.length; i++) {
-    const unit = attackerUnits[i]
-    const roll = rollD6()
+let attackerHits = 0;
+for (let i = 0; i < attackerUnits.length; i++) {
+  const unit = attackerUnits[i];
+  const roll = rollD6();
 
-    // 2. Attacker compares each die roll to the unit's attack stat
-    if (roll <= unit.attack) {
-        // 3. Attacker records a hit for each die roll equal to or
-        //    less than the unit's attack stat
-        attackerHits++
-    }
+  // 2. Attacker compares each die roll to the unit's attack stat
+  if (roll <= unit.attack) {
+    // 3. Attacker records a hit for each die roll equal to or
+    //    less than the unit's attack stat
+    attackerHits++;
+  }
 }
 ```
 
@@ -294,21 +296,21 @@ In general, it's recommended to use `const` whenever possible. Modifying values 
 As an aside, I find that many novice programmers are confused by the use of 'const' with arrays and objects, because arrays and objects declared with 'const' can still have their members modified, for example:
 
 ```javascript
-const arr = []
-const obj = {}
+const arr = [];
+const obj = {};
 
 // This is allowed, even though the above are 'const',
 // because 'arr' or 'obj' are references to Array and Object
 // instances. We are not changing those references here,
 // we are just adding values inside of them.
-arr[0] = 'hello'
-obj.foo = 'bar'
+arr[0] = "hello";
+obj.foo = "bar";
 
 // This is not allowed, because it is attempting to assign
 // 'arr' and 'obj' to new Array and Object instances, and
 // 'const' will not allow us to do that.
-arr = ['hello']
-obj = {foo: 'bar'}
+arr = ["hello"];
+obj = { foo: "bar" };
 ```
 
 Whether or not it is good idea to allow programmers to modify the contents of objects is a subject of great debate, especially in the functional JavaScript circles. For this reason, tools like [Immutable.js](https://immutable-js.github.io/immutable-js/) were invented, which make it so that object properties can not be changed at all, only replaced with new object instances. I recommend giving this topic a Google.
@@ -317,17 +319,16 @@ So what other ways might we do this? Speaking of functional programming (FP), mo
 
 ```javascript
 const attackerHits = attackerUnits
-    .map(u => ({unit: u, roll: rollD6()}))
-    .filter(r => r.roll <= r.unit.attack)
-    .length
+  .map((u) => ({ unit: u, roll: rollD6() }))
+  .filter((r) => r.roll <= r.unit.attack).length;
 ```
 
 This does the same thing as above, but wow! It's a lot shorter. In fact, it's a one-liner. I've just split the lines to make it easier to read. Let's look at what is happening: first, the `map` function creates a new object from each unit in the `attackerList`. Each new object looks something like this: `{ unit, roll }`.
 
 ```javascript
-const attackerList = [Infantry, Tank]
+const attackerList = [Infantry, Tank];
 
-const result = attackerList.map(u => ({unit: u, roll: rollD6()}))
+const result = attackerList.map((u) => ({ unit: u, roll: rollD6() }));
 // [
 //     { unit: Infantry, roll: 2 },
 //     { unit: Tank, roll: 1},
@@ -351,7 +352,7 @@ class Unit() {
 Then we'd use that like this:
 
 ```javascript
-attackerUnits.map(u => u.rollD6())
+attackerUnits.map((u) => u.rollD6());
 ```
 
 And that works just as well, we could loop over that list and compare `unit.roll <= unit.attack`. The drawbacks of doing it this way are that we had to modify the `Unit` class to add this capability and our call to `unit.rollD6()` doesn't reveal that `unit.roll` is being changed "behind the scenes."
@@ -365,17 +366,17 @@ Moving on, in the next line of our FP implementation, we have a `filter`. The fi
 ```javascript
 // Take the result of the 'map' from above
 const result = [
-    { unit: Infantry, roll: 2 },
-    { unit: Tank, roll: 1},
-]
+  { unit: Infantry, roll: 2 },
+  { unit: Tank, roll: 1 },
+];
 
 // Filter by rolls less than or equal to the unit's attack stat
-const hits = result.filter(r => r.roll <= r.unit.attack)
+const hits = result.filter((r) => r.roll <= r.unit.attack);
 // [{unit: Tank, roll: 1}]
 
 // Get the count of the number of remaining elements.
 // That is the number of hits!
-const numHits = hits.length
+const numHits = hits.length;
 // 1
 ```
 
@@ -393,37 +394,43 @@ So let's return to our checklist and finish implementing a full round of combat:
 // SIMULATE A ROUND OF COMBAT
 // 1. Attacker rolls one die for each attacking unit,
 //    **excluding any casualties**
-let attackerHits = 0
-for (let i=attackerCasualties; i<attackerUnits.length; i++) {
-    const unit = attackerUnits[i]
-    const roll = rollD6()
+let attackerHits = 0;
+for (let i = attackerCasualties; i < attackerUnits.length; i++) {
+  const unit = attackerUnits[i];
+  const roll = rollD6();
 
-    // 2. Attacker compares each die roll to the unit's attack stat
-    if (roll <= unit.attack) {
-        // 3. Attacker records a hit for each die roll equal to or
-        //    less than the unit's attack stat
-        attackerHits++
-    }
+  // 2. Attacker compares each die roll to the unit's attack stat
+  if (roll <= unit.attack) {
+    // 3. Attacker records a hit for each die roll equal to or
+    //    less than the unit's attack stat
+    attackerHits++;
+  }
 }
 
 // 4. Defender rolls one die for each attacking unit
 //    **excluding any casualties**
-let defenderHits = 0
-for (let i=defenderCasualties; i<defenderUnits.length; i++) {
-    const unit = defenderUnits[i]
-    const roll = rollD6()
+let defenderHits = 0;
+for (let i = defenderCasualties; i < defenderUnits.length; i++) {
+  const unit = defenderUnits[i];
+  const roll = rollD6();
 
-    // 5. Defender compares each die roll to the unit's defense stat
-    if (roll <= unit.defense) {
-        // 6. Defender records a hit for each die roll equal to or
-        //    less than the unit's defense stat
-        defenderHits++
-    }
+  // 5. Defender compares each die roll to the unit's defense stat
+  if (roll <= unit.defense) {
+    // 6. Defender records a hit for each die roll equal to or
+    //    less than the unit's defense stat
+    defenderHits++;
+  }
 }
 
 // 7. Attacker and defender remove units that were "hit"
-attackerCasualties = Math.min(attackerCasualties + defenderHits, attackerUnits.length)
-defenderCasualties = Math.min(defenderCasualties + attackerHits, defenderUnits.length)
+attackerCasualties = Math.min(
+  attackerCasualties + defenderHits,
+  attackerUnits.length
+);
+defenderCasualties = Math.min(
+  defenderCasualties + attackerHits,
+  defenderUnits.length
+);
 ```
 
 So now we've added Steps 4-6, rolling for the defender and comparing the rolls to each unit's `defense` stat. We've also added a couple variables and logic for Step 7, which records the total number of casualties. We use `Math.min` to limit the number of casualties based on the number of attacking or defending units. We cannot take more casualties than we have units. We've also updated the `for` loops to exclude casualties from rolling. As casualties go up, the `for` loop starts at a later index, so we end up rolling for fewer units.
@@ -433,8 +440,8 @@ From a gameplay perspective, deciding which units to remove first is very signif
 For sake of simplicity, we can deal with this one of two ways: (1) we can ask the user to enter units in the order they expect them to be removed, or (2) we can automatically sort the list of units by their ipc value, like so.
 
 ```javascript
-attackerUnits.sort((a, b) => a.ipc - b.ipc)
-defenderUnits.sort((a, b) => a.ipc - b.ipc)
+attackerUnits.sort((a, b) => a.ipc - b.ipc);
+defenderUnits.sort((a, b) => a.ipc - b.ipc);
 ```
 
 In the real game, there are times where it makes strategic sense to sacrifice higher-valued units or allocate a hit to a Battleship, which has two hit points, but for the sake of simplicity, we will not address that here.
@@ -444,21 +451,25 @@ Now let's look again at the alternative FP implementation of a combat round:
 ```javascript
 // Steps 1-3: Attacker rolls and hit count, excluding casualties
 const attackerHits = attackerUnits
-    .filter((u, index) => index >= attackerCasualties)
-    .map(u => ({unit: u, roll: rollD6()}))
-    .filter(r => r.roll <= r.unit.attack)
-    .length
+  .filter((u, index) => index >= attackerCasualties)
+  .map((u) => ({ unit: u, roll: rollD6() }))
+  .filter((r) => r.roll <= r.unit.attack).length;
 
 // Steps 4-6: Defender rolls and hit count, excluding casualties
 const defenderHits = defenderUnits
-    .filter((u, index) => index >= defenderCasualties)
-    .map(u => ({unit: u, roll: rollD6()}))
-    .filter(r => r.roll <= r.unit.defense)
-    .length
+  .filter((u, index) => index >= defenderCasualties)
+  .map((u) => ({ unit: u, roll: rollD6() }))
+  .filter((r) => r.roll <= r.unit.defense).length;
 
 // 7. Attacker and defender remove units that were "hit"
-attackerCasualties = Math.min(attackerCasualties + defenderHits, attackerUnits.length)
-defenderCasualties = Math.min(defenderCasualties + attackerHits, defenderUnits.length)
+attackerCasualties = Math.min(
+  attackerCasualties + defenderHits,
+  attackerUnits.length
+);
+defenderCasualties = Math.min(
+  defenderCasualties + attackerHits,
+  defenderUnits.length
+);
 ```
 
 It's very similar. Here, we are recording casualties in the same way, and we've added another `filter` call to the lists to remove casualties before rolling. Perhaps you are starting to see the "functional" way of thinking, which is to send our unit lists through a "pipeline" of chained functions until we reach the desired result. Again, this is much more concise than the `for`-loop, but may be less readable to beginners and will probably run slower.
@@ -472,32 +483,32 @@ The individual rounds of combat are the real "meat" of this simulation. With tha
 ```javascript
 // STEPS IN A COMBAT
 // 1. Set up the attacker and defender unit lists
-const attackerList = [Infantry, Tank]
-const defenderList = [Infantry]
+const attackerList = [Infantry, Tank];
+const defenderList = [Infantry];
 
 // Also, reset casualties
-const attackerCasualties = 0
-const defenderCasualties = 0
+const attackerCasualties = 0;
+const defenderCasualties = 0;
 
-const done = false
+const done = false;
 while (!done) {
-    // 2. Do a round
-    //    ... see above
+  // 2. Do a round
+  //    ... see above
 
-    // 3. Check for win, loss, or draw
-    if (
-        attackerCasualties === attackerList.length &&
-        defenderCasualties === defenderList.length
-    ) {
-        alert("It's a draw!")
-        done = true
-    } else if (attackerCasualties === attackerList.length) {
-        alert("Defender Wins!")
-        done = true
-    } else if (defenderCasualties === defenderList.length) {
-        alert("Attacker Wins!")
-        done = true
-    }
+  // 3. Check for win, loss, or draw
+  if (
+    attackerCasualties === attackerList.length &&
+    defenderCasualties === defenderList.length
+  ) {
+    alert("It's a draw!");
+    done = true;
+  } else if (attackerCasualties === attackerList.length) {
+    alert("Defender Wins!");
+    done = true;
+  } else if (defenderCasualties === defenderList.length) {
+    alert("Attacker Wins!");
+    done = true;
+  }
 }
 ```
 
@@ -507,20 +518,20 @@ Can you think of a better or more concise way to write the `if` statement that c
 
 ```javascript
 // A side has lost when casualties equal their unit count
-attackerLost = attackerCasualties === attackerList.length
-defenderLost = defenderCasualtie === defenderList.length
+attackerLost = attackerCasualties === attackerList.length;
+defenderLost = defenderCasualtie === defenderList.length;
 
 // We're done if either side has lost
-done = (attackerLost || defenderLost)
+done = attackerLost || defenderLost;
 
 // The attacker wins if they didn't lose and the defender did
-attackerWon = !attackerLost && defenderLost
+attackerWon = !attackerLost && defenderLost;
 
 // The defender wins if they didn't lose and the attacker did
-defenderWon = !defenderLost && attackerLost
+defenderWon = !defenderLost && attackerLost;
 
 // It's a draw if both sides lost
-draw = attackerLost && defenderLost
+draw = attackerLost && defenderLost;
 ```
 
 This approach looks a bit more verbose than the `if...else if` pattern, but it has the added benefit of being more explicit about what the comparison operators are intended to check. The logic is also cleanly separated between each value, which means that we can change how any one value is computed without affecting any of the other values. By contrast, `if...else if` chains can quickly become confusing, because each block depends on the logic of the previous block, so if you have a bug, you have to trace the whole chain to understand what's going on.
@@ -534,24 +545,24 @@ Now that we can simulate complete multi-round combats, we're ready to wrap every
 ```javascript
 // STEPS IN THE MONTE CARLO SIMULATION
 // 1. Set up the attacker units, defender units, and `x` number of simulations to run
-const attackerList = [Infantry, Tank]
-const defenderList = [Infantry]
-const simCount = 1000
+const attackerList = [Infantry, Tank];
+const defenderList = [Infantry];
+const simCount = 1000;
 
 // We'll record wins/losses from the attacker's perspective
-let wins = 0
-let losses = 0
-let draws = 0
-for (let i=0; i<simCount; i++) {
-    // 2. Run a combat
-    // ... see above
+let wins = 0;
+let losses = 0;
+let draws = 0;
+for (let i = 0; i < simCount; i++) {
+  // 2. Run a combat
+  // ... see above
 
-    // 3. Record the combat result (win, loss, or draw)
-    wins += attackerWon ? 1 : 0
-    losses += defenderWon ? 1 : 0
-    draws += draw ? 1 : 0
+  // 3. Record the combat result (win, loss, or draw)
+  wins += attackerWon ? 1 : 0;
+  losses += defenderWon ? 1 : 0;
+  draws += draw ? 1 : 0;
 
-    // 4. Repeat from Step 2 until we have run `x` number of times
+  // 4. Repeat from Step 2 until we have run `x` number of times
 }
 
 // 5. Display results
@@ -560,7 +571,7 @@ wins: ${wins}
 losses: ${losses}
 draws: ${draws}
 success chance: ${wins / simCount}
-`)
+`);
 ```
 
 So the main thing we've done here is added variables to track the number of wins, losses, and draws from the attacker's perspective. We check the win state after every combat and increment the appropriate counter. Here we have once again avoided `if...else if` statements by using ternary expressions (the `?...:` syntax) to check the values we declared in the previous section. So for example `wins += attackerWon ? 1 : 0` will add `1` to the win count if the attacker won, otherwise, it will add `0`.
@@ -569,11 +580,11 @@ We might have written the same logic using `if...else if`
 
 ```javascript
 if (attackerWon) {
-    wins++
+  wins++;
 } else if (defenderWon) {
-    losses++
+  losses++;
 } else if (draw) {
-    draw++
+  draw++;
 }
 ```
 
@@ -626,22 +637,22 @@ const types = {
 };
 
 var app = new Vue({
-  el: '#app',
+  el: "#app",
   data() {
     return {
       simCount: 1000,
       attackerListStr: "IT",
       defenderListStr: "I",
-      results: null
+      results: null,
     };
   },
   methods: {
     buildUnitList(str) {
       const result = [];
       for (let i = 0; i < str.length; i++) {
-        const unit = types[str[i]]
+        const unit = types[str[i]];
         if (unit) {
-            result.push(unit);
+          result.push(unit);
         }
       }
       return result;
@@ -658,7 +669,6 @@ var app = new Vue({
       let defenderWins = 0;
       let draws = 0;
       for (let i = 0; i < this.simCount; i++) {
-
         // ... RUN COMBAT (see above)
 
         // Summarize stats across all simulated combats
@@ -668,12 +678,12 @@ var app = new Vue({
           draws,
           successChance: attackerWins / this.simCount,
           simCount: this.simCount,
-          simDuration: String(Date.now() - timeStart) + "ms"
+          simDuration: String(Date.now() - timeStart) + "ms",
         };
       }
-    }
-  }
-})
+    },
+  },
+});
 ```
 
 [View the Complete Code on CodePen](https://codepen.io/whusterj/pen/b4397c0d26fc315dae283d682f7819d8)
@@ -685,13 +695,12 @@ Here, the `types` lookup table is used in the `buildUnitList` method, which loop
 ```javascript
 // Examples of strings converted to unit lists
 
-const str = 'IT'
-const unitList = buildUnitList(str)
+const str = "IT";
+const unitList = buildUnitList(str);
 // unitList = [Infantry, Tank]
 
-
-const str = 'IIITTT'
-const unitList = buildUnitList(str)
+const str = "IIITTT";
+const unitList = buildUnitList(str);
 // unitList = [Infantry, Infantry, Infantry, Tank, Tank]
 ```
 
@@ -703,18 +712,19 @@ Because VueJS is reactive, we can present the data rather easily by updating the
 
 ```html
 <div id="app">
-    <form><!-- ... see above --></form>
+  <form><!-- ... see above --></form>
 
-    <div v-if="results !== null">
-        <h3>Sim Results</h3>
-        <p>
-            <strong>Sim Duration:</strong> {{ results.simDuration }}<br />
-            <strong>Attacker Wins:</strong> {{ results.attackerWins }}<br />
-            <strong>Defender Wins:</strong> {{ results.defenderWins }}<br />
-            <strong>Draws:</strong> {{ results.draws }}<br />
-            <strong>Success Chance:</strong> {{ results.attackerWins / results.simCount }}
-        </p>
-    </div>
+  <div v-if="results !== null">
+    <h3>Sim Results</h3>
+    <p>
+      <strong>Sim Duration:</strong> {{ results.simDuration }}<br />
+      <strong>Attacker Wins:</strong> {{ results.attackerWins }}<br />
+      <strong>Defender Wins:</strong> {{ results.defenderWins }}<br />
+      <strong>Draws:</strong> {{ results.draws }}<br />
+      <strong>Success Chance:</strong> {{ results.attackerWins /
+      results.simCount }}
+    </p>
+  </div>
 </div>
 ```
 
@@ -736,6 +746,6 @@ You can reach me at whusterj@gmail.com. Please feel free to reach out with quest
 
 ---
 
-*Notes*
+_Notes_
 
 [^1]: Andrew Howlett demonstrates a "brute force" method and takes this obsession to a whole new level in his paper [Probability of Outcomes of A&A Battles](https://www.radagast.ca/axis_and_allies/probability_of_outcomes_of_a&a_battles.pdf). He also wrote his own [very robust desktop A&A combat simulator back in 2003](https://radagast.ca/axis_and_allies/batsimv2.html) that also uses a Monte Carlo method.

@@ -149,7 +149,8 @@ ul li {
 
 .post-date {
   text-transform: uppercase;
-  color: #d7294a;
+  /* color: #d7294a; */
+  color: #666666;
   font-weight: 600;
 }
 

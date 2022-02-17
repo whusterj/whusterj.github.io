@@ -5,6 +5,7 @@ date: 2018-01-23 12:30
 description: I just ran into an annoying issue with the `name` attribute while using radio buttons with VueJS.
 category: blog
 tags: javascript programming vanillajs
+readtime: 2 min
 ---
 
 I just had an annoying problem with radio buttons in VueJS.
@@ -25,7 +26,7 @@ The currently-selected answer (`question.answer`) is bound to the input like thi
   :id="`q_${question.id}_5`"
   :name="`q_${question.id}`"
   v-model="question.answer"
->
+/>
 ```
 
 You'll notice that the `:id` and `:name` properties are also bound.
@@ -49,17 +50,13 @@ Through all this, the VueJS debugger reported that the data model was updating p
 After a lot of trial and error, I figured out that the problem was the `:name` attribute. I guess it conflicts with how Vue handles v-model on multiple radio buttons internally. Changing my mark-up to this fixed it:
 
 ```html
-<input
-  type="radio"
-  :id="`q_${question.id}_5`"
-  v-model="question.answer"
->
+<input type="radio" :id="`q_${question.id}_5`" v-model="question.answer" />
 ```
 
-I suppose this makes sense. If you bind the same model to multiple radio buttons, they *should* be grouped together. I just didn't expect that VueJS would conflict with a feature of plain HTML.
+I suppose this makes sense. If you bind the same model to multiple radio buttons, they _should_ be grouped together. I just didn't expect that VueJS would conflict with a feature of plain HTML.
 
 ---
 
-*Notes*
+_Notes_
 
 [^1]: Even more infuriating, this behavior did not seem to be consistent. If I moved from a question with a lower-number answer like `3` to a question with an answer of `4`, then the checkbox would update properly. This behavior was super strange. I still don't know why this would be.

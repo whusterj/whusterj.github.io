@@ -5,19 +5,20 @@ date: 2014-11-18 12:00
 description: Alert! Alert! is dependency-free JavaScript library to easily add UI notifications to any web project.
 category: blog
 tags: javascript programming
+readtime: 2 min
 ---
 
 I built a little, dependency-free JavaScript library to add UI notifications to any web project:
 
- - [Demo on Codepen](https://codepen.io/whusterj/pen/qEWMwG).
- - [Code on Github](https://github.com/whusterj/alert-alert).
+- [Demo on Codepen](https://codepen.io/whusterj/pen/qEWMwG).
+- [Code on Github](https://github.com/whusterj/alert-alert).
 
 You’ll need to compile the LESS CSS before use … I’ll eventually add a Gruntfile or something.
 
 It’s very simple to use:
 
 ```javascript
-Alert.alert('info', 'A message', {timeout: 7000});
+Alert.alert("info", "A message", { timeout: 7000 });
 ```
 
 The last param is optional. If a timeout is given, the notification will disappear after the given number of milliseconds.
@@ -33,16 +34,15 @@ Here is the complete source code, which totals about 150 lines of JavaScript and
 **alert-alert.js**
 
 ```javascript
-'use strict';
+"use strict";
 
 module.exports = (function () {
-
   var container,
-      CONTAINER_ID  = 'aa-container',
-      ALERT_CLASS   = 'aa-notification';
+    CONTAINER_ID = "aa-container",
+    ALERT_CLASS = "aa-notification";
 
   exports = {
-    alert: _alert
+    alert: _alert,
   };
 
   return exports;
@@ -50,50 +50,52 @@ module.exports = (function () {
   /////////////////////////////////////////
   // functions
 
-  function _alert (type, message, config) {
-    if (typeof(config) === 'undefined') { config = {}; }
-    if (!container) { container = _genNotificationContainer(); }
-    container.appendChild(
-      _genAlertDiv(type, message, config.timeout)
-    );
+  function _alert(type, message, config) {
+    if (typeof config === "undefined") {
+      config = {};
+    }
+    if (!container) {
+      container = _genNotificationContainer();
+    }
+    container.appendChild(_genAlertDiv(type, message, config.timeout));
   }
 
-  function _genNotificationContainer () {
-    if (container) { return; }
-    var containerDiv = document.createElement('div');
+  function _genNotificationContainer() {
+    if (container) {
+      return;
+    }
+    var containerDiv = document.createElement("div");
     containerDiv.id = CONTAINER_ID;
     document.body.appendChild(containerDiv);
     return containerDiv;
   }
 
-  function _genAlertDiv (type, message, timeout) {
-    var alertDiv = document.createElement('div');
-    alertDiv.className = ALERT_CLASS + ' ' + type;
+  function _genAlertDiv(type, message, timeout) {
+    var alertDiv = document.createElement("div");
+    alertDiv.className = ALERT_CLASS + " " + type;
     alertDiv.innerHTML = message;
 
     //
-    alertDiv.addEventListener('click', _alertClickHandler);
+    alertDiv.addEventListener("click", _alertClickHandler);
 
     //
     if (timeout) {
-      alertDiv.timeout = setTimeout(
-        function () {
-          _removeAlert(alertDiv);
-        }, timeout); 
+      alertDiv.timeout = setTimeout(function () {
+        _removeAlert(alertDiv);
+      }, timeout);
     }
 
     return alertDiv;
   }
 
-  function _removeAlert (alert) {
+  function _removeAlert(alert) {
     window.clearTimeout(alert.timeout);
     container.removeChild(alert);
   }
 
-  function _alertClickHandler (event) {
+  function _alertClickHandler(event) {
     _removeAlert(event.currentTarget);
   }
-
 })();
 ```
 

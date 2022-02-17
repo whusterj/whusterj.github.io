@@ -6,6 +6,7 @@ description: Use JavaScript to validate user input in real time without a framew
 category: blog
 tags: javascript programming vanillajs
 image: /static/images/posts/2018-01-19-form-validation-mockup.png
+readtime: 12 min
 ---
 
 This post demonstrates a straightforward method for writing "live" client-side form validation. It is intended for intermediates or advanced beginners who understand the fundamentals of HTML and modern JavaScript (ES2015). Code samples in this post use ES2015 features and APIs that should be supported in the latest versions of major browsers, but will not work in older browsers.
@@ -21,15 +22,18 @@ Let's say this is the mock-up you received from the designer:
 At first glance, it looks like a simple form you've built many times before. You figure you'll just validate the form when 'Save' is clicked and show any errors just like the mock-up. Then you read the written requirements from designer:
 
 > #### Profile Form Validation
+>
 > For the best possible user experience, the profile form should show which fields are valid or invalid as the user works through the form. That is, form validation should be "live."
 >
 > This means:
+>
 > - A field should not show any errors until the user has touched it.
 > - Once the user touches a field, show an error while the field is not valid.
 > - Error messages should disappear as soon as the error has been corrected.
 > - Clicking the 'Save' button should reveal all errors (or submit the form if there are no errors).
 >
 > Field validation rules:
+>
 > - First name - Cannot be blank.
 > - Last name - Cannot be blank.
 > - Bio - Cannot be blank, and must contain at least eight words.
@@ -46,9 +50,9 @@ Now that we understand the objective, let's think through how to code this. We a
 
 ```html
 <form method="post">
-  <input type="text" name="firstName" placeholder="First name">
-  <input type="text" name="lastName" placeholder="Last name">
-  <input type="text" name="bio" placeholder="Bio">
+  <input type="text" name="firstName" placeholder="First name" />
+  <input type="text" name="lastName" placeholder="Last name" />
+  <input type="text" name="bio" placeholder="Bio" />
   <button type="submit">Save</button>
 </form>
 ```
@@ -61,9 +65,9 @@ Let's say the relative path to the endpoint is `/api/profile`. We could add a sc
 
 ```html
 <form onsubmit="handleSubmit(event)">
-  <input type="text" name="firstName" placeholder="First name">
-  <input type="text" name="lastName" placeholder="Last name">
-  <input type="text" name="bio" placeholder="Bio">
+  <input type="text" name="firstName" placeholder="First name" />
+  <input type="text" name="lastName" placeholder="Last name" />
+  <input type="text" name="bio" placeholder="Bio" />
   <button type="submit">Save</button>
 </form>
 
@@ -80,14 +84,16 @@ Let's say the relative path to the endpoint is `/api/profile`. We could add a sc
     };
 
     // Asynchronously post the data
-    fetch('/api/profile', {
-      method: 'post',
+    fetch("/api/profile", {
+      method: "post",
       body: JSON.stringify(data),
-    }).then(function(response) {
-      return response.json();
-    }).then(function(data) {
-      // Success!
-    });
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        // Success!
+      });
   }
 </script>
 ```
@@ -100,9 +106,9 @@ In the above examples, we didn't define a data model in JavaScript. Instead, the
 
 ```javascript
 const profile = {
-  firstName: '',
-  lastName: '',
-  bio: '',
+  firstName: "",
+  lastName: "",
+  bio: "",
 };
 ```
 
@@ -115,18 +121,18 @@ We can model which fields were 'touched' by extending our `profile` object from 
 ```javascript
 const profile = {
   firstName: {
-    value: '',
+    value: "",
     touched: false,
   },
   lastName: {
-    value: '',
+    value: "",
     touched: false,
   },
   bio: {
-    value: '',
+    value: "",
     touched: false,
-  }
-}
+  },
+};
 ```
 
 We also need a place to put any errors we find in the profile data, so let's also add an 'errors' Array. Further, let's wrap both the profile object and errors list in a parent object called 'state' to keep everything grouped together.
@@ -146,9 +152,9 @@ If you are familiar with React or Redux, the idea of putting everything into one
 
 This looks good, and our data model now includes all of the values we need to track, but when the user interacts with the form, we need a way to keep 'value' and 'touched' up to date in real time.
 
-Synchronizing the form with our data model is pretty straightforward: every time the form receives an `oninput` event, we can read the form data and copy it to our model. Meanwhile, we can listen for the `onfocusout`* event to know when a field was touched, since `onfocusout` is triggered when the user leaves an input field.
+Synchronizing the form with our data model is pretty straightforward: every time the form receives an `oninput` event, we can read the form data and copy it to our model. Meanwhile, we can listen for the `onfocusout`\* event to know when a field was touched, since `onfocusout` is triggered when the user leaves an input field.
 
-While we *could* attach event listeners for these events to each input, there's no need to do so. Thanks to event bubbling, we only need to put them on the form, like so:
+While we _could_ attach event listeners for these events to each input, there's no need to do so. Thanks to event bubbling, we only need to put them on the form, like so:
 
 ```html
 <form
@@ -160,7 +166,7 @@ While we *could* attach event listeners for these events to each input, there's 
 </form>
 ```
 
-_*If you are wondering why we use `onfocusout` here instead of `onblur`, it is because `onblur` does not support event bubbling. Therefor `onblur` will only work if you attach the event listener to each input field. In this case, it is simpler to use event bubbling._
+_\*If you are wondering why we use `onfocusout` here instead of `onblur`, it is because `onblur` does not support event bubbling. Therefor `onblur` will only work if you attach the event listener to each input field. In this case, it is simpler to use event bubbling._
 
 Let's update the event handlers:
 
@@ -187,7 +193,7 @@ function handleSubmit(event) {
     // In a real application, this is where we
     // would make an Ajax call or call or
     // form.submit() to save the form data.
-    alert('No errors - we can save the data!');
+    alert("No errors - we can save the data!");
   }
 }
 
@@ -212,9 +218,9 @@ function handleFocusOut(event) {
 function doUpdate(formElem) {
   // Read the form data and update the state field values
   const { firstName, lastName, bio } = state.profile;
-  firstName.value = getInputVal(formElem, 'firstName');
-  lastName.value = getInputVal(formElem, 'lastName');
-  bio.value = getInputVal(formElem, 'bio');
+  firstName.value = getInputVal(formElem, "firstName");
+  lastName.value = getInputVal(formElem, "lastName");
+  bio.value = getInputVal(formElem, "bio");
 }
 
 function getInputVal(formElem, inputName) {
@@ -244,7 +250,7 @@ If this pattern seems unfamiliar to you, I encourage you to go read about _data 
 
 So we have form events updating our data, but to complete the loop we still need to check for errors and update the form UI, so now let's make this interface come alive!
 
-In order for field errors to appear and disappear "live," we will need to validate the profile data every time it changes. In our code above, the profile data is *always* updated inside of the `doUpdate` function. So we can modify this function to always validate the profile data and update the 'errors' list after reading the latest form values:
+In order for field errors to appear and disappear "live," we will need to validate the profile data every time it changes. In our code above, the profile data is _always_ updated inside of the `doUpdate` function. So we can modify this function to always validate the profile data and update the 'errors' list after reading the latest form values:
 
 ```javascript
 function doUpdate(formElem) {
@@ -264,32 +270,32 @@ function validateProfile(profile) {
   // Validate the 'first name' field
   if (!profile.firstName.value) {
     errors.push({
-      field: 'firstName',
-      message: 'Please enter your first name.',
+      field: "firstName",
+      message: "Please enter your first name.",
     });
   }
 
   // Validate the 'last name' field
   if (!profile.lastName.value) {
     errors.push({
-      field: 'lastName',
-      message: 'Please enter your last name.',
+      field: "lastName",
+      message: "Please enter your last name.",
     });
   }
 
   // Validate the 'bio' field
   const requiredWordCount = 8;
-  const bioWordCount = profile.bio.value.split(' ')
-                                        .filter(i => i !== '')
-                                        .length;
+  const bioWordCount = profile.bio.value
+    .split(" ")
+    .filter((i) => i !== "").length;
   if (!profile.bio.value || bioWordCount < requiredWordCount) {
     const wordCountDiff = requiredWordCount - bioWordCount;
     errors.push({
-      field: 'bio',
-      message: (
+      field: "bio",
+      message:
         `Please write at least ${wordCountDiff} more word` +
-        (wordCountDiff > 1 ? 's': '') + '.'
-      ),
+        (wordCountDiff > 1 ? "s" : "") +
+        ".",
     });
   }
 
@@ -298,22 +304,22 @@ function validateProfile(profile) {
 
 function renderErrors(formElem, state) {
   // First remove any existing error messages
-  const oldFieldErrors = formElem.querySelectorAll('.field-error');
+  const oldFieldErrors = formElem.querySelectorAll(".field-error");
   for (let err of oldFieldErrors) {
     err.parentNode.removeChild(err);
   }
 
   // Then add any current error messages
-  state.errors.forEach(error => {
+  state.errors.forEach((error) => {
     const field = state.profile[error.field];
     // Only display errors if the field has been touched.
     if (field.touched) {
-      const fieldErrorSpan = document.createElement('span');
-      fieldErrorSpan.classList.add('field-error');
+      const fieldErrorSpan = document.createElement("span");
+      fieldErrorSpan.classList.add("field-error");
       fieldErrorSpan.innerHTML = error.message;
-      formElem.querySelector(`[name="${error.field}"]`)
-          .parentNode
-          .appendChild(fieldErrorSpan);
+      formElem
+        .querySelector(`[name="${error.field}"]`)
+        .parentNode.appendChild(fieldErrorSpan);
     }
   });
 }
@@ -355,7 +361,8 @@ And with that, our code is complete! Try playing with the form below. It has not
     <textarea name="bio" placeholder="Your bio here"></textarea>
   </div>
 
-  <button type="submit">Submit</button>
+<button type="submit">Submit</button>
+
 </form>
 
 [**View the complete code for this example.**]({{ '/static/js/posts/2018-01-20-form-validation.js' | absolute_url }})
