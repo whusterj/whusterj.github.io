@@ -99,9 +99,9 @@ ul li {
 }
 
 .header {
-  text-align: center;
-  background-color: rgb(42, 201, 196);
-  color: white;
+  text-align: left;
+  /* background-color: rgb(42, 201, 196); */
+  /* color: white; */
 }
 
 .footer {
