@@ -78,7 +78,7 @@ ul li {
 .row-wrap {
   margin: 0 auto;
   max-width: 40rem;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .block-link {
@@ -182,6 +182,10 @@ code.highlighter-rouge {
   font-size: 1rem;
   padding: 0.1rem 0.25rem;
   color: #1f779a;
+}
+
+pre[class="highlight"] > code {
+  line-height: 1.1;
 }
 
 /* Pygment Syntax Highlighting CSS */
