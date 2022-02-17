@@ -115,6 +115,24 @@ ul li {
   /* background-color: rgb(42, 201, 196); */
   /* color: white; */
 }
+.header__image-container {
+  flex: 1;
+  margin-right: 0.5rem;
+}
+.header__title-container {
+  flex: 5;
+}
+.header__title {
+  font-size: 2.25rem;
+}
+.header__subtitle {
+}
+
+@media (min-width: 768px) {
+  .header__title {
+    font-size: initial;
+  }
+}
 
 .footer {
   background-color: rgb(42, 201, 196);

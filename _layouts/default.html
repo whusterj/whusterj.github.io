@@ -3,10 +3,10 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>{{ site.name }}{% if page.title %} | {{ page.title }} {% endif %}</title>
+        <title>{{ site.name }}{% if page.title %} ㋛ {{ page.title }} {% endif %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{ '/static/css/style.css' | prepend: site.baseurl}}" />
-        <meta name="description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}"/>
+        <meta name="description" content="{% if page.description %}({{ page.readtime }} read) {{page.description}}{% else %}{{site.description}}{% endif %}"/>
         <meta name="author" content="{{site.author}}"/>
         <link rel="author" href="humans.txt"/>
         <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/feed.xml' | prepend: site.baseurl}}" />
@@ -16,7 +16,7 @@
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{site.url}}">
         <meta property="og:title" content="{{ site.name }}{% if page.title %} | {{ page.title }}{% endif %}">
-        <meta property="og:description" content="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}">
+        <meta property="og:description" content="{% if page.description %}({{ page.readtime }} read) {{page.description}}{% else %}{{site.description}}{% endif %}">
         <meta property="og:image" content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}">
         <meta property="og:image:alt" content="williamhuster.com">
 
@@ -24,7 +24,7 @@
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:domain" value="{{site.url}}" />
         <meta name="twitter:title" value="{{ site.name }}{% if page.title %} | {{ page.title }}{% endif %}" />
-        <meta name="twitter:description" value="{% if page.description %}{{page.description}}{% else %}{{site.description}}{% endif %}" />
+        <meta name="twitter:description" value="{% if page.description %}({{ page.readtime }} read) {{page.description}}{% else %}{{site.description}}{% endif %}" />
         <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}" />
         <meta name="twitter:url" value="{{site.url}}" />
 
@@ -42,20 +42,18 @@
 
     <body>
         <header class="header">
-            <div class="row-wrap">
-                <div style="display:flex">
-                    <a href="/" style="flex: 1" class="no-highlight">
-                        <img src="http://gravatar.com/avatar/4e5a5a2d5be8c26770a7d901b5898a9e?s=800"
-                        style="width: 100%; height: auto; max-width: 5.5rem; border-radius: 50%;"
-                        alt="Portrait of William via Gravatar">   
-                    </a>
-                    <a href="/" style="flex: 10" class="no-highlight">
-                        <h1 style="margin: 0">
-                            William Huster
-                        </h1>
-                        <h5 style="margin: 0">A Small Time CTO Near You</h5>
-                    </a>
-                </div>
+            <div class="row-wrap" style="display:flex">
+                <a href="/" class="no-highlight header__img-container">
+                    <img src="http://gravatar.com/avatar/4e5a5a2d5be8c26770a7d901b5898a9e?s=800"
+                    style="width: 100%; height: auto; max-width: 5.5rem; border-radius: 50%;"
+                    alt="Portrait of William via Gravatar">   
+                </a>
+                <a href="/" lass="no-highlight header__title-container">
+                    <h1 style="margin: 0">
+                        William Huster
+                    </h1>
+                    <h5 style="margin: 0">A Small Time CTO Near You</h5>
+                </a>
             </div>
         </header>
 
