@@ -100,6 +100,12 @@ ul li {
   padding: 1rem;
 }
 
+.row-wrap-wide {
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 1rem;
+}
+
 .block-link {
   color: inherit;
   display: block;
@@ -208,9 +214,7 @@ ul li {
 }
 
 /* Photos Page */
-.photo-container {
-  margin: 1rem;
-}
+.photo-container {}
 .photo-container > h5 {
   margin: 0.25rem 0;
 }
