@@ -15,7 +15,7 @@ title: Home
   <a href="{{site.baseurl}}{{post.url}}" class="block-link">
     <article class="row-wrap post-preview">
       <h3 class="post-preview__title">{{ post.title }}</h3>
-      <p class="post-preview__body">{{ post.description }}</p>
+      <p class="post-preview__body">({{ post.readtime }} read) {{ post.description }}</p>
     </article>
   </a>
   {% endfor %}
