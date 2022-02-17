@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>{{ site.name }}{% if page.title %} 🍖 {{ page.title }} {% endif %}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ '/static/css/style.css' | prepend: site.baseurl}}" />
-        <meta name="description" content="{% if page.description %}({{ page.readtime }} read) {{page.description}}{% else %}{{site.description}}{% endif %}"/>
-        <meta name="author" content="{{site.author}}"/>
-        <link rel="author" href="humans.txt"/>
-        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/feed.xml' | prepend: site.baseurl}}" />
 
-        <!-- Page Meta for SEO and Social Sharing -->
-        <!-- Default Facebook Open Graph tags -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{site.url}}">
-        <meta property="og:title" content="{{ site.name }}{% if page.title %} | {{ page.title }}{% endif %}">
-        <meta property="og:description" content="{% if page.description %}({{ page.readtime }} read) {{page.description}}{% else %}{{site.description}}{% endif %}">
-        <meta property="og:image" content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}">
-        <meta property="og:image:alt" content="williamhuster.com">
+<head>
+    <meta charset="utf-8" />
+    <title>{{ site.name }}{% if page.title %} 🍖 {{ page.title }} {% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/static/css/style.css' | prepend: site.baseurl}}" />
+    <meta name="description"
+        content="{% if page.description %}{% if page.readtime %}({{ page.readtime }} read) {% endif %}{{page.description}}{% else %}{{site.description}}{% endif %}" />
+    <meta name="author" content="{{site.author}}" />
+    <link rel="author" href="humans.txt" />
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/feed.xml' | prepend: site.baseurl}}" />
 
-        <!-- Default Twitter Card tags (additive to FB tags) -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:domain" value="{{site.url}}" />
-        <meta name="twitter:title" value="{{ site.name }}{% if page.title %} | {{ page.title }}{% endif %}" />
-        <meta name="twitter:description" value="{% if page.description %}({{ page.readtime }} read) {{page.description}}{% else %}{{site.description}}{% endif %}" />
-        <meta name="twitter:image" content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}" />
-        <meta name="twitter:url" value="{{site.url}}" />
+    <!-- Page Meta for SEO and Social Sharing -->
+    <!-- Default Facebook Open Graph tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{site.url}}">
+    <meta property="og:title" content="{{ site.name }}{% if page.title %} 🍖 {{ page.title }}{% endif %}">
+    <meta property="og:description"
+        content="{% if page.description %}{% if page.readtime %}({{ page.readtime }} read) {% endif %}{{page.description}}{% else %}{{site.description}}{% endif %}">
+    <meta property="og:image"
+        content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}">
+    <meta property="og:image:alt" content="williamhuster.com">
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ '/static/images/favicon.png' | prepend: site.baseurl }}" />
+    <!-- Default Twitter Card tags (additive to FB tags) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" value="{{site.url}}" />
+    <meta name="twitter:title" value="{{ site.name }}{% if page.title %} 🍖 {{ page.title }}{% endif %}" />
+    <meta name="twitter:description"
+        value="{% if page.description %}{% if page.readtime %}({{ page.readtime }} read) {% endif %}{{page.description}}{% else %}{{site.description}}{% endif %}">
+    <meta name="twitter:image"
+        content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}" />
+    <meta name="twitter:url" value="{{site.url}}" />
 
-        <!-- Apple Touch Icons -->
-        <link rel="apple-touch-icon" href="{{site.baseurl}}/static/images/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="{{site.baseurl}}/static/images/apple-touch-icon.png">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ '/static/images/favicon.png' 🍖 prepend: site.baseurl }}" />
 
-        <!-- Android icon -->
-        <link rel="icon" href="{{site.baseurl}}/static/images/apple-touch-icon.png">
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="{{site.baseurl}}/static/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon-precomposed" href="{{site.baseurl}}/static/images/apple-touch-icon.png">
 
-    </head>
+    <!-- Android icon -->
+    <link rel="icon" href="{{site.baseurl}}/static/images/apple-touch-icon.png">
 
-    <body>
-        <header class="header">
-            <div class="row-wrap" style="display:flex">
-                <a href="/" class="no-highlight header__image-container">
-                    <img src="http://gravatar.com/avatar/4e5a5a2d5be8c26770a7d901b5898a9e?s=800"
+</head>
+
+<body>
+    <header class="header">
+        <div class="row-wrap" style="display:flex">
+            <a href="/" class="no-highlight header__image-container">
+                <img src="http://gravatar.com/avatar/4e5a5a2d5be8c26770a7d901b5898a9e?s=800"
                     style="width: 100%; height: auto; max-width: 5.5rem; border-radius: 50%;"
-                    alt="Portrait of William via Gravatar">   
+                    alt="Portrait of William via Gravatar">
+            </a>
+            <a href="/" class="no-highlight header__title-container">
+                <h1 class="header__title">
+                    William Huster
+                </h1>
+                <h5 class="header__subtitle">A Small Time CTO Near You</h5>
+            </a>
+        </div>
+    </header>
+
+    {{ content }}
+
+    <footer class="footer">
+        <address class="row-wrap footer__address">
+            <hr>
+            <p>
+                &copy; <time>{{ site.time | date: '%Y' }}</time>
+                {{site.author}} |
+                <a href="mailto:{{site.author_email}}" class="footer__link">
+                    {{site.author_email}}
+                </a> |
+                <a href="{{site.baseurl}}/about" class="footer__link">
+                    About
                 </a>
-                <a href="/" class="no-highlight header__title-container">
-                    <h1 class="header__title">
-                        William Huster
-                    </h1>
-                    <h5 class="header__subtitle">A Small Time CTO Near You</h5>
-                </a>
-            </div>
-        </header>
+            </p>
+        </address>
+    </footer>
 
-        {{ content }}
-
-        <footer class="footer">
-            <address class="row-wrap footer__address">
-                <hr>
-                <p>
-                    &copy; <time>{{ site.time | date: '%Y' }}</time>
-                    {{site.author}} |
-                    <a href="mailto:{{site.author_email}}" class="footer__link">
-                        {{site.author_email}}
-                    </a> |
-                    <a href="{{site.baseurl}}/about" class="footer__link">
-                        About
-                    </a>
-                </p>
-            </address>
-        </footer>
-
-        <!-- <script src="{{site.baseurl}}/scripts.js"></script> -->
-        {% if jekyll.environment == 'production' %}
-        {% include analytics.html %}
-        {% endif %}
-    </body>
+    <!-- <script src="{{site.baseurl}}/scripts.js"></script> -->
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
+</body>
 
 </html>
