@@ -58,6 +58,12 @@ a:hover {
 a:visited {
   color: inherit;
 }
+a.no-highlight {
+  background: none;
+}
+a.no-highlight:hover {
+  background: none;
+}
 
 img {
   max-width: 100%;
