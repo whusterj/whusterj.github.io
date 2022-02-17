@@ -73,6 +73,7 @@ a.no-highlight:hover {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 blockquote {
@@ -150,9 +151,7 @@ ul li {
 .footer__address {
   font-style: normal;
 }
-.footer__link {
-  color: white;
-}
+.footer__link {}
 
 /* About Page Styles */
 .bio {
@@ -210,11 +209,14 @@ ul li {
 
 /* Photos Page */
 .photo-container {
-  margin: 1rem 0.5rem;
+  margin: 1rem;
+}
+.photo-container > h5 {
+  margin: 0.25rem 0;
 }
 .photo {
-  border-radius: 1rem;
-  box-shadow: 0 0 12px rgba(0,0,0,0.35)
+  border-radius: 0.33rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
 }
 
 /* Custom syntax highlighting styles  */
