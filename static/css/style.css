@@ -144,10 +144,8 @@ ul li {
 }
 
 .footer {
-  background-color: rgb(42, 201, 196);
-  color: white;
   text-align: center;
-  padding: 2rem 0 6rem;
+  padding: 2rem 0;
 }
 .footer__address {
   font-style: normal;
