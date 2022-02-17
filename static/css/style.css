@@ -208,6 +208,15 @@ ul li {
   margin-right: 0.25rem;
 }
 
+/* Photos Page */
+.photo-container {
+  margin: 1rem 0.5rem;
+}
+.photo {
+  border-radius: 1rem;
+  box-shadow: 0 0 12px rgba(0,0,0,0.35)
+}
+
 /* Custom syntax highlighting styles  */
 div.highlight {
   padding: 0 0.5rem;
