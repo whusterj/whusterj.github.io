@@ -6,8 +6,13 @@ layout: default
 
 <main class="photo-body">
     <article class="row-wrap-wide photo-container">
+<<<<<<< HEAD
         <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}" loading="eager"
             class="photo">
+=======
+        <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}"
+            loading="eager" class="photo">
+>>>>>>> e113a4cf85049532faa161d8e6d529b29ce8dea1
         <p>{{ page['Title'] }}</p>
         <p><small>
                 {{ page['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ page['Model'] }} &middot; ISO {{
@@ -15,6 +20,7 @@ layout: default
                 f{{ page["FNumber"] }}
             </small></p>
     </article>
+<<<<<<< HEAD
     <div class="row-wrap" style="text-align: center;">
         {% if page.previous.url %}
         <a href="{{ page.previous.url }}">&laquo; prev</a>
@@ -24,4 +30,6 @@ layout: default
         <a href="{{ page.next.url }}">next &raquo;</a>
         {% endif %}
     </div>
+=======
+>>>>>>> e113a4cf85049532faa161d8e6d529b29ce8dea1
 </main>

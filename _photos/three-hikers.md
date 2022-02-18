@@ -1,7 +1,6 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5386 - 1200px.jpg
-description:
 show: true
 Title: Three Hikers Hiking
 ImageWidth: 1200
