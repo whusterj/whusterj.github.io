@@ -11,5 +11,5 @@ FNumber: 4.0
 ExposureTime: 1/25
 ISO: 3200
 Keywords: christmas, personal, vacation
-DateTimeOriginal: 2021-12-25T05:59:38
+DateTimeOriginal: 2021-12-25 05:59:38
 ---

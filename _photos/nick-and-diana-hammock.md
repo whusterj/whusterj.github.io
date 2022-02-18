@@ -12,5 +12,5 @@ ExposureTime: 1/125
 ISO: 360
 LensID: AF-S DX VR Zoom-Nikkor 18-55mm f/3.5-5.6G
 Keywords: personal, vacation
-DateTimeOriginal: 2021-07-01T18:50:27
+DateTimeOriginal: 2021-07-01 18:50:27
 ---
