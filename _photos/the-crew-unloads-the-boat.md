@@ -1,7 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5446 - 1200px.jpg
-description:
+description: These guys are professionals.
 show: true
 Title: The crew unloads the boat
 ImageWidth: 1200

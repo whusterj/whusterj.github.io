@@ -12,7 +12,9 @@ layout: default
         <p><small>
                 {{ page['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ page['Model'] }} &middot; ISO {{
                 page['ISO'] }} &middot;
-                f{{ page["FNumber"] }}
+                {{ page["ExposureTime"] }} &middot;
+                f{{ page["FNumber"] }} &middot;
+                {{ page["LensID"] }}
             </small></p>
     </article>
     <div class="row-wrap" style="text-align: center;">

@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5369 - 1200px.jpg
-description:
+description: I'm a slow walker, OK? I like to take in the nature. I need to exercise.
 show: true
-Title: Sylvia Had to Wait for Me to Catch Up
+Title: Sylvia had to wait for me to catch up
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

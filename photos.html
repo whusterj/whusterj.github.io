@@ -22,6 +22,7 @@ description: Pictures I have taken that I like.
         <p><small>
                 {{ photo['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ photo['Model'] }} &middot; ISO {{
                 photo['ISO'] }} &middot;
+                {{ photo["ExposureTime"] }} &middot;
                 f{{ photo["FNumber"] }} &middot;
                 {{ photo["LensID"] }}
             </small></p>

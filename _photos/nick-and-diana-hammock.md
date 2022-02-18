@@ -1,7 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5422 - 1200px.jpg
-description:
+description: Everyone needs a good hammock.
 show: true
 Title: Nick and Diana winding down after a day of paddling
 ImageWidth: 1200
