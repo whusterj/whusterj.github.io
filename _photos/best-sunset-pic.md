@@ -1,10 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5323 - 1200px.jpg
-<<<<<<< HEAD
 description:
-=======
->>>>>>> e113a4cf85049532faa161d8e6d529b29ce8dea1
 show: false
 Title: My Best Picture of a Sunset
 ImageWidth: 1200

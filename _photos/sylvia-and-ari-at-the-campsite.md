@@ -1,10 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5322 - 1200px.jpg
-<<<<<<< HEAD
 description:
-=======
->>>>>>> e113a4cf85049532faa161d8e6d529b29ce8dea1
 show: true
 Title: Sylvia and Ari chilling
 ImageWidth: 1200

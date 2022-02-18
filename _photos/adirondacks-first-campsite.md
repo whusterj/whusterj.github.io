@@ -1,10 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5432 - 1200px.jpg
-<<<<<<< HEAD
 description:
-=======
->>>>>>> e113a4cf85049532faa161d8e6d529b29ce8dea1
 show: true
 Title: First campsite of our Adirondacks Canoe Trip
 ImageWidth: 1200
