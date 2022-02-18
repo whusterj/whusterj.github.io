@@ -1,18 +1,30 @@
 ---
 title: Photos
 layout: default
-description: Just some pictures I've taken that I like.
+description: Pictures I have taken that I like.
 ---
 
 {% include nav.html %}
+{% assign filtered_photos = site.photos | where:"show", true %}
 
 <main>
     <div class="row-wrap">
         <h2>Photography</h2>
-        <p>Just some pictures I've taken that I like.</p>
+        <p>Pictures I have taken that I like.</p>
     </div>
-    <div class=".row-wrap-wide photo-container">
-        <img src="/static/images/photos/DSC_5153 - 1200px.jpg" width="795" height="1200" loading="lazy" class="photo">
-        <h5>My brother and his wife out on a hike.</h5>
+
+    {% for photo in filtered_photos %}
+    <div class="row-wrap-wide photo-container">
+        <a href="{{ photo.url }}" class="no-highlight">
+            <img src="{{ photo.filepath }}" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
+                loading="lazy" class="photo">
+        </a>
+        <p>{{ photo['Title'] }}</p>
+        <p><small>
+                {{ photo['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ photo['Model'] }} &middot; ISO {{
+                photo['ISO'] }} &middot;
+                f{{ photo["FNumber"] }}
+            </small></p>
     </div>
+    {% endfor %}
 </main>

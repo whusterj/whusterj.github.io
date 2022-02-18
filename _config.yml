@@ -26,3 +26,9 @@ paginate: 3
 
 # Exclude metadata and development time dependencies (like Grunt plugins)
 exclude: [README.md]
+
+# Photos Collection
+collections:
+  photos:
+    output: true
+    sort_by: -DateTimeOriginal

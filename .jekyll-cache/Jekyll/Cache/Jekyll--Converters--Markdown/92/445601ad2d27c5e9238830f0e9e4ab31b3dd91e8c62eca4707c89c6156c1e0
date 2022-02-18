@@ -1,0 +1,57 @@
+I"{<p>I just had an annoying problem with radio buttons in VueJS.</p>
+
+<p>TL;DR: If you plan on using <code class="language-plaintext highlighter-rouge">v-model</code> with a group of radio buttons or checkboxes in VueJS, you should probably leave out the <code class="language-plaintext highlighter-rouge">name</code> attribute.</p>
+
+<p>I’m working on a project where I have a Survey object containing a list of Question objects. The questions are in various formats, for example: multiple choice, scale value, open text, etc. Questions are rendered one at a time using different child components for each question format.</p>
+
+<p>For scale value questions, I render a component that shows radio buttons 1-5, like this:</p>
+
+<p><img src="http://0.0.0.0:4000/static/images/posts/2018-01-23-radio-buttons-vue.png" alt="Screenshot of radio buttons for a &quot;scale value&quot; question." /></p>
+
+<p>The currently-selected answer (<code class="language-plaintext highlighter-rouge">question.answer</code>) is bound to the input like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span>
+  <span class="na">type=</span><span class="s">"radio"</span>
+  <span class="na">:id=</span><span class="s">"`q_${question.id}_5`"</span>
+  <span class="na">:name=</span><span class="s">"`q_${question.id}`"</span>
+  <span class="na">v-model=</span><span class="s">"question.answer"</span>
+<span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>You’ll notice that the <code class="language-plaintext highlighter-rouge">:id</code> and <code class="language-plaintext highlighter-rouge">:name</code> properties are also bound.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">:id</code> attribute allows a clickable label to be linked to the input (using <code class="language-plaintext highlighter-rouge">for=</code> on the label).</p>
+
+<p>Meanwhile, in plain HTML, the <code class="language-plaintext highlighter-rouge">name</code> property is used to group radio buttons and checkboxes together. …I assumed that I would need the <code class="language-plaintext highlighter-rouge">:name</code> property to do the same in VueJS.</p>
+
+<p>But, no!</p>
+
+<h2 id="the-bug">The Bug</h2>
+
+<p>The markup above worked fine when all of the questions were displayed at once. Clicking on a radio button marked the radio button and also updated the answer in the store object.</p>
+
+<p>But when I updated my interface to render only one question at a time, the radio inputs stopped updating properly. For example, I’d answer <code class="language-plaintext highlighter-rouge">1</code> for question 1 and then go to question 2 and answer <code class="language-plaintext highlighter-rouge">2</code>, but when I’d go back to question 1, the radio button would not be checked anymore.<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup></p>
+
+<p>Through all this, the VueJS debugger reported that the data model was updating properly. The component was definitely updating everything else, so it was definitely just a rendering issue with checkbox.</p>
+
+<h2 id="the-solution">The Solution</h2>
+
+<p>After a lot of trial and error, I figured out that the problem was the <code class="language-plaintext highlighter-rouge">:name</code> attribute. I guess it conflicts with how Vue handles v-model on multiple radio buttons internally. Changing my mark-up to this fixed it:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">:id=</span><span class="s">"`q_${question.id}_5`"</span> <span class="na">v-model=</span><span class="s">"question.answer"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>I suppose this makes sense. If you bind the same model to multiple radio buttons, they <em>should</em> be grouped together. I just didn’t expect that VueJS would conflict with a feature of plain HTML.</p>
+
+<hr />
+
+<p><em>Notes</em></p>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Even more infuriating, this behavior did not seem to be consistent. If I moved from a question with a lower-number answer like <code class="language-plaintext highlighter-rouge">3</code> to a question with an answer of <code class="language-plaintext highlighter-rouge">4</code>, then the checkbox would update properly. This behavior was super strange. I still don’t know why this would be. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET

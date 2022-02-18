@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% include nav.html %}
+
+<main class="photo-body">
+    <article class="row-wrap-wide photo-container">
+        <img src="{{ page.filepath }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}"
+            loading="eager" class="photo">
+        <p>{{ page['Title'] }}</p>
+        <p><small>
+                {{ page['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ page['Model'] }} &middot; ISO {{
+                page['ISO'] }} &middot;
+                f{{ page["FNumber"] }}
+            </small></p>
+    </article>
+</main>

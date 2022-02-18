@@ -1,5 +1,10 @@
 <nav class="main-nav row-wrap">
   <hr>
+  {% if page.title == 'Home' %}
+  {% else %}
+  <a href="/">Home</a>
+  {% endif %}
+  <a href="/photos">Photos</a>
   <a href="/about">About</a>
   <a href="/now">Now</a>
   <hr>

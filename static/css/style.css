@@ -215,8 +215,12 @@ ul li {
 
 /* Photos Page */
 .photo-container {}
-.photo-container > h5 {
-  margin: 0.25rem 0;
+.photo-container > p {
+  margin: 0;
+  line-height: 1;
+}
+.photo-container small {
+  color: gray;
 }
 .photo {
   border-radius: 0.33rem;

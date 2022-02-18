@@ -1,0 +1,210 @@
+I"PR<p>Radar charts<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> can be a great way to visually compare sets of numbers, particularly when those numbers represent the features of a real-world person or object.</p>
+
+<p><img src="http://0.0.0.0:4000/static/images/posts/2018-01-27_radar_chart_example_01.png" alt="An example radar chart" /></p>
+
+<p><small><i>Fig. 1 - An example radar chart comparing a person’s ‘real’ workplace experience with their ‘ideal’. <a href="http://aspire.is">At Aspire</a>, we generate these charts as part of our ‘Aspire Quotient’ workplace satisfaction survey. <a href="http://www.chartjs.org">Made with the chart.js library</a>.</i></small></p>
+
+<p>For example, let’s say we have a database of people along with information about their proficiency in certain skills, with each skill scored within the range 0 to 100 (‘0: not at all’ to ‘100: very’ proficient). Let’s grab a couple people at random and list their skill scores (ignoring any labels for now):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>  <span class="c1"># person A's skill scores
+</span><span class="p">[</span><span class="mi">76</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>    <span class="c1"># person B's skill scores
+</span></code></pre></div></div>
+
+<p>In mathematical lingo, unlabeled lists like this are called “feature vectors.” Feature vectors are used to represent objects numerically for processing by pattern recognition and machine learning algorithms (but that’s material for a different post…).</p>
+
+<p>We can make a comparison between the two individuals by studying these lists, but the similarities or differences would be easier to spot with a graphical representation. Let’s use a radar chart for that graphical representation!<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup></p>
+
+<p>When each series is plotted on a radar chart, it forms a polygon representing the “shape” of that particular feature vector. After we plot two such shapes, the similarities, differences, and overall overlap become readily visible.</p>
+
+<h2 id="coding-it-up">Coding it Up</h2>
+
+<p>In Python, we can generate these charts using the matplotlib package, which has built-in support for “polar” graphs. We’ll also use the pandas package to help us manipulate our data.</p>
+
+<p>Install the python packages with pip:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pandas matplotlib
+</code></pre></div></div>
+
+<p>By default, matplotlib also depends on <code class="language-plaintext highlighter-rouge">_tkinter</code>, which cannot be installed through pip. On Ubuntu, this can be installed with apt:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get <span class="nb">install </span>python3-tk
+</code></pre></div></div>
+
+<p>If for some reason you are unable to install python3-tk, you can work around this requirement by changing the matplotlib back-end at the top of your program. I have done this in order to use matplotlib on Heroku, for instance:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">matplotlib</span><span class="p">.</span><span class="n">use</span><span class="p">(</span><span class="s">'Agg'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Let’s begin! Follow along with this code by opening a Python shell (type <code class="language-plaintext highlighter-rouge">python</code> on the command line).</p>
+
+<p>We’ll start with some data. Here are the same skills scores from before, only now they are represented as dictionaries with labels included.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user_a_skills</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Skill A'</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="s">'Skill B'</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span>
+  <span class="s">'Skill C'</span><span class="p">:</span> <span class="mi">47</span><span class="p">,</span>
+  <span class="s">'Skill D'</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
+  <span class="s">'Skill E'</span><span class="p">:</span> <span class="mi">39</span><span class="p">,</span>
+  <span class="s">'Skill F'</span><span class="p">:</span> <span class="mi">34</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">user_b_skills</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Skill A'</span><span class="p">:</span> <span class="mi">76</span><span class="p">,</span>
+  <span class="s">'Skill B'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s">'Skill C'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="s">'Skill D'</span><span class="p">:</span> <span class="mi">77</span><span class="p">,</span>
+  <span class="s">'Skill E'</span><span class="p">:</span> <span class="mi">77</span><span class="p">,</span>
+  <span class="s">'Skill F'</span><span class="p">:</span> <span class="mi">56</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We can begin working with this data by importing it into pandas as a data frame. This isn’t strictly necessary, but it will let us manipulate it more freely:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">user_a_skills</span><span class="p">,</span> <span class="n">user_b_skills</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>For example, we can easily retrieve the names of all the skills and count them. We’ll store the skills in a list called <code class="language-plaintext highlighter-rouge">skills</code>. Later, we’ll plot each skill as an axis of the chart:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">skills</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">num_skills</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">skills</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Unfortunately, matplotlib does not automatically generate angles for the axes of the chart, so we’ll have to do that manually.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="n">angles</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">num_skills</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_skills</span><span class="p">)]</span>
+<span class="n">angles</span> <span class="o">+=</span> <span class="n">angles</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># repeat the first value to close the circle
+</span></code></pre></div></div>
+
+<p>Bear in mind that zero degrees (0°) is located on the right side of the circle by default, and we’ll move counter-clockwise around the circle as the angle increases. If you are not happy with the placement of the axes, you will need to tweak the above formula to change the default offset.</p>
+
+<p>Now we can begin drawing the plot. We’ll import <code class="language-plaintext highlighter-rouge">plt</code> from matplotlib and start by drawing the x and y axes and tick marks that make up the background of the chart. Notice that before drawing the plot, we also create subplots for each data series. This should always be done before drawing, or else you may get unexpected results:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">GRAY</span> <span class="o">=</span> <span class="s">'#999999'</span>
+
+<span class="c1"># Clear the plot to start with a blank canvas.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">clf</span><span class="p">()</span>
+
+<span class="c1"># Create subplots for each data series
+</span><span class="n">series_1</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">series_2</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">polar</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1"># Draw one x-axis per variable and add labels
+</span><span class="n">plt</span><span class="p">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">angles</span><span class="p">,</span> <span class="n">skills</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">GRAY</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="c1"># Draw the y-axis labels. To keep the graph uncluttered,
+# include lines and labels at only a few values.
+</span><span class="n">plt</span><span class="p">.</span><span class="n">yticks</span><span class="p">(</span>
+  <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">],</span>
+  <span class="p">[</span><span class="s">'20'</span><span class="p">,</span> <span class="s">'40'</span><span class="p">,</span> <span class="s">'60'</span><span class="p">,</span> <span class="s">'80'</span><span class="p">],</span>
+  <span class="n">color</span><span class="o">=</span><span class="n">GRAY</span><span class="p">,</span>
+  <span class="n">size</span><span class="o">=</span><span class="mi">7</span>
+<span class="p">)</span>
+
+<span class="c1"># Constrain y axis to range 0-100
+</span><span class="n">plt</span><span class="p">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Next, we’ll retrieve our data from the data frame. First, it might be helpful to preview the contents of our data frame:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; df
+   Skill A  Skill B  Skill C  Skill D  Skill E  Skill F
+0       80       24       47       56       39       34
+1       76        1        4       77       77       56
+</code></pre></div></div>
+
+<p>Notice how pandas was able to digest the two dictionaries and now renders them together like a spreadsheet. This is a really nifty feature for crunching numbers, since you often need to move back and forth from Python data structures to spreadsheets. In this particular situation, using pandas is probably overkill, but it’s worth trying out!</p>
+
+<p>Let’s now retrieve the data from our dataframe as lists that are ready to plot:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">series_1_values</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> \
+                    <span class="p">.</span><span class="n">values</span> \
+                    <span class="p">.</span><span class="n">flatten</span><span class="p">()</span> \
+                    <span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">series_1_values</span> <span class="o">+=</span> <span class="n">series_1_values</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># duplicate first element to close the circle
+</span>
+<span class="n">series_2_values</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> \
+                    <span class="p">.</span><span class="n">values</span> \
+                    <span class="p">.</span><span class="n">flatten</span><span class="p">()</span> \
+                    <span class="p">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">series_2_values</span> <span class="o">+=</span> <span class="n">series_2_values</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>   <span class="c1"># duplicate first element to close the circle
+</span></code></pre></div></div>
+
+<p>All we’ve done is retrieve each list of skill scores without labels, just like before:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">24</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>  <span class="c1"># person A's skill scores
+</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">56</span><span class="p">]</span>    <span class="c1"># person B's skill scores
+</span></code></pre></div></div>
+
+<p>So now we can plot the data!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set up colors
+</span><span class="n">ORANGE</span> <span class="o">=</span> <span class="s">'#FD7120'</span>
+<span class="n">BLUE</span> <span class="o">=</span> <span class="s">'#00BFFF'</span>
+
+<span class="c1"># Plot the first series
+</span><span class="n">series_1</span><span class="p">.</span><span class="n">set_rlabel_position</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">series_1</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span>
+  <span class="n">angles</span><span class="p">,</span>
+  <span class="n">series_1_values</span><span class="p">,</span>
+  <span class="n">color</span><span class="o">=</span><span class="n">ORANGE</span><span class="p">,</span>
+  <span class="n">linestyle</span><span class="o">=</span><span class="s">'solid'</span><span class="p">,</span>
+  <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">series_1</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span>
+  <span class="n">angles</span><span class="p">,</span>
+  <span class="n">series_1_values</span><span class="p">,</span>
+  <span class="n">color</span><span class="o">=</span><span class="n">ORANGE</span><span class="p">,</span>
+  <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span>
+<span class="p">)</span>
+
+
+<span class="c1"># Plot the second series
+</span><span class="n">series_2</span><span class="p">.</span><span class="n">set_rlabel_position</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">series_2</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span>
+  <span class="n">angles</span><span class="p">,</span>
+  <span class="n">series_2_values</span><span class="p">,</span>
+  <span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">,</span>
+  <span class="n">linestyle</span><span class="o">=</span><span class="s">'solid'</span><span class="p">,</span>
+  <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">series_2</span><span class="p">.</span><span class="n">fill</span><span class="p">(</span>
+  <span class="n">angles</span><span class="p">,</span>
+  <span class="n">series_2_values</span><span class="p">,</span>
+  <span class="n">color</span><span class="o">=</span><span class="n">BLUE</span><span class="p">,</span>
+  <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<p>This code is pretty self-explanatory: for each series, we feed the angles and values lists into the <code class="language-plaintext highlighter-rouge">plot()</code> and <code class="language-plaintext highlighter-rouge">fill()</code> methods of our subplots. This draws the shapes. Each shape has a solid outline and semi-transparent fill color set by the <code class="language-plaintext highlighter-rouge">alpha</code> argument, so that overlapping areas remain visible. I plotted the orange shape first and then blue on top because, trust me, it looks better than the other way ‘round.</p>
+
+<p>And finally, we can save the image and view our creation. PNG is the default format.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Save the image
+</span><span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'radar_chart.png'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>And here is the final result!</p>
+
+<p><img src="http://0.0.0.0:4000/static/images/posts/2018-01-27_radar_chart.png" alt="Final radar chart" /></p>
+
+<p>So what can we see? I see almost immediately that these two people have somewhat complementary skills. Person A (in orange) has some proficiency in everything, but is strongest in Skills B and C. Meanwhile Person B (in blue) is definitely stronger in Skills D, E, and F. Both individuals are approximately equally as strong in skill A. Pretty cool!</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>Radar charts are also sometimes referred to as ‘kite’ charts, ‘polar’ charts, or ‘spider’ charts… All fine choices, although for some reason I really dislike the term ‘spider’ chart. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="http://workshape.io">workshape.io</a> is a great example of using radar charts to compare people’s skills, not only with other people, but also the skill requirements for job openings. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
