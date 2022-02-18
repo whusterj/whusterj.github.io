@@ -12,7 +12,7 @@ description: Pictures I have taken that I like.
         <h2>Some of my Photography</h2>
     </div>
 
-    {% for photo in filtered_photos %}
+    {% for photo in filtered_photos reversed %}
     <div class="row-wrap-wide photo-container">
         <a href="{{ photo.url }}" class="no-highlight">
             <img src="{{ photo.image }}" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
