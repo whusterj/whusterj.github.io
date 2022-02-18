@@ -1,6 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5446 - 1200px.jpg
+description:
 show: true
 Title: The crew unloads the boat
 ImageWidth: 1200

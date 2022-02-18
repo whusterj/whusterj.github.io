@@ -6,8 +6,8 @@ layout: default
 
 <main class="photo-body">
     <article class="row-wrap-wide photo-container">
-        <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}"
-            loading="eager" class="photo">
+        <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}" loading="eager"
+            class="photo">
         <p>{{ page['Title'] }}</p>
         <p><small>
                 {{ page['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ page['Model'] }} &middot; ISO {{
@@ -15,4 +15,13 @@ layout: default
                 f{{ page["FNumber"] }}
             </small></p>
     </article>
+    <div class="row-wrap" style="text-align: center;">
+        {% if page.previous.url %}
+        <a href="{{ page.previous.url }}">&laquo; prev</a>
+        {% endif %}
+        &nbsp;
+        {% if page.next.url %}
+        <a href="{{ page.next.url }}">next &raquo;</a>
+        {% endif %}
+    </div>
 </main>

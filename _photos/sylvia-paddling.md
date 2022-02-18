@@ -1,6 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5416 - 1200px.jpg
+description:
 show: true
 Title: Sylvia paddling and exploring, intrepidly
 ImageWidth: 1200
