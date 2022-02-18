@@ -7,7 +7,7 @@ layout: default
 <main class="photo-body">
     <article class="row-wrap-wide photo-container">
         <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}" loading="eager"
-            class="photo">
+            class="photo" title="{{ page.description }}">
         <p>{{ page['Title'] }}</p>
         <p><small>
                 {{ page['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ page['Model'] }} &middot; ISO {{

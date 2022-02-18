@@ -16,7 +16,7 @@ description: Pictures I have taken that I like.
     <div class="row-wrap-wide photo-container">
         <a href="{{ photo.url }}" class="no-highlight">
             <img src="{{ photo.image }}" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
-                loading="lazy" class="photo">
+                loading="lazy" class="photo" title="{{ page.description }}">
         </a>
         <p>{{ photo['Title'] }}</p>
         <p><small>
