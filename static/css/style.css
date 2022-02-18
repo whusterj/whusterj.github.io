@@ -157,7 +157,8 @@ ul li {
 .footer__address {
   font-style: normal;
 }
-.footer__link {}
+.footer__link {
+}
 
 /* About Page Styles */
 .bio {
@@ -214,7 +215,8 @@ ul li {
 }
 
 /* Photos Page */
-.photo-container {}
+.photo-container {
+}
 .photo-container > p {
   margin: 0;
   line-height: 1;
