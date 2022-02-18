@@ -1,6 +1,6 @@
 ---
 layout: photo
-filepath: /static/images/photos/DSC_5764 - 1200px.jpg
+image: /static/images/photos/DSC_5764 - 1200px.jpg
 show: true
 Title: Bill & Gertrude at Christmas Time, 2022
 ImageWidth: 1200

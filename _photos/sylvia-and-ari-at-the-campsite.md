@@ -1,6 +1,6 @@
 ---
 layout: photo
-filepath: /static/images/photos/DSC_5322 - 1200px.jpg
+image: /static/images/photos/DSC_5322 - 1200px.jpg
 show: true
 Title: Sylvia and Ari chilling
 ImageWidth: 1200

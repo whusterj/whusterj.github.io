@@ -15,7 +15,7 @@ description: Pictures I have taken that I like.
     {% for photo in filtered_photos %}
     <div class="row-wrap-wide photo-container">
         <a href="{{ photo.url }}" class="no-highlight">
-            <img src="{{ photo.filepath }}" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
+            <img src="{{ photo.image }}" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
                 loading="lazy" class="photo">
         </a>
         <p>{{ photo['Title'] }}</p>

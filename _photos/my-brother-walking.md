@@ -1,6 +1,6 @@
 ---
 layout: photo
-filepath: /static/images/photos/DSC_5153 - 1200px.jpg
+image: /static/images/photos/DSC_5153 - 1200px.jpg
 show: true
 Title: Nick and Diana go out walking every day
 ImageWidth: 795
