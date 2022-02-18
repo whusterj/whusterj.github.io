@@ -1,6 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5408 - 1200px.jpg
+show: true
 Title: This frog let us sit on his rock
 ImageWidth: 1200
 ImageHeight: 795

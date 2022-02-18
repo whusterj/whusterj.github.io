@@ -1,6 +1,7 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5369 - 1200px.jpg
+show: true
 Title: Sylvia Had to Wait for Me to Catch Up
 ImageWidth: 1200
 ImageHeight: 795
