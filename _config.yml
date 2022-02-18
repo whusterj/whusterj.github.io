@@ -30,4 +30,3 @@ exclude: [README.md]
 collections:
   photos:
     output: true
-    sort_by: DateTimeOriginal
