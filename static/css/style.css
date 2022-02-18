@@ -217,6 +217,9 @@ ul li {
 /* Photos Page */
 .photo-container {
 }
+.photo-container > a {
+  text-align: center;
+}
 .photo-container > p {
   margin: 0;
   line-height: 1;

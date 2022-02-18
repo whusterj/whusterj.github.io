@@ -9,8 +9,7 @@ description: Pictures I have taken that I like.
 
 <main>
     <div class="row-wrap">
-        <h2>Photography</h2>
-        <p>Pictures I have taken that I like.</p>
+        <h2>Some of my Photography</h2>
     </div>
 
     {% for photo in filtered_photos %}
@@ -23,7 +22,8 @@ description: Pictures I have taken that I like.
         <p><small>
                 {{ photo['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ photo['Model'] }} &middot; ISO {{
                 photo['ISO'] }} &middot;
-                f{{ photo["FNumber"] }}
+                f{{ photo["FNumber"] }} &middot;
+                {{ photo["LensID"] }}
             </small></p>
     </div>
     {% endfor %}
