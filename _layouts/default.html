@@ -65,21 +65,7 @@
 
     {{ content }}
 
-    <footer class="footer">
-        <address class="row-wrap footer__address">
-            <hr>
-            <p>
-                &copy; <time>{{ site.time | date: '%Y' }}</time>
-                {{site.author}} |
-                <a href="mailto:{{site.author_email}}" class="footer__link">
-                    {{site.author_email}}
-                </a> |
-                <a href="{{site.baseurl}}/about" class="footer__link">
-                    About
-                </a>
-            </p>
-        </address>
-    </footer>
+    {% include footer.html %}
 
     <!-- <script src="{{site.baseurl}}/scripts.js"></script> -->
     {% if jekyll.environment == 'production' %}

@@ -14,19 +14,19 @@ The results this year seem to reflect my own impression of things from watching 
 
 ## General Observations
 
-Respondents are primarily male, white, and age 24-34 (surprise, surprise).
+**Respondents are primarily male, white, and age 24-34** (surprise, surprise).
 
-The majority of people came to the survey through Twitter. I'm always struck by how Twitter has managed to stay relevant while other oldies like Facebook suffer. I've used it intermittently, but never got into it. Perhaps because I never found "my people" there.
+**The majority of people came to the survey through Twitter.** I'm always struck by how Twitter has managed to stay relevant while other oldies like Facebook suffer. I've used it intermittently, but never got into it. Perhaps because I never found "my people" there.
 
-A good chunk of respondents are from companies with 100+ people, but there's also good representation from companies of all sizes between 1 and 100.
+**More than half of respondents are from companies with 100+ people**, but there's also good representation from companies of all sizes between 1 and 100.
 
-Clients always ask me about React vs. Vue. This year, React is still on top and Vue fell in popularity and usage for the first time since appearing on the survey. My personal opinion is that this is because Vue 3 made some big changes that make it a bit harder to work with, and consequently sentiment is turning against it. I think it's also generally true that all frameworks start to decline after a few years anyway.
+**Clients always ask me about React vs. Vue. This year, React is still on top and Vue fell in popularity and usage** for the first time since appearing on the survey. My personal opinion is that this is because Vue 3 made some big changes that make it a bit harder to work with, and consequently sentiment is turning against it. I think it's also generally true that all frameworks start to decline after a few years anyway.
 
-Almost every framework that has appeared on the survey more than 2 times dipped in terms of satisfaction and usage. This makes me think, you know, there hasn't been a major turnover in frameworks or tools for 4-6 years, since reactive frameworks "took over." Are we seeing any up-and-coming disruptors on the survey? Hard to say. I don't see any serious contenders on the frontend framework side except maybe Svelte. I'm a fan of Svelte - I used it in the very early days before even Vue was released! But I don't see any React-killing features in Svelte. Vue remains relevant, but I think we can say at this point it has definitively failed to take the throne. Aside, another engineer once dubbed me a hipster (_gasp_) for using Vue over React. I wonder if that opinion persists.
+**Almost every framework that has appeared on the survey more than 2 times dipped in terms of satisfaction and usage.** This makes me think, you know, there hasn't been a major turnover in frameworks or tools for 4-6 years, since reactive frameworks "took over." Are we seeing any up-and-coming disruptors on the survey? Hard to say. I don't see any serious contenders on the frontend framework side except maybe Svelte. I'm a fan of Svelte - I used it in the very early days before even Vue was released! But I don't see any React-killing features in Svelte. Vue remains relevant, but I think we can say at this point it has definitively failed to take the throne. Aside, another engineer once dubbed me a hipster (_gasp_) for using Vue over React. I wonder if that opinion persists.
 
 ## Build Tools
 
-The build tools side of things is more interesting. I think esbuild could be a disruptor. Gulp has taken a major dive over the years (good riddance), and webpack remains on top, but is starting to take a turn. IMO, webpack was an improvement over all that came before, but it has ended up suffering the same issues as Gulp. It requires too much fiddling with configuration to get to _just right_. It's not accessible, and builds are v-e-r-y s-l-o-w.
+The build tools side of things is more interesting. I think **[esbuild]()** could be a disruptor. Gulp has taken a major dive over the years (good riddance), and webpack remains on top, but is starting to take a turn. IMO, webpack was an improvement over all that came before, but it has ended up suffering the same issues as Gulp. It requires too much fiddling with configuration to get to _just right_. It's not accessible, and builds are v-e-r-y   s-l-o-w.
 
 I have been using esbuild on a side project and the speed is so incredible, I could see this paradigm of build tool taking over within a few years. The basic idea is that build tools can be made orders of magnitude faster by writing them in a fast language like Go. Vite is another contender here.
 
