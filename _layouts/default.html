@@ -47,21 +47,7 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="row-wrap" style="display:flex">
-            <a href="/" class="no-highlight header__image-container">
-                <img src="http://gravatar.com/avatar/4e5a5a2d5be8c26770a7d901b5898a9e?s=800"
-                    style="width: 100%; height: auto; max-width: 5.5rem; border-radius: 50%;"
-                    alt="Portrait of William via Gravatar">
-            </a>
-            <a href="/" class="no-highlight header__title-container">
-                <h1 class="header__title">
-                    William Huster
-                </h1>
-                <h5 class="header__subtitle">A Small Time CTO Near You</h5>
-            </a>
-        </div>
-    </header>
+    {% include header.html %}
 
     {{ content }}
 
