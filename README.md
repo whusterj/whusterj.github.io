@@ -27,3 +27,26 @@ And use it to extract some basic image info that we can copy-paste into the mark
 ```bash
 exiftool *.jpg -S -Title -ImageWidth -ImageHeight -Make -Model -FNumber -ExposureTime -ISO -LensID -Keywords -DateTimeOriginal -d "%Y-%m-%d %H:%M:%S"
 ```
+
+## Convert Photos to WebP
+
+Install the CLI utility:
+
+```bash
+brew install webp
+sudo apt-get install webp
+```
+
+Bulk compress some images to quality 75%. In my tests, this can reduce file size by as much as 50+% (from 190kb to 90kb).
+
+```bash
+find ./ -type f -name '*.jpg' -exec sh -c 'cwebp -q 75 "$1" -o "${1%.jpg}.webp"' _ {} \;
+```
+
+Lossless compression. The following command will give highest possible compression, and will take some time to run:
+
+```bash
+find ./ -type f -name '*.jpg' -exec sh -c 'cwebp -lossless -m 6 -z 9 -q 100 "$1" -o "${1%.jpg}.webp"' _ {} \;
+```
+
+In my tests, the above settings for lossless compression of JPGs actually INCREASED file size. This might work better for large lossless images, but since JPG itself is lossy, we're actually backtracking with this one.

@@ -15,8 +15,11 @@ description: Pictures I have taken that I like.
     {% for photo in filtered_photos reversed %}
     <div class="row-wrap-wide photo-container">
         <a href="{{ photo.url }}" class="no-highlight">
-            <img src="{{ photo.image }}" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
-                loading="lazy" class="photo" title="{{ photo.description }}">
+            <picture>
+                <source srcset="{{ photo.image }}.webp" type="image/webp">
+                <img src="{{ photo.image }}.jpg" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
+                loading="lazy" class="photo" title="{{ photo.description }}" alt="{{ photo.description }}">
+            </picture>
         </a>
         <p>{{ photo['Title'] }}</p>
         <p><small>

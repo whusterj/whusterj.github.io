@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5369 - 1200px.jpg
+image: /static/images/photos/DSC_5369 - 1200px
 description: I'm a slow walker, OK? I like to take in the nature. I need to exercise.
 show: true
 Title: Sylvia had to wait for me to catch up

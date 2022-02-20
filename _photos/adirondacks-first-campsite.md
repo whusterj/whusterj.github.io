@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5432 - 1200px.jpg
+image: /static/images/photos/DSC_5432 - 1200px
 description: And we'll have fun, fun, fun 'til we take our own climate awayyyy
 show: true
 Title: First campsite of our Adirondacks canoe trip

@@ -6,8 +6,11 @@ layout: default
 
 <main class="photo-body">
     <article class="row-wrap-wide photo-container">
-        <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}" loading="eager"
-            class="photo" title="{{ page.description }}">
+        <picture>
+            <source srcset="{{ page.image }}.webp" type="image/webp">
+            <img src="{{ page.image }}" width="{{ page['ImageWidth'] }}" height="{{ page['ImageHeight'] }}" loading="eager"
+            class="photo" title="{{ page.description }}" alt="{{ page.description }}">
+        </picture>
         <p>{{ page['Title'] }}</p>
         <p><small>
                 {{ page['DateTimeOriginal'] | date:"%b %-d, %Y" }} &middot; {{ page['Model'] }} &middot; ISO {{
