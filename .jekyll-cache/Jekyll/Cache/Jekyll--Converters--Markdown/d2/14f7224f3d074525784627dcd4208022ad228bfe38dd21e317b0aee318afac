@@ -1,2 +1,0 @@
-I"“<p><em>UPDATE: Jan 26, 2018: This post previously used the pep8 package and SublimeLinter-pep8, but both were renamed at the recommendation of Guido van Rossum (yes, the creator of Python himself). <a href="https://github.com/PyCQA/pycodestyle/issues/466">The discussion thread on Github</a> about PEP8 and the name of the linting tool is a fascinating example of the Python community at work.</em></p>
-:ET

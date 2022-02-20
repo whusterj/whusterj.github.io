@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5322 - 1200px
+image: /static/images/photos/DSC_5322-1200px
 description: Light a fire and cheel.
 show: true
 Title: Sylvia and Ari chilling

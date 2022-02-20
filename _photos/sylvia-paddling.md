@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5416 - 1200px
+image: /static/images/photos/DSC_5416-1200px
 description: We saw so many loons.
 show: true
 Title: Sylvia paddling and exploring, intrepidly

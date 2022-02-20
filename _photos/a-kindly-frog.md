@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5408 - 1200px
+image: /static/images/photos/DSC_5408-1200px
 description: A kindly frog sat by, doffed his cap and said, "hi!"
 show: true
 Title: This frog let us sit on his rock
