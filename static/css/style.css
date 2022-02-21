@@ -7,9 +7,10 @@ body {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   /* TODO: For "writerly" posts, we can use these more book-like fonts:
   font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
   */
@@ -29,7 +30,7 @@ h1 {
   font-size: 2rem;
 }
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.33rem;
 }
 h1,
 h2,
@@ -49,7 +50,7 @@ hr {
 }
 
 p {
-  line-height: 1.1;
+  line-height: 1.2;
   margin: 1.5rem 0;
 }
 
@@ -85,7 +86,7 @@ blockquote {
 
 ol li,
 ul li {
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
@@ -251,21 +252,21 @@ div.highlight {
   overflow-y: auto;
   overflow-x: auto;
   max-height: 100rem;
-  line-height: 1.1rem;
+  line-height: 1.2;
 }
 
 /* Use for markdown with backticks, ex: `some_code_thing` */
 code.highlighter-rouge {
   background-color: rgb(230, 230, 230);
   font-weight: 600;
-  line-height: 1;
+  line-height: 1.2;
   font-size: 1rem;
   padding: 0.1rem 0.25rem;
   color: #1f779a;
 }
 
 pre[class="highlight"] > code {
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 /* Pygment Syntax Highlighting CSS */
