@@ -26,7 +26,7 @@ The results this year seem to reflect my own impression of things from watching 
 
 ## Build Tools
 
-The build tools side of things is more interesting. I think **[esbuild]()** could be a disruptor. Gulp has taken a major dive over the years (good riddance), and webpack remains on top, but is starting to take a turn. IMO, webpack was an improvement over all that came before, but it has ended up suffering the same issues as Gulp. It requires too much fiddling with configuration to get to _just right_. It's not accessible, and builds are v-e-r-y   s-l-o-w.
+The build tools side of things is more interesting. I think **[esbuild](https://github.com/evanw/esbuild)** could be a disruptor. Gulp has taken a major dive over the years (good riddance), and webpack remains on top, but is starting to take a turn. IMO, webpack was an improvement over all that came before, but it has ended up suffering the same issues as Gulp. It requires too much fiddling with configuration to get to _just right_. It's not accessible, and builds are v-e-r-y s-l-o-w.
 
 I have been using esbuild on a side project and the speed is so incredible, I could see this paradigm of build tool taking over within a few years. The basic idea is that build tools can be made orders of magnitude faster by writing them in a fast language like Go. Vite is another contender here.
 
