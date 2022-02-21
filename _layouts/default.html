@@ -16,7 +16,7 @@
     <!-- Page Meta for SEO and Social Sharing -->
     <!-- Default Facebook Open Graph tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{site.url}}">
+    <meta property="og:url" content="{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
     <meta property="og:title" content="{{ site.name }}{% if page.title %} 🍖 {{ page.title }}{% endif %}">
     <meta property="og:description"
         content="{% if page.description %}{% if page.readtime %}({{ page.readtime }} read) {% endif %}{{page.description}}{% else %}{{site.description}}{% endif %}">
@@ -26,7 +26,7 @@
 
     <!-- Default Twitter Card tags (additive to FB tags) -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:domain" value="{{site.url}}" />
+    <meta name="twitter:domain" value="{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}" />
     <meta name="twitter:title" value="{{ site.name }}{% if page.title %} 🍖 {{ page.title }}{% endif %}" />
     <meta name="twitter:description"
         value="{% if page.description %}{% if page.readtime %}({{ page.readtime }} read) {% endif %}{{page.description}}{% else %}{{site.description}}{% endif %}">
