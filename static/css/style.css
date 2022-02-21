@@ -39,6 +39,7 @@ h5 {
   font-weight: 700;
   line-height: 1;
   word-wrap: break-word;
+  margin: 0.5rem 0;
 }
 
 hr {
@@ -147,7 +148,7 @@ ul li {
   text-align: center;
 }
 .main-nav > a {
-  margin: 0 1rem;
+  margin: 0 0.33rem;
 }
 .main-nav__icon {
   display: inline-block;
@@ -155,6 +156,11 @@ ul li {
   height: 1.66rem;
   padding: 0 0.5rem;
   vertical-align: text-bottom;
+}
+@media (min-width: 768px) {
+  .main-nav > a {
+    margin: 0 1rem;
+  }
 }
 
 .footer {
@@ -175,7 +181,7 @@ ul li {
 
 /* Post Styles */
 .post-preview {
-  padding: 1.25rem;
+  padding: 0.5rem;
 }
 .post-preview__title {
   margin-top: 0;
