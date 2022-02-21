@@ -1,4 +1,4 @@
-I"�<p>The State of JS survey and results have been collected and published every year for the past 6 years or so. I have responded a few times, but not this year. Their design and data visualization skills are top-notch. It’s always an interesting and informative read. I often refer to it when clients ask me why we are/are not using framework XYZ. That’s JS-only, of course, but a quick Google can get you similar survey results for other topics.</p>
+I"�<p>The State of JS survey and results have been collected and published every year for the past 6 years or so. I have responded a few times, but not this year. Their design and data visualization skills are top-notch. It’s always an interesting and informative read. I often refer to it when clients ask me why we are/are not using framework XYZ. That’s JS-only, of course, but a quick Google can get you similar survey results for other topics.</p>
 
 <p>The results this year seem to reflect my own impression of things from watching the ecosystem and talking to engineers.</p>
 
@@ -16,7 +16,7 @@
 
 <h2 id="build-tools">Build Tools</h2>
 
-<p>The build tools side of things is more interesting. I think <strong><a href="">esbuild</a></strong> could be a disruptor. Gulp has taken a major dive over the years (good riddance), and webpack remains on top, but is starting to take a turn. IMO, webpack was an improvement over all that came before, but it has ended up suffering the same issues as Gulp. It requires too much fiddling with configuration to get to <em>just right</em>. It’s not accessible, and builds are v-e-r-y   s-l-o-w.</p>
+<p>The build tools side of things is more interesting. I think <strong><a href="https://github.com/evanw/esbuild">esbuild</a></strong> could be a disruptor. Gulp has taken a major dive over the years (good riddance), and webpack remains on top, but is starting to take a turn. IMO, webpack was an improvement over all that came before, but it has ended up suffering the same issues as Gulp. It requires too much fiddling with configuration to get to <em>just right</em>. It’s not accessible, and builds are v-e-r-y s-l-o-w.</p>
 
 <p>I have been using esbuild on a side project and the speed is so incredible, I could see this paradigm of build tool taking over within a few years. The basic idea is that build tools can be made orders of magnitude faster by writing them in a fast language like Go. Vite is another contender here.</p>
 

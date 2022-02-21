@@ -3,7 +3,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  color: rgb(60, 60, 60);
 }
 
 body {
@@ -13,23 +12,23 @@ body {
   /* TODO: For a "writerly" style, we can use these more book-like fonts:
   font-family: 'Palatino Linotype','Book Antiqua',Palatino,serif;
   */
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1rem;
 }
 
 @media (min-width: 768px) {
   body {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
 /* Text Styles */
 h1 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 h2 {
-  font-size: 1.33rem;
+  font-size: 1.15rem;
 }
 h1,
 h2,
@@ -41,6 +40,22 @@ h5 {
   word-wrap: break-word;
   margin: 0.5rem 0;
 }
+p + h1, ul + h1, ol + h1,
+p + h2, ul + h2, ol + h2,
+p + h3, ul + h3, ol + h3,
+p + h4, ul + h4, ol + h4,
+p + h5, ul + h5, ol + h5 {
+  margin-top: 2.5em;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.33rem;
+  }
+}
 
 hr {
   height: 1px;
@@ -49,8 +64,7 @@ hr {
 }
 
 p {
-  line-height: 1.2;
-  margin: 1.5rem 0;
+  line-height: 1.45;
 }
 
 a {
@@ -79,13 +93,14 @@ img {
 
 blockquote {
   border-left: 4px solid rgba(180, 255, 180, 0.75);
-  margin: 1.5rem 0;
+  margin: 1em 0;
   padding: 0 1rem;
 }
 
 ol li,
 ul li {
-  line-height: 1.2;
+  line-height: 1.45;
+  margin-bottom: 0.2rem;
 }
 
 .header-underline {
@@ -181,6 +196,7 @@ ul li {
 /* Post Styles */
 .post-preview {
   padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 .post-preview__title {
   margin-top: 0;
