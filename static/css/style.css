@@ -259,13 +259,13 @@ code.highlighter-rouge {
   background-color: rgb(230, 230, 230);
   font-weight: 600;
   line-height: 1.2;
-  font-size: 0.85rem;
   padding: 0.1rem 0.25rem;
   color: #1f779a;
 }
 
 pre[class="highlight"] > code {
   line-height: 1.2;
+  font-size: 0.85rem;
 }
 
 /* Pygment Syntax Highlighting CSS */
