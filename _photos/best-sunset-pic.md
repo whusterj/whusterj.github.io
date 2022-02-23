@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5323-1200px
-description: I bet you don't know of a better picture of a sunset. Send it to me. I will fight you.
 show: true
 Title: My best picture of a sunset
+Description: I bet you don't know of a better picture of a sunset. Send it to me. I will fight you.
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

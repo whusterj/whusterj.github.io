@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5422-1200px
-description: Everyone needs a good hammock.
 show: true
 Title: Nick and Diana winding down after a day of paddling
+Description: Everyone needs a good hammock.
 ImageWidth: 1200
 ImageHeight: 768
 Make: NIKON CORPORATION

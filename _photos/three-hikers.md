@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5386-1200px
-description: Look at these modest explorers.
 show: true
 Title: Three Hikers Hiking
+Description: Look at these modest explorers.
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

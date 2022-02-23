@@ -18,7 +18,7 @@ description: Pictures I have taken that I like.
             <picture>
                 <source srcset="{{ photo.image }}.webp" type="image/webp">
                 <img src="{{ photo.image }}.jpg" width="{{ photo['ImageWidth'] }}" height="{{ photo['ImageHeight'] }}"
-                    loading="lazy" class="photo" title="{{ photo.description }}" alt="{{ photo.description }}">
+                    loading="lazy" class="photo" title="{{ photo['Description'] }}" alt="{{ photo.description }}">
             </picture>
         </a>
         <p>{{ photo['Title'] }}</p>

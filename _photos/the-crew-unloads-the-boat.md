@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5446-1200px
-description: These guys are professionals.
 show: true
 Title: The crew unloads the boat
+Description: These guys are professionals.
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

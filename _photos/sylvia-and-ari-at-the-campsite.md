@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5322-1200px
-description: Light a fire and cheel.
 show: true
 Title: Sylvia and Ari chilling
+Description: Light a fire and cheel.
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

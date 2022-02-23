@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5432-1200px
-description: And we'll have fun, fun, fun 'til we take our own climate awayyyy
 show: true
 Title: First campsite of our Adirondacks canoe trip
+Description: And we'll have fun, fun, fun 'til we take our own climate awayyyy
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

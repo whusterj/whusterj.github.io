@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5416-1200px
-description: We saw so many loons.
 show: true
 Title: Sylvia paddling and exploring, intrepidly
+Description: We saw so many loons.
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

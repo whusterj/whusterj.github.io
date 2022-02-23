@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5764-1200px
-description: My parents are the greatest.
 show: true
 Title: Bill & Gertrude at Christmas Time, 2022
+Description: My parents are the greatest.
 ImageWidth: 1200
 ImageHeight: 795
 Make: NIKON CORPORATION

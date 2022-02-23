@@ -1,9 +1,9 @@
 ---
 layout: photo
 image: /static/images/photos/DSC_5153-1200px
-description: I sang the song "Walking" by the Rosebuds, and it was a highlight of my life.
 show: true
 Title: Nick and Diana go out walking every day
+Description: I sang the song "Walking" by the Rosebuds, and it was a highlight of my life.
 ImageWidth: 795
 ImageHeight: 1200
 Make: NIKON CORPORATION
