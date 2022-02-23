@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: static/images/photos/DSC_1261-1200px
+image: /static/images/photos/DSC_1261-1200px
 show: true
 date: 2016-10-16 02:46:19
 Title: Maria Strikes a Pose in DC
