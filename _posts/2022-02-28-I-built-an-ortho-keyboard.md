@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "I Built an Ortholinear Keyboard"
-date: 2022-02-28 11:15
-description: 
+date: 2022-02-28 02:00
+description: I built an ortholinear keybaord and retrained my brain!
 category: blog
 tags: programming keyboards
 image: /static/images/posts/2022-02-27 preonic-keyboard.jpg
