@@ -5,7 +5,7 @@ date: 2022-02-28 02:00
 description: I built an ortholinear keybaord and retrained my brain!
 category: blog
 tags: programming keyboards
-image: /static/images/posts/2022-02-27 preonic-keyboard.jpg
+image: /static/images/posts/2022-02-27_preonic-keyboard.jpg
 readtime: 5 min
 ---
 
