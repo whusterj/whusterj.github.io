@@ -5,6 +5,7 @@ date: 2020-01-15 18:00
 description: Wherein I compare product dev to moon landings.
 category: blog
 tags: space videos
+readtime: 1 min
 ---
 
 (A recent NASA animation for the new Artemis program)[https://www.youtube.com/watch?v=_T8cn2J13-4], which aims to land on the moon by 2024
