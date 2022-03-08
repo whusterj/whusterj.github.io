@@ -2,6 +2,8 @@
 type: post
 ---
 
+Write about what I call "Pure Functional Object Oriented Programming"
+
 Write something that explains ways in which pure functional programming is practical, even in an object-oriented environment
 
 7/21 - I found a few articles today, like the one by John Carmack, that illustrate this well, but I think some practical examples in JavaScript would be great.

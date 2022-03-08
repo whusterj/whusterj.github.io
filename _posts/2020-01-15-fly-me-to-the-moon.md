@@ -2,7 +2,7 @@
 layout: post
 title: "Fly Me to the Moon"
 date: 2020-01-15 18:00
-description:
+description: Wherein I compare product dev to moon landings.
 category: blog
 tags: space videos
 ---
