@@ -2,7 +2,7 @@
 layout: post
 title: How I extract Metadata from Photos for My Blog
 date: 2022-03-07 12:00
-description: ""
+description: "This is how I use exiftool to extract the metadata from my photos to markdown."
 tags: photography
 readtime: 4 min
 ---
