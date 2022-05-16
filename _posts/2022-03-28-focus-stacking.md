@@ -12,7 +12,7 @@ Focus Stacking has got to be my new favorite photography technique.
 
 I recently acquired a Canon M6 mkII mirrorless camera, and I love how compact it is. Here it is pictured with a 22mm f/2 fixed prime "pancake" lens:
 
-![Canon M6 mk II Camera](/static/images/posts/focus-bracketing/canon-m6.jpg)
+![Canon M6 mk II Camera](canon-m6.jpg.md)
 
 I enjoy shooting with fixed prime lenses, because of their low profile, low cost, image quality, and wide apertures, which are great for low-light situations. You can't zoom of course, but I feel like that's a virtue, because it forces you to interact with your subject and really think about the image framing.
 
