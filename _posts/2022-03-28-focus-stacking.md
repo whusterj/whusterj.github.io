@@ -12,7 +12,7 @@ Focus Stacking has got to be my new favorite photography technique.
 
 I recently acquired a Canon M6 mkII mirrorless camera, and I love how compact it is. Here it is pictured with a 22mm f/2 fixed prime "pancake" lens:
 
-![Canon M6 mk II Camera](canon-m6.jpg)
+![Canon M6 mk II Camera](/static/images/posts/focus-bracketing/canon-m6.jpg)
 
 I enjoy shooting with fixed prime lenses, because of their low profile, low cost, image quality, and wide apertures, which are great for low-light situations. You can't zoom of course, but I feel like that's a virtue, because it forces you to interact with your subject and really think about the image framing.
 
@@ -20,7 +20,7 @@ This 22mm lens is a good all-rounder. It's wide-angled enough for a selfie at ar
 
 Here's an example macro shot with the lens:
 
-![Flower Photo Demonstrating Depth of Field](flower-dof.jpg)
+![Flower Photo Demonstrating Depth of Field](/static/images/posts/focus-bracketing/flower-dof.jpg)
 
 Look at the crisp focus on the subject! The lovely bokeh of the background! As the pros say, this lens is some _quality glass_. It's a very nice effect that does a great job of separating the subject from background. But sometimes, you want to catch your subject or subjects at an angle or depth that prevents you from focusing up everything that you want to have in focus.
 
@@ -42,8 +42,8 @@ That's all there is to it. Just let Photoshop do it's thing. It can take a coupl
 
 Here's an example of a macro photo of [one of my wife's art masks](https://maskemaiden.com), first without focus bracketing, and then with focus bracketing:
 
-![A Mask Photo with Depth of Field](mask-dof.jpg)
+![A Mask Photo with Depth of Field](/static/images/posts/focus-bracketing/mask-dof.jpg)
 
-![A Mask Photo, after Focus-Stacking](focus-stacked-mask03.jpg)
+![A Mask Photo, after Focus-Stacking](/static/images/posts/focus-bracketing/focus-stacked-mask03.jpg)
 
 Check out my [photos](/photos) page for more of my amateur photography.
