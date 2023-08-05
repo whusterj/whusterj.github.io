@@ -1,8 +1,16 @@
-# Installing Jekyll on Ubuntu 16.04
+# Installation
+
+## Installing on Mac OS
+
+[Official Instructions here](https://jekyllrb.com/docs/installation/macos/)
+
+## Installing Jekyll on Ubuntu 16.04
+
+TODO: Update for newer versions.
 
 Here's a cheat sheet to install ruby and Jekyll for development purposes. This uses rbenv to manage the installation, so there's no need to install ruby or gems globally as sudo.
 
-## Step 1 — Installing Jekyll
+### Step 1 — Installing Jekyll
 
 [Source](https://stackoverflow.com/questions/37720892/you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory)
 
@@ -29,7 +37,7 @@ gem install jekyll bundler
 rbenv rehash
 ```
 
-## Step 2 — Running Jekyll for Development
+### Step 2 — Running Jekyll for Development
 
 ```bash
 jekyll serve
