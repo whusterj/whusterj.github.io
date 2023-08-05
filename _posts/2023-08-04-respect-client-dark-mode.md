@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I Support Your Dark Mode Preference
-date: 2023-08-23 23:00
+date: 2023-08-04 23:00
 description: "I finally updated my blog (williamhuster.com) to respect the dark mode / light mode preferences of the user's browser. It was surprisingly easy!"
 tags: programming css
 readtime: 1 min
