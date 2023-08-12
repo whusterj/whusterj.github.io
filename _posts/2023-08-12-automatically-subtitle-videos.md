@@ -14,6 +14,7 @@ So at work we were talking about how we could build this feature ourselves using
 So there are two steps to this (1) generate captions from the video as an SRT file, and (2) bundle the captions with the video. 
 
 Whisper in my experience is incredibly good at audio transcription. And it can directly transcribe mp4 files to SRT format. You don't have to extract the audio from the video or anything like that. Once you have an SRT file, `ffmpeg` can easily bundle an mp4 and SRT file. I've tried this on some personal videos, and the results have been near perfect.
+## How to Do It
 
 **Step 1:** Use `whisper` to generate an SRT transcription of the video:
 
