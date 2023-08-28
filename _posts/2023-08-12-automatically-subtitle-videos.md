@@ -58,13 +58,13 @@ If you're captioning videos for viewing in web browsers, there's an even easier 
 
 After my initial write-up, I learned that it's also possible to attach the track to the video using HTML5's built-in `<video>` and `<track>` tags. This cuts out step two above, meaning you won't have to use ffmpeg to embed the track in the video file.
 
-In this case, you'll want to generate a `.vtt` file instead of the `.srt` above. Fortunately, whisper supports this format, too!
+In this case, you'll want to generate a `.vtt` file instead of the `.srt` above. Fortunately, Whisper supports this format, too!
 
 ```bash
 whisper infile.mp4 \
     --model small.en \
     --language English \
-    -f 'srt'
+    -f 'vtt'
 ```
 
 Once you've generated your captions, you can use them with the HTML5 video player like this:
