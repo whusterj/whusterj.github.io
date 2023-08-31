@@ -11,7 +11,7 @@ Big video handlers like YouTube and even Slack use AI to automatically caption v
 
 So at work we were talking about how we could build this feature ourselves using open source tools. I came up with this suggestion that uses [OpenAI's Whisper](https://github.com/openai/whisper) and the venerable [`ffmpeg`](https://www.ffmpeg.org/).
 
-So there are two steps to this (1) generate captions from the video as an SRT file, and (2) bundle the captions with the video.
+There are two steps to this (1) generate captions from the video as an SRT file, and (2) bundle the captions with the video.
 
 Whisper in my experience is incredibly good at audio transcription. And it can directly transcribe mp4 files to SRT format. You don't have to extract the audio from the video or anything like that. Once you have an SRT file, `ffmpeg` can easily bundle an mp4 and SRT file. I've tried this on some personal videos, and the results have been near perfect.
 
@@ -47,10 +47,10 @@ You will need a player like VLC that can show you the subtitle tracks. It is als
 
 ## Automate It All!
 
-So the above would be the "by hand" procedure, but perhaps you can see how easily this process might be automated in bulk.
+The above would be the "by hand" procedure, but perhaps you can see how easily this process might be automated in bulk.
 
 ![Automatic Video Captioning Pipeline Sketch](/static/images/posts/2023-08-12-closed-captioning-data-pipeline-sketch.jpg)
-So the idea would be that you can drop the mp4 files you want subtitled into an S3 bucket. Then you'd have a scheduler script detect them and queue up jobs for one or more workers. This isn't strictly necessary, but would allow you to fan out the process to as many workers as you like to process more videos faster. The jobs would run the above commands and produce captioned video files automatically, which are then saved back to S3 somewhere.
+The idea would be that you can drop the mp4 files you want subtitled into an S3 bucket. Then you'd have a scheduler script detect them and queue up jobs for one or more workers. This isn't strictly necessary, but would allow you to fan out the process to as many workers as you like to process more videos faster. The jobs would run the above commands and produce captioned video files automatically, which are then saved back to S3 somewhere.
 
 ## Show Captions in HTML without Embedding
 
