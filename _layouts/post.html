@@ -21,8 +21,29 @@ layout: default
     </div>
 
     <footer class="post-footer">
+
       {% for tag in page.tags %}
-      <span class="post-category-label">{{ tag }}</span>
+      <p>
+        <span class="post-category-label">{{ tag }}</span>
+      </p>
+      {% endfor %}
+
+      <h2>Keep Reading...</h2>
+      {% for post in site.posts | reverse %}
+        {% if post.url == page.url %}
+          {% assign prev_post_index = forloop.index | minus: 1 %}
+          {% assign next_post_index = forloop.index | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% for post in site.posts %}
+      {% if prev_post_index == forloop.index %}
+        <p><a class="btn" rel="prev" href="{{ site.baseurl }}{{ post.url }}">[&uarr; newer] {{ post.title }}</a></p>
+      {% endif %}
+    
+      {% if next_post_index == forloop.index %}
+        <p><a class="btn" rel="next" href="{{ site.baseurl }}{{ post.url }}">[&darr; older] {{ post.title }}</a></p>
+      {% endif %}
       {% endfor %}
     </footer>
   </article>
