@@ -19,7 +19,6 @@ Social Entrepreneurship, most simply put, is the creation of businesses intent u
 
 Businesses touting green practices are perhaps the most familiar examples of socially responsible business today. It is important to note, however, that social business is more than a one-off marketing campaign. A true social business aims for both sustained social impact and sustained financial success. Another important thing to understand about social business is that they do not have to be non-profit or charity-based to succeed. In fact, the revolutionary concept behind the new social business philosophy is that effective, sustainable businesses may be better equipped to create positive social impact than the traditional avenues of social aid, such as charities and non-profits.
 
-
 Toms shoes is an excellent example of a social business that thrives both as a financially feasible business and a purveyor of social good.
 
 Everybody living here at Compass HQ, believes that we are on the forefront of a major movement. Fresh from college, we are tapping into social entrepreneurship's greatest wellspring of future talent: passionate young people. In a nutshell,Compass targets college campuses with its fellowship program and incubation services, putting immense resources into students' hands to create new social businesses of their own.
