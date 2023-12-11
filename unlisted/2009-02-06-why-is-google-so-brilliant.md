@@ -7,9 +7,10 @@ category: blog
 tags:
   - technology
 ---
+
 So, while I was in DC, my friend Neil turned me on to the divine radiance that is Gmail. I mean, ever since I saw this billboard in my hometown:
 
-![[2009-02-06-google-billboard.png]]
+![Google Billboard](/static/images/posts/2009-02-06-google-billboard.png)
 
 I knew that Google was setting a high standard! You see, visiting the URL on the billboard was just the first step towards applying for a job with Google.
 
