@@ -2,7 +2,7 @@
 layout: post
 title: First Post - Merry Christmas
 date: 2008-12-25 1:19
-description: Starting my public blog. Original posted on Blogger.
+description: Starting my public blog. Originally posted on Blogger.
 category: blog
 tags:
   - writing
