@@ -21,12 +21,11 @@ layout: default
     </div>
 
     <footer class="post-footer">
-
-      {% for tag in page.tags %}
       <p>
+      {% for tag in page.tags %}
         <span class="post-category-label">{{ tag }}</span>
-      </p>
       {% endfor %}
+      </p>
 
       <h2>Keep Reading...</h2>
       {% for post in site.posts | reverse %}
