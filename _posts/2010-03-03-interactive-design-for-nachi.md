@@ -2,7 +2,7 @@
 layout: post
 title: "Interactive Design for 'Nachi'"
 date: 2010-03-03 01:07
-description: In December 2009, I collaborated with digital artist Arthur Liou on the interactive design for his piece 'Nachi'.
+description: "In December 2009, I collaborated with digital artist Arthur Liou on the interactive design for his piece 'Nachi'."
 category: blog
 tags: digital-art
 ---

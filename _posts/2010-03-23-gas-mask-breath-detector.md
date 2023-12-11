@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Gas Mask' Breath Detector
+title: "'Gas Mask' Breath Detector"
 date: 2010-03-23 11:06
 description: "Sharing progress on a new interactive media piece I'm working on."
 category: blog

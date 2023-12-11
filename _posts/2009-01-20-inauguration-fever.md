@@ -2,7 +2,7 @@
 layout: post
 title: Inauguration Fever
 date: 2009-01-20 22:17
-description: A brief recap of my experience at Obama's first inauguration as President of the US.
+description: "A brief recap of my experience at Obama's first inauguration as President of the US."
 category: blog
 tags:
   - travel
@@ -17,4 +17,4 @@ Then, after we had finished switching presidents, Neil and I became stuck in the
 
 I do have a video for the week, although I didn't take my camera to the ceremony. I don't really regret that decision, because there wasn't too much to see. It was all about the experience, anyway, and that's something a photo can't capture. Here's the vid; enjoy!
 
-2023 UPDATE: THE VIDEO NO LONGER EXISTS :(  As I recall, it was a video of Joe Biden coming out of church in Georgetown.
+2023 UPDATE: THE VIDEO NO LONGER EXISTS :( As I recall, it was a video of Joe Biden coming out of church in Georgetown.

@@ -2,7 +2,7 @@
 layout: post
 title: "Intermedia Festival, IUPUI"
 date: 2010-04-17 12:10
-description: A digital art festival that I participated in.
+description: "A digital art festival that I participated in."
 category: blog
 tags: digital-art
 ---

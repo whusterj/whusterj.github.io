@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "'Salvation' Interactive 3D Environment"
-date: 2010-03-03 13:50
-description: An interactive 3D environment inspired by the time I spent in El Salvador.
+date: 2010-03-02 13:50
+description: "An interactive 3D environment inspired by the time I spent in El Salvador."
 category: blog
 tags: digital-art
 ---
