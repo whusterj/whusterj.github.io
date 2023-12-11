@@ -16,3 +16,8 @@ Data from the four infrared sensors in the gallery is passed through 75 feet of 
 A front-back facsimile of the (very glossy) flyer for Arthur's show:
 
 ![Arthur Liou Poissant Flyer](/static/images/posts/arthur_liou_poissant.jpg "Arthur Liou - 'Nachi' at the Poissant Gallery")]
+
+And here's a video:
+
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/11658295?h=2f8ad5b781" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/11658295">Nachi</a> from <a href="https://vimeo.com/arthurliou">Jawshing Arthur Liou 劉肇興</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
