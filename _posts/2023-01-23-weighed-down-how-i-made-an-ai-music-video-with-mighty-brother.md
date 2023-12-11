@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Weighed Down - How I Made an AI Music Video with Mighty Brother
+title: "'Weighed Down' - How I Made an AI Music Video with Mighty Brother"
 date: 2023-01-23 12:00
 description: "We told an AI the story of this song, and fed it some lyrics, and here is the result."
 tags: generative-ai artificial-intelligence video
