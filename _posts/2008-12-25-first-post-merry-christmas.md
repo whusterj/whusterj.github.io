@@ -6,7 +6,7 @@ description: Starting my public blog. Original posted on Blogger.
 category: blog
 tags:
   - writing
-original: https://whusterj.blogspot.com/2008/12/first-post-merry-christmas.html
+original_url: https://whusterj.blogspot.com/2008/12/first-post-merry-christmas.html
 ---
 
 I created this blog a while back for a video art class with professor [Leslie Sharpe](http://lesliesharpe.net/). I posted a few things in that semester (Fall 2007) as part of the class's requirements, but those posts were erratic and utterly useless, so I deleted them.
