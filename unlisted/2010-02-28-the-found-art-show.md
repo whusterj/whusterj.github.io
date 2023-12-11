@@ -9,8 +9,8 @@ tags: music
 
 On September 23rd, 2009, Youngsuk Altieri and I showed our “Connections” piece at the FOUND art show at The Lodge in downtown Bloomington. Here's the Video:
 
-Video is here: https://vimeo.com/manage/videos/9812364
-[VIDEO NO LONGER EXISTS :(]
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/9812364?h=8e1e42c30d" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<p><a href="https://vimeo.com/9812364">Connections</a> from <a href="https://vimeo.com/whusterj">William Huster</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 The piece was created for Leslie Sharpe’s interactive multimedia course in the fall of 2008. Conceptually, the piece represents the aged theme of humanity vs. nature. By interacting with the piece, the viewer is meant to play the role of "intruder." The viewer's actions disrupt the nature imagery in the projection and overwhelm the soothing nature sounds with sounds of machinery and war. At first, we used a Numark Total Control ® DJ controller as our interface device. The sounds, imagery, and interaction were processed using Pure Data. Later, we replaced the controller with force sensors and used an arduino micro controller as an interface device with the computer.
 

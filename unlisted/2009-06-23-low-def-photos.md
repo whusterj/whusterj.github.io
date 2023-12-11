@@ -11,13 +11,23 @@ tags:
   - travel
   - life
 ---
-In addition to the hi-def images from my new camera, I've been taking some low-definition photos with my cell-phone. I finally took some time to upload them. There's something nice about just taking an image and sending it "straight to press" ... something old-fashioned, like taking pictures with a disposable camera, and just accepting the output.  
-  
+
+In addition to the hi-def images from my new camera, I've been taking some low-definition photos with my cell-phone. I finally took some time to upload them. There's something nice about just taking an image and sending it "straight to press" ... something old-fashioned, like taking pictures with a disposable camera, and just accepting the output.
+
 Some really neat effects also happened as a result of the fact that the camera is built into the body of the phone, which has become really scratched up, diffusing light sources to a glow and blurring edges.
 
-(2023-12-11 Update: Unfortunately Blogger deleted these images, but I think I can recover some of them from my library.)
-
 Berlin from the roof of Club Weekend:
+
+![Berlin from the roof of Club Weekend](https://images.williamhuster.com/2009%20-%20Germany%20Album/0503090000-00%20-%201200px.jpg)
+
 Beach in Warnemünde:
+
+![Beach in Warnemünde](https://images.williamhuster.com/2009%20-%20Germany%20Album/0509091437-00%20-%201200px.jpg)
+
 My little sculpture:
+
+![My little sculpture](https://images.williamhuster.com/2009%20-%20Germany%20Album/0509091437-02%20-%201200px.jpg)
+
 My train's arriving!
+
+![My train arriving](https://images.williamhuster.com/2009 - Germany Album/0603091756-01 - 1200px.jpg)
