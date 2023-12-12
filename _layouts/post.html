@@ -12,7 +12,9 @@ layout: default
         <time datetime="{{page.date|date:" %F"}}">
           {{page.date|date:"%b %-d, %Y"}}
         </time>
+        {% if page.readtime %}
         <span>&middot; {{page.readtime}} read</span>
+        {% endif %}
       </span>
     </header>
 
