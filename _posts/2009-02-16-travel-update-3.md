@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Travel Update #3"
+title: "Travel Update #3: Arrived in Berlin"
 date: 2009-02-16 8:46
 description: My bags are neatly packed, and tonight I'll drive to Indianapolis to spend the last couple days with my family before I fly to Germany on Sunday.
 category: blog
@@ -9,6 +9,7 @@ tags:
   - travel
   - life
 ---
+
 Well, here I am in Berlin two weeks before the IES Program officially begins with nothing much to do! I'm sitting in the Mitte's Backpacker Youth Hostel hammering out this entry before I pay to connect to the internet and post it. Everything I write here is the truth and happened, unless I say it isn't and didn't in which case you should believe the latter, okay? Why would I pay 3 Euros an hour to lie to you?
 
 I arrived two days ago (truth!) and did a little exploring of the Mitte (Middle) area of Berlin, which is just up the street from here. Pictures and video will come soon! I did not see any Nazis (truth!), but I did see some Nazi-esque banners with silhouettes of Pretzels on them. I once heard the swastika is illegal here; I wonder if that's true? For the curious among you, the banners were an advertisement for a performance of The Producers.
