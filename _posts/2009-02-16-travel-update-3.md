@@ -31,7 +31,7 @@ After considering a nearby memorial to the Berlin Wall, I wandered into the trai
 ![Memorial](https://images.williamhuster.com/2009 - Germany Album/IMG_0153 - 1200px.jpg)
 ![Bob der Baumister](https://images.williamhuster.com/2009 - Germany Album/bob_baumeister - 1200px.jpg)
 
-After wandering around the mall for a while, I paid 5 Euros to pee (false! I only paid 10 cents). No, it wasn't mandatory, but everyone else what putting change on the plate. And when everyone else is putting change on the plate, what can one do?
+After wandering around the mall for a while, I paid 5 Euros to pee (false! I only paid 10 cents). No, it wasn't mandatory, but everyone else was putting change on the plate. And when everyone else is putting change on the plate, what can one do?
 
 Well, that's it! Thanks for reading the first dispatch from Berlin. You'll hear from me again soon.
 

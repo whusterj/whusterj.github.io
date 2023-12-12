@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Wolfram Alpha Computational Search Engine
+title: On the Art Front
 date: 2009-05-29 9:49
-description: Is computational search the future of the Internet and a threat to Google's dominance?
+description: Berkeley Student Yotam Mann created this multi-touch instrument with some cardboard, a couple of lasers, and a webcam.
 category: blog
 tags:
   - digital-art
