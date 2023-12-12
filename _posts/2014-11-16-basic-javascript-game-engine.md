@@ -8,7 +8,7 @@ tags: javascript vanillajs programming games
 external_url: https://codepen.io/whusterj/full/vEYVpG
 ---
 
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="vEYVpG" data-user="whusterj" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+<p class="codepen" data-height="660" data-default-tab="result" data-slug-hash="vEYVpG" data-user="whusterj" style="height: 660px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
   <span>See the Pen <a href="https://codepen.io/whusterj/pen/vEYVpG">
   Basic JavaScript Game Engine</a> by William Huster (<a href="https://codepen.io/whusterj">@whusterj</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
