@@ -5,6 +5,7 @@ date: 2010-04-17 12:10
 description: "A digital art festival that I participated in."
 category: blog
 tags: digital-art
+readtime: 2 min
 ---
 
 Finally, something new to report! Just last night I drove up to the IUPUI campus to rehearse a performance with Intermedia Festival director Scott Deal and his students. The piece is a collaboration between our digital environments class in Bloomington, headed by Margaret Dolinsky, Scott Deal's class in Indianapolis, and a group of graduate students and professors led by Kenneth Fields and Ellen Pearlman at the Syneme lab in Calgary Canada.

@@ -7,6 +7,7 @@ category: blog
 tags:
   - digital-art
   - technology
+readtime: 1 min
 ---
 
 A recent feature on Youtube, and how interesting! Val has turned her paintings into a brand. She is taking full advantage of social networking sites Youtube, Facebook, and Twitter. She has almost 500 fans already!

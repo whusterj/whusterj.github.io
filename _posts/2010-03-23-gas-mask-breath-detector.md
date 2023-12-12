@@ -5,6 +5,7 @@ date: 2010-03-23 11:06
 description: "Sharing progress on a new interactive media piece I'm working on."
 category: blog
 tags: digital-art
+readtime: 2 min
 ---
 
 One of the main reasons I started this blog was to assist in my artistic process as well as to encourage myself to document my artwork better. To that end, I'd like to share some of my progress on a new piece that I'm working on in the vein of interactive media. Here is a sketch:

@@ -7,6 +7,7 @@ category: blog
 tags:
   - life
   - humor
+readtime: 1 min
 ---
 
 Okay, I'm about to drive back to Indianapolis, but before I go, check these out:

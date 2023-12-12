@@ -7,6 +7,7 @@ category: blog
 tags:
   - travel
   - life
+readtime: 1 min
 ---
 
 Woohoo!

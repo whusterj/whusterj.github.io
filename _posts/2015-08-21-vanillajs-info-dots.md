@@ -6,6 +6,7 @@ description: Info Dots are a dependency-free UI Component you can use to annotat
 category: blog
 tags: javascript vanillajs programming components
 external_url: https://codepen.io/whusterj/full/VLJgQj/
+readtime: 4 min
 ---
 
 <p class="codepen" data-height="660" data-default-tab="result" data-slug-hash="jbGGyQ" data-user="whusterj" style="height: 660px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">

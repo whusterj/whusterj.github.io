@@ -5,6 +5,7 @@ date: 2010-03-02 13:50
 description: "An interactive 3D environment inspired by the time I spent in El Salvador."
 category: blog
 tags: digital-art
+readtime: 2 min
 ---
 
 Since I have been doing a lot of 3D work this semester, I thought I would share a little bit of what I'm working on. In Margaret Dolinsky's 3D Graphical Environments course, I am working on an environment inspired by the time I spent in El Salvador, living in a little cinder block house with my friend Chamba.

@@ -7,6 +7,7 @@ category: blog
 tags:
   - writing
 original_url: https://whusterj.blogspot.com/2008/12/first-post-merry-christmas.html
+readtime: 1 min
 ---
 
 I created this blog a while back for a video art class with professor [Leslie Sharpe](https://sharpel3.myportfolio.com/). I posted a few things in that semester (Fall 2007) as part of the class's requirements, but those posts were erratic and utterly useless, so I deleted them.

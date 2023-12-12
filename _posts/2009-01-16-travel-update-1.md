@@ -8,6 +8,7 @@ tags:
   - germany
   - travel
   - life
+readtime: 1 min
 ---
 
 So much for habitual updates!

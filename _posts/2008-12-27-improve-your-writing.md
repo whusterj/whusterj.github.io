@@ -7,6 +7,7 @@ category: blog
 tags:
   - writing
 original: https://whusterj.blogspot.com/2008/12/writing-is-important-skill-and-since.html
+readtime: 3 min
 ---
 
 Since keeping a blog consists mainly of writing, and I haven't studied writing for some years, I definitely needed a refresher. So I took some time today to search online for some writing style tips. Perhaps you will find my discoveries useful:

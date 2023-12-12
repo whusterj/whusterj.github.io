@@ -7,6 +7,7 @@ category: blog
 tags:
   - writing
 original: https://whusterj.blogspot.com/2008/12/making-habit.html
+readtime: 1 min
 ---
 
 In my quest to gain some support for my new writing habit, I convinced my brother to get a blog. Check it out on the sidebar; it's called ["Fantastic Rants"](https://fantasticrants.blogspot.com/), and it is a fantastic idea. Nick is going to collect all sorts of rants in all forms from all over the internet. He's planning to write some of his own, and he's also looking for contributors. I know I'll be sending in a rant or two about the OVERUSE OF PAPYRUS FONT by companies, restaurants, and even graphic designers who should know better!

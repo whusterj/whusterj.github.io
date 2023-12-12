@@ -5,6 +5,7 @@ date: 2010-03-03 01:07
 description: "In December 2009, I collaborated with digital artist Arthur Liou on the interactive design for his piece 'Nachi'."
 category: blog
 tags: digital-art
+readtime: 2 min
 ---
 
 In December 2009, [Arthur Liou](https://www.arthurliou.net/) approached me about the design of an interactive component for his projection piece "Nachi," which is being shown at the Poissant gallery in Houston, Texas this month. He is in Houston this week setting up. You can see my portfolio for more details. "Nachi" is a high-definition "moving photograph" of a waterfall, and is part of a series of waterfall videos that Arthur shot in Japan last summer.
