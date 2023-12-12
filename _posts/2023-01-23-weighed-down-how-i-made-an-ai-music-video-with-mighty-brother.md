@@ -7,7 +7,7 @@ tags: generative-ai artificial-intelligence video
 readtime: 6 min
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QCZtpYYUrpM?si=BxC-XjJeetuqVNe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/QCZtpYYUrpM?si=BxC-XjJeetuqVNe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Back in July of 2022 I asked an AI to help make a music video for Mighty Brother's song "Weighed Down."
 
