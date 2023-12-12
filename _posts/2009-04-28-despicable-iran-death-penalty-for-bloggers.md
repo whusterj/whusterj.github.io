@@ -12,4 +12,4 @@ tags:
 
 Speaks for itself, y'know....
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oq9SkwGxvYY?si=MPTLFqzpk84clngu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/oq9SkwGxvYY?si=MPTLFqzpk84clngu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

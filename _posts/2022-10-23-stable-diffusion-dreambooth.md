@@ -12,7 +12,7 @@ Today I played around with Stable Diffusion and Dreambooth to make a bunch of si
 
 [Click here if you just want to see the AI generated pictures!](https://photos.google.com/share/AF1QipOPlXIUvcyFZGhfIzyvbRKO1bCOykswMkViAybtNtlappkEVCK22WPAphEI1J3fNA?key=LWV1RVk0SFNmSHhjREQ5ZzZjemtNSFhHMHIxemZB)
 <a href="https://photos.google.com/share/AF1QipOPlXIUvcyFZGhfIzyvbRKO1bCOykswMkViAybtNtlappkEVCK22WPAphEI1J3fNA?key=LWV1RVk0SFNmSHhjREQ5ZzZjemtNSFhHMHIxemZB" target="_blank_">
-	<img
+<img
 	    src="/static/images/posts/2022-10-23_stable-diffusion-ai-william-jedi.png"
 	    alt="I am a Jedi! AI generated image of William as a Jedi holding a lightsaber. Generated using Stable Diffusion and Dreambooth."/>
 </a>
@@ -30,9 +30,9 @@ For each person, it probably took 45-60 minutes to train Dreambooth, but after t
 
 Prompts like this gave great results:
 
-	photo of sks william as a starfleet captain, star trek, wrath of khan
+    photo of sks william as a starfleet captain, star trek, wrath of khan
 
-Notice that it says "sks william" - the "sks" string is a known rare identifier, so it helps Stable Diffusion to understand that we specifically mean *me*, and not some other William.
+Notice that it says "sks william" - the "sks" string is a known rare identifier, so it helps Stable Diffusion to understand that we specifically mean _me_, and not some other William.
 
 The progress in AI-generated images this year has been astounding. Of course everyone was amazed when GPT-3 and Dall-E came onto the scene with extremely convincing text and image content. But access to these tools and the source code behind them remains limited, because the source code and training models are proprietary.
 
@@ -42,6 +42,6 @@ He explained how he used the open source AI tool Disco Diffusion to generate the
 
 Here's a demo music video I made with Disco Diffusion:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xijahF3VCd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="youtube-embed" src="https://www.youtube.com/embed/xijahF3VCd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 I experimented with this for a while, and shared the results with my brother. Together, we created a complete AI music video for his band [Mighty Brother](https://mightybrotherband.com/). That video is set to release in early 2023, and I'll drop a link here when it does.

@@ -10,7 +10,7 @@ readtime: 1 min
 
 [A recent NASA animation for the new Artemis program](https://www.youtube.com/watch?v=_T8cn2J13-4), which aims to land on the moon by 2024
 
-[Wernher von Braun explains how we'll land on the moon in 1955](https://www.youtube.com/watch?v=eXIDFx74aSY)
+[Wernher von Braun explains how we'll land on the moon in 1955](https://www.youtube.com/watch?v=Sz7njI0wEIw)
 
 I see a lot of parallels in these videos, and it's kind of funny to compare the second one to the moon landing actually happened!
 
