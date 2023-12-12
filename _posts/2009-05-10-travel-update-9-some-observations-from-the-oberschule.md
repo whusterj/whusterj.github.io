@@ -2,7 +2,7 @@
 layout: post
 title: "Travel Update #9: Some Observations from the Oberschule"
 date: 2009-05-10 9:57
-description: As the final exams fly by in the US (for most of you they are already done), I'm taking a little break from studying for my midterms, which are coming up this week.
+description: "Well, I'm feeling a little productive, so I decided to write another little post. A little more about my experience at the Oberschule."
 category: blog
 tags:
   - berlin
@@ -11,6 +11,7 @@ tags:
   - germany
   - internship
 ---
+
 Well, I'm feeling a little productive, so I decided to write another little post. A little more about my experience at the Oberschule:
 
 In the third period on Monday I was helping out with a 7th grade class. Half of the class left within 15 minutes, because it was picture day for them. Curiously enough, it was not picture day for the other half of the class. They stayed in the room and I helped them correct their English tests. I was assigned to two girls and a Turkish boy named Patrick.
@@ -25,7 +26,7 @@ Looking closer, Patrick scratched out 8, 9, and 10, realizing that he only neede
 
 Okay, first translate the sentence into German. Alright, now go back to the dialog and find the related sentence.... Ok, I'll help you, this one here. Translate that into German.... Exactly, now you see what's wrong....
 
-------------------
+---
 
 Well, I haven't mentioned yet that we spent this weekend in Warnemuende once again. Our train leaves shortly, so I will have to finish this post a little later.
 

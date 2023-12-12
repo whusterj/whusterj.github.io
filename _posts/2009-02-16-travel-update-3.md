@@ -2,7 +2,7 @@
 layout: post
 title: "Travel Update #3: Arrived in Berlin"
 date: 2009-02-16 8:46
-description: My bags are neatly packed, and tonight I'll drive to Indianapolis to spend the last couple days with my family before I fly to Germany on Sunday.
+description: Well, here I am in Berlin two weeks before the IES Program officially begins with nothing much to do!
 category: blog
 tags:
   - germany

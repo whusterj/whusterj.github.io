@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Wolfram Alpha Computational Search Engine
+title: "Wolfram Alpha Computational Search Engine"
 date: 2009-05-16 8:50
-description: Is computational search the future of the Internet and a threat to Google's dominance?
+description: "Is computational search the future of the Internet and a threat to Google's dominance?"
 category: blog
 tags:
   - technology

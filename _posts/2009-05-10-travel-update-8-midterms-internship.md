@@ -2,7 +2,7 @@
 layout: post
 title: "Travel Update #8: Midterms, Internship"
 date: 2009-05-10 6:39
-description: As the final exams fly by in the US (for most of you they are already done), I'm taking a little break from studying for my midterms, which are coming up this week.
+description: "As the final exams fly by in the US (for most of you they are already done), I'm taking a little break from studying for my midterms, which are coming up this week."
 category: blog
 tags:
   - berlin
@@ -11,6 +11,7 @@ tags:
   - germany
   - internship
 ---
+
 As the final exams fly by in the US (for most of you they are already done), I'm taking a little break from studying for my midterms, which are coming up this week.
 
 This is interesting, because it means that I've hit the halfway point here. Maybe I'll write a little halfway-retrospective later.
