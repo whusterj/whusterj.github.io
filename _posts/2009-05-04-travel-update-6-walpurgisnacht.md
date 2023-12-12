@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Walpurgisnacht - Wal-Mart-Begone-Night
+title: "Travel Update #6: Walpurgisnacht - Wal-Mart-Begone-Night"
 date: 2009-05-04 13:57
 description: "I know you're thinking, \"What does William do all the live-long day, and has he turned German yet?\" \r\rLet's talk about recent developments."
 category: blog
@@ -11,6 +11,7 @@ tags:
   - berlin
   - riots
 ---
+
 I know you're thinking, "What does William do all the live-long day, and has he turned German yet?"
 
 Let's talk about recent developments.
