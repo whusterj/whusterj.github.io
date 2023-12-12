@@ -73,6 +73,7 @@ a {
   text-decoration: none;
   background: rgba(34, 194, 255, 0.3);
   transition: background 0.1s linear;
+  word-wrap: break-word;
 }
 a:hover {
   background: rgba(34, 194, 255, 0.6);
