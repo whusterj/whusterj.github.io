@@ -5,6 +5,7 @@ date: 2010-07-30 12:10
 description: Back in 2006, my friend Eva d'Ambrosio and I wrote and performed a 'Global Warming Cabaret'.
 category: blog
 tags: video
+readtime: 10 min
 ---
 
 Here's a little gem I just dug out of my past.
