@@ -2,7 +2,7 @@
 layout: post
 title: How to Use a Bash Script to Count Your Heroku Releases
 date: 2023-12-16 11:30
-description: ""
+description: "I asked ChatGPT to help me write a bash script to count the total number of production releases our company has made to Heroku."
 tags: programming artificial-intelligence heroku
 readtime: 2 min
 ---
@@ -68,7 +68,7 @@ latest_version=$(heroku releases -a "$app" | grep -E '^v[0-9]+' | sort -rV | hea
 
 Here is the final script mainly authored by ChatGPT that will get a list of all production Heroku apps you have access to and sum up their latest release versions to give you a total number of all-time production deployments.
 
-In our case, the number of total production releases is over 2000! And that doesn't even include apps we have shut down or transferred away to clients. So I'd guess out team has pushed to prod almost 5000 times. A vanity metric, perhaps, but it's still cool to think about.
+In our case, the number of total production releases is over 2000! And that doesn't even include apps on AWS or those we have shut down and transferred away to clients. So I'd guess out team has probably pushed to prod almost 5000 times over the past five years. A vanity metric, perhaps, but it's still cool to think about.
 
 ```bash
 #!/bin/bash
