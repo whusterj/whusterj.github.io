@@ -15,6 +15,42 @@ There are two steps to this (1) generate captions from the video as an SRT file,
 
 Whisper in my experience is incredibly good at audio transcription. And it can directly transcribe mp4 files to SRT format. You don't have to extract the audio from the video or anything like that. Once you have an SRT file, `ffmpeg` can easily bundle an mp4 and SRT file. I've tried this on some personal videos, and the results have been near perfect.
 
+## Installation
+
+Here is my project directory on GitHub. The README includes installation instructions, reproduced here.
+
+https://github.com/whusterj/whisper-transcribe
+
+The only two hard dependencies are the `ffmpeg` system package and the `openai-whisper` Python package.
+
+This installation has been tested with `Python 3.10.12` on Ubuntu 20.02. It should work on other Platforms as well, and OpenAI says Whisper should work with all Python versions 3.9 to 3.11.
+
+First, you will need `ffmpeg` on your system, if you don't have it already:
+
+```bash
+# on Ubuntu or Debian
+sudo apt update && sudo apt install ffmpeg
+
+# on MacOS using Homebrew (https://brew.sh/)
+brew install ffmpeg
+```
+
+For other platforms, see the [Whisper GitHub repo][1].
+
+Now you can install the python requirements. Create a virtual environment, activate it, and pip install from requirements.txt:
+
+```bash
+python -m venv .venv/
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+If you encounter errors during installation, you may need to install `rust` on your platform as well. If my requirements.txt fails to install for some reason, try just installing the `openai-whisper` package - this should install its Python sub-dependencies:
+
+```bash
+pip install openai-whisper
+```
+
 ## How to Do It
 
 **Step 1:** Use `whisper` to generate an SRT transcription of the video:

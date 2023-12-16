@@ -4,7 +4,7 @@ title: How to Use a Bash Script to Count Your Heroku Releases
 date: 2023-12-16 11:30
 description: "I asked ChatGPT to help me write a bash script to count the total number of production releases our company has made to Heroku."
 tags: programming artificial-intelligence heroku
-readtime: 2 min
+readtime: 6 min
 ---
 
 Our Creative Director asked me if I could estimate the number of production releases we have pushed so we could bost about it on [our website](https://thinknimble.com). I quickly figured out a strategy that would work using just the `heroku apps` and `heroku releases` commands, but realized I would need to draft a script to iterate and parse the outputs. I also knew it would be best to do this in bash to make use of those heroku-cli commands.
