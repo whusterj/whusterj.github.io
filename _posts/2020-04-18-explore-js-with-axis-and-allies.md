@@ -710,6 +710,8 @@ The rest of the code is very much the same until the simulation completes. At th
 
 Because VueJS is reactive, we can present the data rather easily by updating the template:
 
+{% raw %}
+
 ```html
 <div id="app">
   <form><!-- ... see above --></form>
@@ -727,6 +729,8 @@ Because VueJS is reactive, we can present the data rather easily by updating the
   </div>
 </div>
 ```
+
+{% endraw %}
 
 The results `div` will only appear when `results !== null`, and `results` is `null` by default, so this div will be hidden until the simulation has finished running for the first time. The rest of the template lists the results in a `<p>` tag.
 

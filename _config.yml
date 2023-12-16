@@ -21,6 +21,7 @@ baseurl:
 permalink: /:title/
 
 # How many articles do you wish to appear on the front page:
+plugins: [jekyll-paginate]
 paginate: 3
 
 # Exclude metadata and development time dependencies (like Grunt plugins)

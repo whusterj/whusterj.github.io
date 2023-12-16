@@ -30,7 +30,7 @@ layout: default
       </p>
 
       <h2>Keep Reading...</h2>
-      {% for post in site.posts | reverse %}
+      {% for post in site.posts %}
         {% if post.url == page.url %}
           {% assign prev_post_index = forloop.index | minus: 1 %}
           {% assign next_post_index = forloop.index | plus: 1 %}
