@@ -19,7 +19,7 @@ Whisper in my experience is incredibly good at audio transcription. And it can d
 
 Here is my project directory on GitHub. The README includes installation instructions, reproduced here.
 
-https://github.com/whusterj/whisper-transcribe
+[https://github.com/whusterj/whisper-transcribe](https://github.com/whusterj/whisper-transcribe)
 
 The only two hard dependencies are the `ffmpeg` system package and the `openai-whisper` Python package.
 
