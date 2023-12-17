@@ -7,11 +7,12 @@ category: blog
 tags: python programming
 ---
 
-NOTE: I put a video of the script in action in the 'static' directory. I should probably find good off-site hosting for it and embed it here.
+Posted on Slack to the ThinkNimble team:
 
 Hi all, I wanted to share an interesting problem and my solution. A couple weeks ago, we started a data migration for the Catalogue for Philanthropy. In short: they have a 15-year-old database with thousands of nonprofits and ALSO our new app database with the few hundred nonprofits that applied to be part of the Catalogue in 2019/2020.
 
 Our goal is to import nonprofit data the old database, some of which is duplicated in the new database... This means checking for matches between over 400 nonprofits. Easy, but manual and time-consuming. We can't simply automate it, because (a) the old system itself has duplicate records and (b) nonprofit names do not match up exactly between the two systems. So for example the old system would have "A D Cherry Early Childhood Music Outreach Program Inc." while the new system has "AD Cherry Early Childhood Music Program". A human can tell that these are the same and match them up, but computers need some direction.
+
 So I wrote a quick-and-dirty command-line script in Python that:
 
 1. Computes the Levenshtein Distance (https://en.wikipedia.org/wiki/Levenshtein_distance) for each pair of nonprofit names. It sounds fancy, but I just had to install this package: https://pypi.org/project/python-Levenshtein/ to use the algorithm.
@@ -22,8 +23,14 @@ So I wrote a quick-and-dirty command-line script in Python that:
 In this way, I was able to thoroughly cross-reference the two lists of >400 nonprofits in about 20 minutes with
 a fair bit of confidence. Now when we import the legacy data into our new app, we have some assurance that there won't be too many (or any) duplicates.
 
-I know I talk about clean, maintainable code a lot, but sometimes messy throwaway code is the right choice, too. This is also a pattern I we can reuse for semi-manual extract-transfer-load (ETL) workflows for other clients in the future.
+Here's a video of the script in action:
 
+<video controls>
+  <source src="https://images.williamhuster.com/videos/cfp-matching-script.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+I know I talk about clean, maintainable code a lot, but sometimes messy throwaway code is the right choice, too. This is also a pattern I we can reuse for semi-manual extract-transfer-load (ETL) workflows for other clients in the future.
 
 ```python
 #!/usr/bin/python
