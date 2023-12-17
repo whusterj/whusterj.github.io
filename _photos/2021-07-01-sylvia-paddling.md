@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5416-1200px
+image: https://images.williamhuster.com/photos/DSC_5416-1200px
 show: true
 Title: Sylvia paddling and exploring, intrepidly
 Description: We saw so many loons.

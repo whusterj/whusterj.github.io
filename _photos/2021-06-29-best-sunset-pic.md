@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5323-1200px
+image: https://images.williamhuster.com/photos/DSC_5323-1200px
 show: true
 Title: My best picture of a sunset
 Description: I bet you don't know of a better picture of a sunset. Send it to me. I will fight you.
