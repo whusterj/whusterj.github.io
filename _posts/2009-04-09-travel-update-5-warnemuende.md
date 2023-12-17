@@ -27,3 +27,18 @@ As she has responsibilities to her art school and family here in Berlin, she onl
 Birgit has already returned to Warnemuende for the the Easter break. She's there now with her daughter Stella and one of Stella's friends. I will probably be joining them on Thursday evening to stay for the weekend. Hopefully Spring is here to stay, and I'll be able to send you more sunny photos.
 
 Well, I have to go fetch my train ticket! More to come. Ta ta for now!
+
+UPDATE: Here are some of my favorite images from Warnemuende:
+
+![Birgit Working in her Atelier](https://images.williamhuster.com/2009 - Germany Album/IMG_0469 - 1200px.jpg)
+![A Colorful Fishing Boat](https://images.williamhuster.com/2009 - Germany Album/IMG_0252 - 1200px.jpg)
+![Another boat called "Sylvia" like my girlfriend](https://images.williamhuster.com/2009 - Germany Album/IMG_0256 - 1200px.jpg)
+![Seagull Feet](https://images.williamhuster.com/2009 - Germany Album/IMG_0258 - 1200px.jpg)
+![Seagull Face](https://images.williamhuster.com/2009 - Germany Album/IMG_0259 - 1200px.jpg)
+![Lighthouse in Warnemuende](https://images.williamhuster.com/2009 - Germany Album/IMG_0271-1 - 1200px.jpg)
+![Beach in Warnemuende](https://images.williamhuster.com/2009 - Germany Album/IMG_0272-1 - 1200px.jpg)
+![Another view of the Warnemuende Lighthouse](https://images.williamhuster.com/2009 - Germany Album/IMG_0283 - 1200px.jpg)
+![My shadow on the beach in Warnemuende](https://images.williamhuster.com/2009 - Germany Album/IMG_0285 - 1200px.jpg)
+![The "Count" of Warnemuende rides his horse on the beach](https://images.williamhuster.com/2009 - Germany Album/IMG_0286 - 1200px.jpg)
+![Host family on the beach at Warnemuende](https://images.williamhuster.com/2009 - Germany Album/IMG_0288-1 - 1200px.jpg)
+![Artsy shot of grass and the lighthouse at Warnemuende](https://images.williamhuster.com/2009 - Germany Album/IMG_0328 - 1200px.jpg)
