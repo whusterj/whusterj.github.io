@@ -2,7 +2,7 @@
 layout: post
 title: "String Matching with Levenshtein Distance"
 date: 2019-12-05 22:00
-description:
+description: "A demonstration of a case where I cleaned up messy, mismatched data using Levenshtein distance to find and rank likely matches."
 category: blog
 tags: python programming
 ---
