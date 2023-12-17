@@ -4,7 +4,7 @@ title: Automatically Caption Your Videos with Whisper and ffmpeg
 date: 2023-08-12 14:00
 description: "A quick tutorial on how to use OpenAI's WhisperAI library to automatically generate high-quality closed captions for your videos and attach them to your videos using ffmpeg. This process is entirely offline, meaning it's efficient and safe from prying eyes!"
 tags: programming artificial-intelligence video accessibility
-readtime: 2 min
+readtime: 5 min
 ---
 
 Big video handlers like YouTube and even Slack use AI to automatically caption videos that you upload. This is a great win for accessibility, and the AI is extremely accurate. It sometimes stumbles on uncommon words and bad audio signals, but these can be easily fixed by a human. I think most would agree that the benefit and cost savings of generating 95% accurate captions greatly outweighs the cost of having none at all!
