@@ -12,6 +12,22 @@ jekyll serve
 
 Github pages is integrated with Jekyll. It builds and deploys this site: [See documentation here](https://help.github.com/en/articles/about-github-pages-and-jekyll).
 
+## Sync Images and Videos to R2
+
+I use Cloudflare's R2 to host my images and videos at the subdomain images.williamhuster.com. I use [rclone](https://rclone.org/) to quickly sync
+
+Sync from my R2 bucket to local, using `--interactive` or `-i` to confirm changes and avoid data loss:
+
+```bash
+rclone sync r2:blog-images local-blog-images-dir -i
+```
+
+When adding new files, sync from local up to R2:
+
+```bash
+rclone sync local-blog-images-dir r2:blog-images -i
+```
+
 ## Extract Metadata from Photos
 
 In early 2022 I added a 'photos' page and photos collection. To make this easier to manage and the information more interesting, I'm keeping the details in the image metadata and extracting it to the markdown frontmatter using exiftool.
