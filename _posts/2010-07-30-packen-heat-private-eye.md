@@ -14,7 +14,7 @@ A few years ago, a good friend of mine and I wrote a short play for the Indianap
 
 We even got a nice little write-up in the local newspaper.
 
-![Global Warming Cabaret in the Newspaper](/static/images/posts/gwc.jpg)
+![Global Warming Cabaret in the Newspaper](https://images.williamhuster.com/posts/gwc.jpg)
 
 We made the following nifty little parody video to play at intermission in an overdrawn film noir detective story style.
 

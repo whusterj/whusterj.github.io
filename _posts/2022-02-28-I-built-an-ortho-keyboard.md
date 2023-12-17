@@ -5,7 +5,7 @@ date: 2022-02-28 02:00
 description: I built an ortholinear keybaord and retrained my brain!
 category: blog
 tags: programming keyboards
-image: /static/images/posts/2022-02-27_preonic-keyboard.jpg
+image: https://images.williamhuster.com/posts/2022-02-27_preonic-keyboard.jpg
 readtime: 5 min
 ---
 
@@ -13,7 +13,7 @@ For some reason, I decided to ask Sylvia for an ortholinear keyboard for Christm
 
 They do look good. Here's what I built:
 
-![Preonic Keyboard](/static/images/posts/2022-02-27_preonic-keyboard.jpg)
+![Preonic Keyboard](https://images.williamhuster.com/posts/2022-02-27_preonic-keyboard.jpg)
 
 I have been practicing with the keyboard for the past two months and have managed to reach an average of 100 words per minute. Writing code is slower, though, since I still have to think about where some special characters are located.
 
@@ -29,7 +29,7 @@ So here's how I have programmed my Preonic - it was very easy!
 
 In the end, my layout looked like this:
 
-![Preonic Keyboard](/static/images/posts/2022-01-02_preonic-layout.png)
+![Preonic Keyboard](https://images.williamhuster.com/posts/2022-01-02_preonic-layout.png)
 
 The upper layer is accessed by pressing the 'raise' key and the lower layer is accessed by pressing the 'lower' key. I really wanted quick access to a num pad and brackets, since I use these characters often while coding.
 
@@ -41,21 +41,21 @@ Next, I visited https://config.qmk.fm to configure the layout. This allows you t
 
 So I:
 
-1) Configured my keyboard layout and layers. [I used this Reddit post as inspiration][reddit-post]. And [here are the images from that post][reddit-post-images] It had exactly what I was looking for, which was a complete numpad on one of the layers, along with a number of other interesting ideas. For instance, the author shifts the numbers row to the left by one. This sacrifices the backtick and tilde key to regain the dash/hyphen and =/+ keys, which are arguably more common - although backticks are increasingly common in programming and markdown. It's an interesting idea that I'll try for a time and see how it works for me. It's already very beneficial to have the hyphen key readily available, rather than hidden behind a layer. 
+1. Configured my keyboard layout and layers. [I used this Reddit post as inspiration][reddit-post]. And [here are the images from that post][reddit-post-images] It had exactly what I was looking for, which was a complete numpad on one of the layers, along with a number of other interesting ideas. For instance, the author shifts the numbers row to the left by one. This sacrifices the backtick and tilde key to regain the dash/hyphen and =/+ keys, which are arguably more common - although backticks are increasingly common in programming and markdown. It's an interesting idea that I'll try for a time and see how it works for me. It's already very beneficial to have the hyphen key readily available, rather than hidden behind a layer.
 
 I made a couple minor customizations to this layout. For example, I moved the Ctrl key to the far left corner of the keyboard, because this felt like a more natural position for me and less of a stretch.
 
 Typing prose like this is going pretty smoothly. I will have to try some programming to see how it goes. Brackets and navigating code will be a little more difficult for me to 'get under my fingers' I expect.
 
-2) Click COMPILE to create the firmware file. This is not an obvious step, and it isn't explained anywhere. I just inferred that you should do this before downloading the firmware. It takes a minute or two to compile the firmware.
+2. Click COMPILE to create the firmware file. This is not an obvious step, and it isn't explained anywhere. I just inferred that you should do this before downloading the firmware. It takes a minute or two to compile the firmware.
 
-3) Click to download the firmware.
+3. Click to download the firmware.
 
-4) Open QMK Toolkit and load the firmware file that you downloaded.
+4. Open QMK Toolkit and load the firmware file that you downloaded.
 
-5) Press the RESET button on the bottom of the keyboard.
+5. Press the RESET button on the bottom of the keyboard.
 
-6) Click "flash" in QMK Toolkit to flash the firmware. It will take a few moments and then will automatically reset the keyboard - it's done!
+6. Click "flash" in QMK Toolkit to flash the firmware. It will take a few moments and then will automatically reset the keyboard - it's done!
 
-[reddit-post]: <https://www.reddit.com/r/olkb/comments/7ga16r/my_preonic_layouts/>
-[reddit-post-images]: <https://i.imgur.com/omXktkE.png>
+[reddit-post]: https://www.reddit.com/r/olkb/comments/7ga16r/my_preonic_layouts/
+[reddit-post-images]: https://i.imgur.com/omXktkE.png

@@ -5,7 +5,7 @@ date: 2022-02-19 11:15
 description: The 'State of JS' survey results are always an interesting and informative read - my observations and TILs.
 category: blog
 tags: javascript programming
-image: /static/images/posts/js2021-social.png
+image: https://images.williamhuster.com/posts/js2021-social.png
 readtime: 5 min
 ---
 

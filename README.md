@@ -19,13 +19,13 @@ I use Cloudflare's R2 to host my images and videos at the subdomain images.willi
 Sync from my R2 bucket to local, using `--interactive` or `-i` to confirm changes and avoid data loss:
 
 ```bash
-rclone sync r2:blog-images local-blog-images-dir -i
+rclone sync r2:blog-images static/r2-blog-images -i
 ```
 
 When adding new files, sync from local up to R2:
 
 ```bash
-rclone sync local-blog-images-dir r2:blog-images -i
+rclone sync static/r2-blog-images r2:blog-images -i
 ```
 
 ## Extract Metadata from Photos

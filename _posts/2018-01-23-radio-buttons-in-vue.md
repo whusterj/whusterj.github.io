@@ -16,7 +16,7 @@ I'm working on a project where I have a Survey object containing a list of Quest
 
 For scale value questions, I render a component that shows radio buttons 1-5, like this:
 
-![Screenshot of radio buttons for a "scale value" question.]({{ "/static/images/posts/2018-01-23-radio-buttons-vue.png" | absolute_url }})
+![Screenshot of radio buttons for a "scale value" question.]({{ "https://images.williamhuster.com/posts/2018-01-23-radio-buttons-vue.png" | absolute_url }})
 
 The currently-selected answer (`question.answer`) is bound to the input like this:
 
