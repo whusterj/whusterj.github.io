@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: https://images.williamhuster.com/photos/DSC_5153-1200px
+image: /static/images/photos/DSC_5153-1200px
 show: true
 Title: Nick and Diana go out walking every day
 Description: I sang the song "Walking" by the Rosebuds, and it was a highlight of my life.

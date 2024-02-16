@@ -5,7 +5,7 @@ date: 2018-01-20 18:00
 description: Use JavaScript to validate user input in real time without a framework.
 category: blog
 tags: javascript programming vanillajs
-image: https://images.williamhuster.com/posts/2018-01-19-form-validation-mockup.png
+image: /static/images/posts/2018-01-19-form-validation-mockup.png
 readtime: 12 min
 ---
 
@@ -17,7 +17,7 @@ Suppose you are asked to build a basic user profile form to collect a person's f
 
 Let's say this is the mock-up you received from the designer:
 
-![Form Validation Mock-Up]({{ "https://images.williamhuster.com/posts/2018-01-19-form-validation-mockup.png" | absolute_url }})
+![Form Validation Mock-Up]({{ "/static/images/posts/2018-01-19-form-validation-mockup.png" | absolute_url }})
 
 At first glance, it looks like a simple form you've built many times before. You figure you'll just validate the form when 'Save' is clicked and show any errors just like the mock-up. Then you read the written requirements from designer:
 
@@ -240,7 +240,7 @@ So far we have defined a data model to hold the **state** of our form fields and
 
 When the user takes action, DOM events trigger our event listeners and begin a feedback loop which reads the form data, validates it, and updates the form accordingly, as illustrated here:
 
-![Form Validation Data Flow]({{ "https://images.williamhuster.com/posts/2018-01-20-form-validation-data-flow.png" | absolute_url }})
+![Form Validation Data Flow]({{ "/static/images/posts/2018-01-20-form-validation-data-flow.png" | absolute_url }})
 
 Two important things about this design are that (a) data updates flow in one direction only and (b) the DOM is always updated all at once at the end of the chain of events—NEVER in the middle of the loop.
 

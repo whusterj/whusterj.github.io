@@ -57,14 +57,6 @@ In my tests, the above settings for lossless compression of JPGs actually INCREA
 
 NO LONGER USED, FOR REFERENCE ONLY: I experimented with using Cloudflare's R2 to host my images. Unfortunately my analytics showed a big spike in latency to serve these images from the R2 bucket.
 
-### Use a CDN?
-
-It would be better to serve images from a CDN. I researched different solutions and the frontrunner for me was Cloudflare Images. This costs $5/month for up to 100K images. Features include auto-generated variants, which is attractive.
-
-The big drawback is that I would somehow need to automate the image upload process. CF Images generates a UUID for each image by default. You can also specify a "custom key." I would just use the filename to make it easier to identify.
-
-For now (2024-02-16) I've decided to move back to GitHub for image hosting. I only have ~50MB of media so far, and GitHub seems to put media on its user content CDN. Most of all, it is free to use!
-
 ### Back Up Images to R2
 
 R2 is free with my Cloudflare account and a good backup solution I think, in case I ever need to migrate from GH Pages.
@@ -86,3 +78,11 @@ When adding new files, sync from local up to R2:
 ```bash
 rclone sync static/images r2:blog-images -i
 ```
+
+### Use a CDN?
+
+If I end up having many GB of images and video, then it would be better to serve media from a CDN. I researched different solutions and the frontrunner for me was Cloudflare Images. This costs $5/month for up to 100K images. Features include auto-generated variants, which is attractive.
+
+The big drawback is that I would somehow need to automate the image upload process. CF Images generates a UUID for each image by default. You can also specify a "custom key." I would just use the filename to make it easier to identify.
+
+For now (2024-02-16) I've decided to move back to GitHub for image hosting. I only have ~50MB of media so far, and GitHub seems to put media on its user content CDN. Most of all, it is free to use!

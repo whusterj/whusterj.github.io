@@ -18,16 +18,16 @@ Some really neat effects also happened as a result of the fact that the camera i
 
 Berlin from the roof of Club Weekend:
 
-![Berlin from the roof of Club Weekend](https://images.williamhuster.com/2009%20-%20Germany%20Album/0503090000-00%20-%201200px.jpg)
+![Berlin from the roof of Club Weekend](/static/images/2009%20-%20Germany%20Album/0503090000-00%20-%201200px.jpg)
 
 Beach in Warnemünde:
 
-![Beach in Warnemünde](https://images.williamhuster.com/2009%20-%20Germany%20Album/0509091437-00%20-%201200px.jpg)
+![Beach in Warnemünde](/static/images/2009%20-%20Germany%20Album/0509091437-00%20-%201200px.jpg)
 
 My little sculpture:
 
-![My little sculpture](https://images.williamhuster.com/2009%20-%20Germany%20Album/0509091437-02%20-%201200px.jpg)
+![My little sculpture](/static/images/2009%20-%20Germany%20Album/0509091437-02%20-%201200px.jpg)
 
 My train's arriving!
 
-![My train arriving](https://images.williamhuster.com/2009 - Germany Album/0603091756-01 - 1200px.jpg)
+![My train arriving](/static/images/2009 - Germany Album/0603091756-01 - 1200px.jpg)

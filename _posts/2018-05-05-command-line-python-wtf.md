@@ -5,7 +5,7 @@ date: 2018-05-05 12:00
 description: Let's write a command line tool in Python to record WTF moments during code reviews.
 category: blog
 tags: python programming command-line
-image: https://images.williamhuster.com/posts/2018-05-05_wtf_table_flip.png
+image: /static/images/posts/2018-05-05_wtf_table_flip.png
 readtime: 7 min
 ---
 
@@ -13,7 +13,7 @@ readtime: 7 min
 
 Most programmers are familiar with this iconic comic:
 
-![WTF](https://images.williamhuster.com/posts/wtfm.jpg)
+![WTF](/static/images/posts/wtfm.jpg)
 [Source](http://www.osnews.com/story/19266/WTFs_m)
 
 And anyone who has ever done code review or even just tried to read code knows how true this is.

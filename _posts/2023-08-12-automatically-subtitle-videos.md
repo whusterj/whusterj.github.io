@@ -85,7 +85,7 @@ You will need a player like VLC that can show you the subtitle tracks. It is als
 
 The above would be the "by hand" procedure, but perhaps you can see how easily this process might be automated in bulk.
 
-![Automatic Video Captioning Pipeline Sketch](https://images.williamhuster.com/posts/2023-08-12-closed-captioning-data-pipeline-sketch.jpg)
+![Automatic Video Captioning Pipeline Sketch](/static/images/posts/2023-08-12-closed-captioning-data-pipeline-sketch.jpg)
 The idea would be that you can drop the mp4 files you want subtitled into an S3 bucket. Then you'd have a scheduler script detect them and queue up jobs for one or more workers. This isn't strictly necessary, but would allow you to fan out the process to as many workers as you like to process more videos faster. The jobs would run the above commands and produce captioned video files automatically, which are then saved back to S3 somewhere.
 
 ## Show Captions in HTML without Embedding

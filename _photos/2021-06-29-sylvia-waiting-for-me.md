@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: https://images.williamhuster.com/photos/DSC_5369-1200px
+image: /static/images/photos/DSC_5369-1200px
 show: true
 Title: Sylvia had to wait for me to catch up
 Description: I'm a slow walker, OK? I like to take in the nature. I need to exercise.

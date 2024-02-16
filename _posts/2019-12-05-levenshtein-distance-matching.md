@@ -26,7 +26,7 @@ a fair bit of confidence. Now when we import the legacy data into our new app, w
 Here's a video of the script in action:
 
 <video controls>
-  <source src="https://images.williamhuster.com/videos/cfp-matching-script.mp4" type="video/mp4">
+  <source src="/static/images/videos/cfp-matching-script.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

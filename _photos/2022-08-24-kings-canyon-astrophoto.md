@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: https://images.williamhuster.com/photos/DSC_3156-1200px
+image: /static/images/photos/DSC_3156-1200px
 show: true
 Title: The Milky Way over King's Canyon, Australia
 Description: As part of our travels through Australia, we spent one night at King's Canyon resort, an isolated spot in the center of Australia far from man-made light. This makes it an ideal spot for Astrophotography!

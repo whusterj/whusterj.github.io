@@ -16,7 +16,7 @@ Data from the four infrared sensors in the gallery is passed through 75 feet of 
 
 A front-back facsimile of the (very glossy) flyer for Arthur's show:
 
-![Arthur Liou Poissant Flyer](https://images.williamhuster.com/posts/arthur_liou_poissant.jpg "Arthur Liou - 'Nachi' at the Poissant Gallery")
+![Arthur Liou Poissant Flyer](/static/images/posts/arthur_liou_poissant.jpg "Arthur Liou - 'Nachi' at the Poissant Gallery")
 
 And here's a video:
 

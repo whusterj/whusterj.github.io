@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: https://images.williamhuster.com/photos/DSC_5408-1200px
+image: /static/images/photos/DSC_5408-1200px
 show: true
 Title: This frog let us sit on his rock
 Description: A kindly frog sat by, doffed his cap and said, "hi!"

@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: https://images.williamhuster.com/photos/DSC_1261-1200px
+image: /static/images/photos/DSC_1261-1200px
 show: true
 Title: Maria Strikes a Pose in DC
 Description: Maria graduated from high school, and I took some pictures to commemorate the occasion.

@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: https://images.williamhuster.com/photos/DSC_5764-1200px
+image: /static/images/photos/DSC_5764-1200px
 show: true
 Title: Bill & Gertrude at Christmas Time, 2022
 Description: My parents are the greatest.

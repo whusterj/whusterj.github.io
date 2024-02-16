@@ -5,13 +5,13 @@ date: 2018-01-27 22:00
 description: Radar charts are a great way to visually compare sets of numbers. They also help us gain an intuitive understanding of the data structures and pattern matching processes that underpin almost all automated matching, pattern recognition, and machine learning algorithms.
 category: blog
 tags: python programming
-image: https://images.williamhuster.com/posts/2018-01-27_radar_chart.png
+image: /static/images/posts/2018-01-27_radar_chart.png
 readtime: 5 min
 ---
 
 Radar charts[^1] can be a great way to visually compare sets of numbers, particularly when those numbers represent the features of a real-world person or object.
 
-![An example radar chart]({{ 'https://images.williamhuster.com/posts/2018-01-27_radar_chart_example_01.png' | absolute_url }})
+![An example radar chart]({{ '/static/images/posts/2018-01-27_radar_chart_example_01.png' | absolute_url }})
 
 <small><i>Fig. 1 - An example radar chart comparing a person's 'real' workplace experience with their 'ideal'. [At Aspire](http://aspire.is), we generate these charts as part of our 'Aspire Quotient' workplace satisfaction survey. [Made with the chart.js library](http://www.chartjs.org).</i></small>
 
@@ -216,7 +216,7 @@ plt.savefig('radar_chart.png')
 
 And here is the final result!
 
-![Final radar chart]({{ 'https://images.williamhuster.com/posts/2018-01-27_radar_chart.png' | absolute_url }})
+![Final radar chart]({{ '/static/images/posts/2018-01-27_radar_chart.png' | absolute_url }})
 
 So what can we see? I see almost immediately that these two people have somewhat complementary skills. Person A (in orange) has some proficiency in everything, but is strongest in Skills B and C. Meanwhile Person B (in blue) is definitely stronger in Skills D, E, and F. Both individuals are approximately equally as strong in skill A. Pretty cool!
 

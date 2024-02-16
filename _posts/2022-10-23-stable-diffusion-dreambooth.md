@@ -4,7 +4,7 @@ title: Fun with Stable Diffusion and Dreambooth
 date: 2022-10-23 12:00
 description: "Today I played around with Stable Diffusion and Dreambooth to make a bunch of silly pictures of myself and friends."
 tags: AI programming
-image: https://images.williamhuster.com/posts/2022-10-23_sylvia-game-character.png
+image: /static/images/posts/2022-10-23_sylvia-game-character.png
 readtime: 4 min
 ---
 
@@ -13,7 +13,7 @@ Today I played around with Stable Diffusion and Dreambooth to make a bunch of si
 [Click here if you just want to see the AI generated pictures!](https://photos.google.com/share/AF1QipOPlXIUvcyFZGhfIzyvbRKO1bCOykswMkViAybtNtlappkEVCK22WPAphEI1J3fNA?key=LWV1RVk0SFNmSHhjREQ5ZzZjemtNSFhHMHIxemZB)
 <a href="https://photos.google.com/share/AF1QipOPlXIUvcyFZGhfIzyvbRKO1bCOykswMkViAybtNtlappkEVCK22WPAphEI1J3fNA?key=LWV1RVk0SFNmSHhjREQ5ZzZjemtNSFhHMHIxemZB" target="_blank_">
 <img
-	    src="https://images.williamhuster.com/posts/2022-10-23_stable-diffusion-ai-william-jedi.png"
+	    src="/static/images/posts/2022-10-23_stable-diffusion-ai-william-jedi.png"
 	    alt="I am a Jedi! AI generated image of William as a Jedi holding a lightsaber. Generated using Stable Diffusion and Dreambooth."/>
 </a>
 
