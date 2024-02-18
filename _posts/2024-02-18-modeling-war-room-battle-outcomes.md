@@ -20,7 +20,7 @@ The other big difference from AA is that only one "round" of combat and dice rol
 - [Codepen: War Room Air/Ground Battle Board Simulator](https://codepen.io/whusterj/full/YzgJdEy/9439d70207e540169361fbbb0e6133e1) - JavaScript implementation of War Room air/ground battle board. Select attacking and defending units and see what might happen.
 - [(2020) Explore JavaScript with Axis & Allies](https://williamhuster.com/explore-js-with-axis-and-allies/) - Blog post I wrote breaking down the JavaScript code I wrote to simulate Axis and Allies battles.
 - [Codepen: Axis and Allies in JavaScript](https://codepen.io/whusterj/pen/VwvjzQv/b4397c0d26fc315dae283d682f7819d8) - Complete JavaScript implementation of Monte Carlo simulation of Axis and Allies battles.
-- [Github: Axis and Allies in C](https://github.com/whusterj/axis-and-allies) - Naive implmeentation of Axis and Allies battle simulator in C. Tinkering with a focus on execution speed.
+- [Github: Axis and Allies in C](https://github.com/whusterj/axis-and-allies) - Naive implementation of Axis and Allies battle simulator in C. Tinkering with a focus on execution speed.
 - [Board Game Geek: War Room](https://boardgamegeek.com/boardgame/229713/war-room)
 
 ## Part 1 - Modeling the Probabilities Using Simulation
@@ -934,7 +934,7 @@ $$P(X = k) = \binom{n}{k} \times p^k \times (1-p)^{n-k}$$
 
 where:
 
-- \\(n_m\\) is the number of trials (number of die rolls)
+- \\(n\\) is the number of trials (number of die rolls)
 - \\(k\\) is the number of successful outcomes (rolling a particular color)
 - \\(p\\) is the probability of success on a single trial
 - \\(\binom{n}{k}\\) represents the binomial coefficient, which is the number of ways to choose \\(k\\) successes out of \\(n\\) trials
@@ -965,7 +965,7 @@ I think I get it, but I don't love these kinds of explanations that are very muc
 
 In Python we could implement a function that computes the binomial coefficient exactly as represented above using `math.factorial`. Python makes it even easier by providing this function in the standard library as `math.comb`.
 
-Remembering that in our case \\(n\\) is the number of dice rolls and \\(k\\) is the number of rolls of a particular color. We can hold \\(n\\) steady at 10 and see how the coefficient varies with \\(k\\). So let's use `NUM_DICE` as \\(n\\) from our simulations above. Then we'll step through every possible value of \\(k\\) successful roles. In math lingo, that is the set of \\(\{0, 1, 2 ... 10\}\\).
+Remembering that in our case \\(n\\) is the number of dice rolls and \\(k\\) is the number of rolls of a particular color. We can hold \\(n\\) steady at 10 and see how the coefficient varies with \\(k\\). So let's use `NUM_DICE` as \\(n\\) from our simulations above. Then we'll step through every possible value of \\(k\\) successful roles. In math lingo, that is the set of \\(\\{0, 1, 2 ... 10\\}\\).
 
 ```python
 import math
