@@ -41,11 +41,11 @@ h5 {
   word-wrap: break-word;
   margin: 0.5rem 0;
 }
-p + h1, ul + h1, ol + h1,
-p + h2, ul + h2, ol + h2,
-p + h3, ul + h3, ol + h3,
-p + h4, ul + h4, ol + h4,
-p + h5, ul + h5, ol + h5 {
+div + h1, p + h1, ul + h1, ol + h1,
+div + h2, p + h2, ul + h2, ol + h2,
+div + h3, p + h3, ul + h3, ol + h3,
+div + h4, p + h4, ul + h4, ol + h4,
+div + h5, p + h5, ul + h5, ol + h5 {
   margin-top: 2.5em;
 }
 
@@ -69,17 +69,12 @@ p {
 }
 
 a {
-  color: inherit;
+  color: rgba(34, 194, 255);
   text-decoration: none;
-  background: rgba(34, 194, 255, 0.3);
-  transition: background 0.1s linear;
   word-wrap: break-word;
 }
-a:hover {
-  background: rgba(34, 194, 255, 0.6);
-}
 a:visited {
-  color: inherit;
+  color: rgb(24, 127, 168);
 }
 a.no-highlight {
   background: none;
@@ -124,11 +119,14 @@ ul li {
 }
 
 .block-link {
-  color: inherit;
+  color: white;
   display: block;
   text-decoration: none;
   transition: background-color 0.2s linear;
   background-color: white;
+}
+.block-link:visited {
+  color: white;
 }
 .block-link:hover {
   background-color: rgb(235, 235, 235);
@@ -157,10 +155,12 @@ ul li {
   flex: 5;
 }
 .header__title {
+  color: white;
   font-size: 2.25rem;
   margin: 0;
 }
 .header__subtitle {
+  color: white;
   margin: 0;
 }
 
@@ -174,7 +174,11 @@ ul li {
   text-align: center;
 }
 .main-nav > a {
+  color: white;
   margin: 0 0.33rem;
+}
+.main-nav > a:visited {
+  color: white;
 }
 .main-nav__icon {
   display: inline-block;
@@ -265,6 +269,10 @@ ul li {
   width: 100%;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+}
+
 /* Photos Page */
 .photo-container {
 }
@@ -313,6 +321,15 @@ code.highlighter-rouge {
 pre[class="highlight"] > code {
   line-height: 1.2;
   font-size: 0.9rem;
+}
+
+/**
+ * Syntax Highlighting
+ **/
+
+/* Ensure margins between consecutive code blocks */
+[class^="language-"] {
+  margin: 1rem 0;
 }
 
 /**

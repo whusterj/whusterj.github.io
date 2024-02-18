@@ -12,7 +12,27 @@ jekyll serve
 
 Github pages is integrated with Jekyll. It builds and deploys this site: [See documentation here](https://help.github.com/en/articles/about-github-pages-and-jekyll).
 
-## Extract Metadata from Photos
+## Handling Python Notebooks
+
+I've started doing more work in Python notebooks and would like to develop a publishing workflow to this blog. Here are the steps I'm taking right now, but it's a bit manual:
+
+1. Export the notebook to markdown
+
+```bash
+jupyter nbconvert --to markdown my_notebook.ipynb
+```
+
+2. Create a new post in `_posts` and copy-paste the markdown
+
+3. Move the images to the `static/images` directory and update the links in the markdown. Make sure to include the `absolute_url` directive - this is the most laborious step.
+
+4. Convert LaTex statements to MathJax. This is also laborious, because you can't simply substitute
+
+I've added my first notebook post, and I'm also seeing some CSS issues. I will try to correct these in the main stylesheet, but it may add more steps.
+
+## Handling Images
+
+### Extract Metadata from Photos
 
 Short version: use `gen_photo_frontmatter.sh`
 
@@ -30,7 +50,7 @@ And use it to extract some basic image info that we can copy-paste into the mark
 exiftool *.jpg -S -Title -ImageWidth -ImageHeight -Make -Model -FNumber -ExposureTime -ISO -LensID -Keywords -DateTimeOriginal -d "%Y-%m-%d %H:%M:%S"
 ```
 
-## Convert Photos to WebP
+### Convert Photos to WebP
 
 Install the CLI utility:
 
@@ -53,11 +73,11 @@ find ./ -type f -name '*.jpg' -exec sh -c 'cwebp -lossless -m 6 -z 9 -q 100 "$1"
 
 In my tests, the above settings for lossless compression of JPGs actually INCREASED file size. This might work better for large lossless images, but since JPG itself is lossy, we're actually backtracking with this one.
 
-## Sync Images and Videos to R2
+### Sync Images and Videos to R2
 
 NO LONGER USED, FOR REFERENCE ONLY: I experimented with using Cloudflare's R2 to host my images. Unfortunately my analytics showed a big spike in latency to serve these images from the R2 bucket.
 
-### Back Up Images to R2
+#### Back Up Images to R2
 
 R2 is free with my Cloudflare account and a good backup solution I think, in case I ever need to migrate from GH Pages.
 
