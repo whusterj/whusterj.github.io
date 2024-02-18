@@ -12,9 +12,7 @@ Today I played around with Stable Diffusion and Dreambooth to make a bunch of si
 
 [Click here if you just want to see the AI generated pictures!](https://photos.google.com/share/AF1QipOPlXIUvcyFZGhfIzyvbRKO1bCOykswMkViAybtNtlappkEVCK22WPAphEI1J3fNA?key=LWV1RVk0SFNmSHhjREQ5ZzZjemtNSFhHMHIxemZB)
 <a href="https://photos.google.com/share/AF1QipOPlXIUvcyFZGhfIzyvbRKO1bCOykswMkViAybtNtlappkEVCK22WPAphEI1J3fNA?key=LWV1RVk0SFNmSHhjREQ5ZzZjemtNSFhHMHIxemZB" target="_blank_">
-<img
-	    src="/static/images/posts/2022-10-23_stable-diffusion-ai-william-jedi.png"
-	    alt="I am a Jedi! AI generated image of William as a Jedi holding a lightsaber. Generated using Stable Diffusion and Dreambooth."/>
+<img src="{{ "/static/images/posts/2022-10-23_stable-diffusion-ai-william-jedi.png" | absolute_url }}" alt="I am a Jedi! AI generated image of William as a Jedi holding a lightsaber. Generated using Stable Diffusion and Dreambooth."/>
 </a>
 
 All of these images are AI generated using a combination of Stable Diffusion and Dreambooth.
