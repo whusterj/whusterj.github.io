@@ -14,7 +14,7 @@ On September 23rd, 2009, Youngsuk Altieri and I showed our “Connections” pie
 
 The piece was created for Leslie Sharpe’s interactive multimedia course in the fall of 2008. Conceptually, the piece represents the aged theme of humanity vs. nature. By interacting with the piece, the viewer is meant to play the role of "intruder." The viewer's actions disrupt the nature imagery in the projection and overwhelm the soothing nature sounds with sounds of machinery and war. At first, we used a Numark Total Control ® DJ controller as our interface device.
 
-![Numark Total Control DJ Controller](/static/images/posts/found-art-show/numark.jpg)
+![Numark Total Control DJ Controller]({{ "/static/images/posts/found-art-show/numark.jpg" | absolute_url }})
 
 The sounds, imagery, and interaction were processed using Pure Data. Later, we replaced the controller with force sensors and used an arduino micro controller as an interface device with the computer.
 

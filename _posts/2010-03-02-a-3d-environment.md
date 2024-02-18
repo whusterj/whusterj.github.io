@@ -12,12 +12,12 @@ Since I have been doing a lot of 3D work this semester, I thought I would share 
 
 Here are a few renders of the work in progress.
 
-![Salvation - 3D Environment Image 1](/static/images/posts/salvation/01.jpg)
+![Salvation - 3D Environment Image 1]({{ "/static/images/posts/salvation/01.jpg" | absolute_url }})
 
-![Salvation - 3D Environment Image 2](/static/images/posts/salvation/02.jpg)
+![Salvation - 3D Environment Image 2]({{ "/static/images/posts/salvation/02.jpg" | absolute_url }})
 
-![Salvation - 3D Environment Image 3](/static/images/posts/salvation/03.jpg)
+![Salvation - 3D Environment Image 3]({{ "/static/images/posts/salvation/03.jpg" | absolute_url }})
 
-![Salvation - 3D Environment Image 4](/static/images/posts/salvation/04.jpg)
+![Salvation - 3D Environment Image 4]({{ "/static/images/posts/salvation/04.jpg" | absolute_url }})
 
 And here's the environment (EDIT 2018-01-11: This link is unfortunately dead). I haven't had a chance to optimize for the web, yet. So only click the link if you have some time, patience, and a solid internet connection. Also, you will need to download the 3DVia player in order to view the file. A link to the download site should be provided if you don't have it, yet.

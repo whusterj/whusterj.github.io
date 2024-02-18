@@ -22,20 +22,20 @@ Well, what did we do May First? Of course, we hit up the party down by Kottbusse
 
 The party was bumping. There were at least four stages (that I counted, but who wants to count at a party?) with live music, and the streets were almost as packed as DC after Obama's Inauguration (hereafter: The Inauguration), which means shoulder-to-shoulder peopletraffic. Sorry, I'm getting used to being able to mash words together.
 
-![Walpurgisnacht - Music Stage](/static/images/2009 - Germany Album/IMG_2073 - 1200px.jpg)
+![Walpurgisnacht - Music Stage]({{ "/static/images/2009 - Germany Album/IMG_2073 - 1200px.jpg" | absolute_url }})
 
-![Walpurgisnacht - Crowds Hanging Out in the Park](/static/images/2009 - Germany Album/IMG_2063 - 1200px.jpg)
+![Walpurgisnacht - Crowds Hanging Out in the Park]({{ "/static/images/2009 - Germany Album/IMG_2063 - 1200px.jpg" | absolute_url }})
 
 The party was called MyFest because "May" in German is spelled "Mai" and pronounced "My." Yes, the Germans love puns almost as much as they love English. Put the two together and apparently you have three blocks worth of people partying likes its 2009. We watched some rapping Turks, we laid out in a park next to a Techno DJ, and we paid too much for Beck's (but still less than bar prices. Berlin must maintain it's status as most affordable major city in the world).
 
 But let's get to the crux of the story. May 1st is also the day when the anti-capitalists turn out en masse to show their general dissatisfaction with The System. They march around for a while and then at dusk they put on their masks and descend on Kottbusser Tor (an over-ground/under-ground subway stop as well as a major intersection), setting expensive cars and banks aflame, resisting law enforcement, and generally being a nuisance. It's black-bandanna student-revolting chaos.
 
-![Walpurgisnacht - Make Capitalism History Poster](/static/images/2009 - Germany Album/IMG_2072 - 1200px.jpg)
+![Walpurgisnacht - Make Capitalism History Poster]({{ "/static/images/2009 - Germany Album/IMG_2072 - 1200px.jpg" | absolute_url }})
 
-![Walpurgisnacht - Smoke in the Streets](/static/images/2009 - Germany Album/IMG_2082 - 1200px.jpg)
+![Walpurgisnacht - Smoke in the Streets]({{ "/static/images/2009 - Germany Album/IMG_2082 - 1200px.jpg" | absolute_url }})
 
 Now before my mother has a heart attack reading this, I'll go ahead and say that I was long gone by the time these festivities began. This is partially because of the heads-up I got from the local media and wise Berliners alike. The area was also crawling with coppers, ambuli (my new plural for ambulance), and apparently fire trucks, though I didn't see any. Mainly, I saw police van after van after van and a bunch of dashing young officers in uniform going to and fro, their bellies dancing merrily in their bulging waistcoats.
 
-![Walpurgisnacht - My Friend Greg in Front of a Line of Police Vans](/static/images/2009 - Germany Album/IMG_2084 - 1200px.jpg)
+![Walpurgisnacht - My Friend Greg in Front of a Line of Police Vans]({{ "/static/images/2009 - Germany Album/IMG_2084 - 1200px.jpg" | absolute_url }})
 
 Ay yai! More to come...
