@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5322-1200px
+image: https://williamhuster.com/static/images/photos/DSC_5322-1200px
 show: true
 Title: Sylvia and Ari chilling
 Description: Light a fire and cheel.

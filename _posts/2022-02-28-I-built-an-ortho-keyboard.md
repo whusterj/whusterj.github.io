@@ -5,7 +5,7 @@ date: 2022-02-28 02:00
 description: I built an ortholinear keybaord and retrained my brain!
 category: blog
 tags: programming keyboards
-image: /static/images/posts/2022-02-27_preonic-keyboard.jpg
+image: https://williamhuster.com/static/images/posts/2022-02-27_preonic-keyboard.jpg
 readtime: 5 min
 ---
 
@@ -13,7 +13,7 @@ For some reason, I decided to ask Sylvia for an ortholinear keyboard for Christm
 
 They do look good. Here's what I built:
 
-![Preonic Keyboard](/static/images/posts/2022-02-27_preonic-keyboard.jpg)
+![Preonic Keyboard]({{ "/static/images/posts/2022-02-27_preonic-keyboard.jpg" | absolute_url }})
 
 I have been practicing with the keyboard for the past two months and have managed to reach an average of 100 words per minute. Writing code is slower, though, since I still have to think about where some special characters are located.
 
@@ -29,7 +29,7 @@ So here's how I have programmed my Preonic - it was very easy!
 
 In the end, my layout looked like this:
 
-![Preonic Keyboard](/static/images/posts/2022-01-02_preonic-layout.png)
+![Preonic Keyboard]({{ "/static/images/posts/2022-01-02_preonic-layout.png" | absolute_url }})
 
 The upper layer is accessed by pressing the 'raise' key and the lower layer is accessed by pressing the 'lower' key. I really wanted quick access to a num pad and brackets, since I use these characters often while coding.
 

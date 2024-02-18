@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5446-1200px
+image: https://williamhuster.com/static/images/photos/DSC_5446-1200px
 show: true
 Title: The crew unloads the boat
 Description: These guys are professionals.

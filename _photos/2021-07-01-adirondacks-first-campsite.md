@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5432-1200px
+image: https://williamhuster.com/static/images/photos/DSC_5432-1200px
 show: true
 Title: First campsite of our Adirondacks canoe trip
 Description: And we'll have fun, fun, fun 'til we take our own climate awayyyy

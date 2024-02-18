@@ -5,7 +5,7 @@ date: 2018-01-20 18:00
 description: Use JavaScript to validate user input in real time without a framework.
 category: blog
 tags: javascript programming vanillajs
-image: /static/images/posts/2018-01-19-form-validation-mockup.png
+image: https://williamhuster.com/static/images/posts/2018-01-19-form-validation-mockup.png
 readtime: 12 min
 ---
 

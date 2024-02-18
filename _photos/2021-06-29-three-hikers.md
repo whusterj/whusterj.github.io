@@ -1,6 +1,6 @@
 ---
 layout: photo
-image: /static/images/photos/DSC_5386-1200px
+image: https://williamhuster.com/static/images/photos/DSC_5386-1200px
 show: true
 Title: Three Hikers Hiking
 Description: Look at these modest explorers.
