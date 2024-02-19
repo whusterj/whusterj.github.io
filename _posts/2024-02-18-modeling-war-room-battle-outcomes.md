@@ -4,14 +4,14 @@ title: Exploring Battle Outcome Probabilities in War Room by Larry Harris
 date: 2024-02-18 12:00
 description: "Using Python to explore the probabilities of battle outcomes in War Room, a grand strategy board game similar to Axis and Allies."
 tags: programming python data-science
-readtime: 10 min
+readtime: 22 min
 ---
 
 War Room is a board game by Larry Harris, the designer of Axis and Allies. I see it as at least a spiritual successor to AA, if not a complete overhaul. Like AA, it's a grand strategy game set during World War II. Players control the major Axis and Allied powers and vie for the control of territories. The ultimate goals is to capture the opposing capitals and win the war.
 
-See [main.ipynb on GitHub](https://github.com/whusterj/war-room/blob/main/main.ipynb) for the exploration.
+[You can see my original Python notebooks on GitHub](https://github.com/whusterj/war-room/blob/main/2024-02-18-war-room.ipynb).
 
-I previously did an exploration of battle outcome probabilities in Axis and Allies using JavaScript and C (links below). Battles in War Room are similar in some ways and very different in others. The unit types are mostly identical, but the way dice are rolled and hits are allocated is different. War Room's dice have six different colors distributed across 12 faces. The first four colors: red, green, blue, and yellow correspond to different unit types. The last two colors: black and white, are wild, and may or may not be applied in specific circumstances.
+I previously did an exploration of battle outcome probabilities in Axis and Allies using JavaScript and C (links below). Battles in War Room are similar in some ways and very different in others. The unit types are mostly identical, but the way dice are rolled and hits are allocated is different. War Room's dice have six different colors distributed across 12 faces. The first four colors: RED, GREEN, BLUE, and YELLOW correspond to different unit types. The last two colors: black and white, are wild, and may or may not be applied in specific circumstances.
 
 The other big difference from AA is that only one "round" of combat and dice rolling happens per combat per turn. The impact of this rule is that most combats end up playing out over several turns, during which time the territory remains "contested," and players can make plans and moves that reinforce their forces in the territory. I personally like this. I think it reflects the reality of having different "fronts" open in a given region and potentially bogging down as both sides throw more and more resources into the fight.
 
@@ -264,9 +264,9 @@ df_random_choices
 
 ### Step 3 - Analyze the Results
 
-The proportions of colors on the dice are known, so the expected value for a given roll or set of rules is easy to compute and doesn't require a simulation.
+The proportions of colors on the dice are known, so the expected value for a given roll or set of rules is easy to compute and doesn't require a simulation. For instance, YELLOW has a probability of \\(\frac{4}{12}\\) of being rolled, so the expected value for a roll of ten dice is \\(10 \times \frac{4}{12} = 3.33\\).
 
-But what is less clear is the _variability_ you might expect from each color, and also the aggregate impact of the wild BLACK and WHITE results. So here we look at the distribution by each color.
+But what is less clear is the _variability_ you might expect from each color, and the neat twist in War Room's battles is how BLACK and WHITE faces are wild and may impact the results. So here we will look at the entire distribution by each color.
 
 #### Get and Graph a Distribution for a Color
 
@@ -301,7 +301,7 @@ plt.hist(yellow_distribution, bins=df_random_choices.shape[1], color=COLOR_LOOKU
      array([0. , 0.9, 1.8, 2.7, 3.6, 4.5, 5.4, 6.3, 7.2, 8.1, 9. ]),
      <BarContainer object of 10 artists>)
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_9_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_9_1.png" | absolute_url }})
 
 #### Aggregate and Plot All Colors
 
@@ -325,11 +325,11 @@ plt.show()
 
     <Figure size 640x480 with 0 Axes>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_11_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_11_1.png" | absolute_url }})
 
 #### What We See
 
-Distributions appear normally distributed around the expected value for their color. There's a slight skew, because the distributions are discrete and values can't go negative, but the shape is generally normal.
+Distributions appear normally distributed around the expected value for their color. There's a slight skew, because the distributions are discrete and values can't go negative, but the shape is generally normal. As we'll see, these are _technically_ binomial distributions, not normal distributions, but the shape still resembles a bell curve.
 
 ### Step 4 - Adding in White and Black Results
 
@@ -881,7 +881,7 @@ plt.show()
 
     <Figure size 640x480 with 0 Axes>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_24_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_24_1.png" | absolute_url }})
 
 ```python
 plt.clf()
@@ -900,15 +900,15 @@ plt.show()
 
     <Figure size 640x480 with 0 Axes>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_25_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_25_1.png" | absolute_url }})
 
 ### Conclusions - Wild Results Have a Decent Impact!
 
 So it looks like adding in wild results has shifted each distribution up by a little less than two hits. This is to be expected, because both BLACK and WHITE have a 1:12 chance of being rolled, and white is slightly discounted, because it may not always be allocatable.
 
-The impact is most pronounced on green and red. This is because their odds have been improved by a lot: 2X in the case of green (from 2:12 -> ~4:12) and 3X in the case of red (from 1:12 -> ~3:12).
+The impact is most pronounced on GREEN and RED. This is because their odds have been improved by a lot: 2X in the case of GREEN (from 2:12 -> ~4:12) and 3X in the case of RED (from 1:12 -> ~3:12).
 
-Again, this effectively shows the maximum number of hits you _might_ be able to allocate to each indvidual color. In a real game BLACK and WHITE results won't shift all of the colors up by the same amount, because you can only apply a wild to one color at a time. But presumably you would allocate the wild to the color that would benefit the most from it, so this is a reasonable upper bound on the number of hits you might expect to allocate to each color.
+Again, this effectively shows the maximum number of hits you _might_ be able to allocate to each indvidual color. In a real game, BLACK and WHITE results won't shift all of the colors up by the same amount, because you can only apply a wild to one color at a time. But presumably you would allocate the wild to the color that would benefit the most from it, so this is a reasonable upper bound on the number of hits you might expect to allocate to each color.
 
 ## Part 2 - Modeling the Probabilities in "Pure Math"
 
@@ -918,11 +918,11 @@ So next, I would like to take a more mathematical appraoch to the problem, which
 
 I was trying to derive the formula myself while in the shower this morning. It's clear that it's not as simple as looking at the probability of rolling a single color. We need to look at combined probabilities across any number of rolls.
 
-I started by thinking about a specific case: how would you compute the probability that you could roll ten times and end up with zero yellow results? I _know_ I studied this back in high school math, but twenty years later it's not exactly top of mind.
+I started by thinking about a specific case: how would you compute the probability that you could roll ten times and end up with zero YELLOW results? I _know_ I studied this back in high school math, but twenty years later it's not exactly top of mind.
 
-I realized that the probability of having no yellow results is the same as rolling non-yellow ten times in a row. That would be something like \\((8/12)^{10}\\). Not math I can do in my head, but definitely a small number. Using a calculator, there's about a 1.7% chance of this happening. Makes sense.
+I realized that the probability of having no YELLOW results is the same as rolling non-YELLOW ten times in a row. That would be something like \\((8/12)^{10}\\). Not math I can do in my head, but definitely a small number. Using a calculator, there's about a 1.7% chance of this happening. Makes sense.
 
-Then I moved on to the probability of having one out of ten results be yellow, and here I realized that I needed to somehow combine the probability of success with the probability of failure. That's where I got stuck mentally.
+Then I moved on to the probability of having one out of ten results be YELLOW, and here I realized that I needed to somehow combine the probability of success with the probability of failure. That's where I got stuck mentally.
 
 ### Computing the Binomial Distribution
 
@@ -993,13 +993,13 @@ And looking back at the binomial probability formula, we see that this binomial 
 
 #### A Real Understanding of the Binomial Coefficient
 
-So back to how we can make sense of these numbers... Let's imagine it as cases of throwing ten real dice. For each number of successful yellow rolls \\(k\\), how many different ways can the dice rolls be combined to results in that number?
+So back to how we can make sense of these numbers... Let's imagine it as cases of throwing ten real dice. For each number of successful YELLOW rolls \\(k\\), how many different ways can the dice rolls be combined to results in that number?
 
-In the case of zero successful dice rolls of a given color (\\(k=0\\)), the binomial coefficient says there's only one way this can happen. This is a little counterintuitive, because I can easily think of many ways that we could roll zero yellow dice: we could roll all blues or all reds or all greens or any combination of those. So this is our first revelation: for the purposes of the binomial coefficient, all those negative cases are treated as the same case, regardless of order or combination of non-yellow results.
+In the case of zero successful dice rolls of a given color (\\(k=0\\)), the binomial coefficient says there's only one way this can happen. This is a little counterintuitive, because I can easily think of many ways that we could roll zero YELLOW dice: we could roll all BLUEs or all REDs or all GREENs or any combination of those. So this is our first revelation: for the purposes of the binomial coefficient, all those negative cases are treated as the same case, regardless of order or combination of non-YELLOW results.
 
-Now moving up to \\(k=1\\), there are ten different ways to roll just one yellow die in ten. This is easy to make sense of. We're still ignoring the order, but because there are ten dice, there are ten different combinations of one yellow dice and 9 others: die #1 could be yellow, or die #2, and so on.
+Now moving up to \\(k=1\\), there are ten different ways to roll just one YELLOW die in ten. This is easy to make sense of. We're still ignoring the order, but because there are ten dice, there are ten different combinations of one YELLOW dice and 9 others: die #1 could be YELLOW, or die #2, and so on.
 
-At \\(k=2\\), we find there are 45 different ways to roll two yellow dice in ten. We're still ignoring the order, but the possible combinations are quickly adding up. For instance, there are ten combinations of die #1 and the other 9 dice. And then there are nine cases of die #2 and the other 8 dice - note that we already counted the combo of die #1 and die #2. And then there are eight cases of die #3 and the remaining 7 dice, and so on.
+At \\(k=2\\), we find there are 45 different ways to roll two YELLOW dice in ten. We're still ignoring the order, but the possible combinations are quickly adding up. For instance, there are ten combinations of die #1 and the other 9 dice. And then there are nine cases of die #2 and the other 8 dice - note that we already counted the combo of die #1 and die #2. And then there are eight cases of die #3 and the remaining 7 dice, and so on.
 
 Now _that_ is starting to look like a factorial. So the formula is helping us compute the sum of these possible combinations for a given number of dice rolls (\\(n\\)) and a target number of successful rolls (\\(k\\)).
 
@@ -1014,7 +1014,7 @@ def binomial_probability(n, k, p):
     return math.comb(n, k) * pow(p, k) * pow(1 - p, n - k)
 ```
 
-Now, let's set up \\(n\\) and `p_yellow` then compute the binomial distribution for yellow.
+Now, let's set up \\(n\\) and `p_yellow` then compute the binomial distribution for YELLOW.
 
 ```python
 n = NUM_DICE
@@ -1068,11 +1068,11 @@ plt.show()
 
     <Figure size 640x480 with 0 Axes>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_40_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_40_1.png" | absolute_url }})
 
 As expected, the distributions look identical!
 
-### Including Wild Results
+## Part 3 - Including Wild Results in "Pure Math"
 
 We can follow the same approach to compute our probability distribution for the number of BLACK results.
 
@@ -1100,9 +1100,9 @@ plt.show()
 
     <Figure size 640x480 with 0 Axes>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_43_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_43_1.png" | absolute_url }})
 
-Now at first I thought that we should somehow combine this distribution with the yellow distribution through addition or multiplication, but I realize that wouldn't be correct. The BLACK results really modify the probability of a success (\\(p\\)) in the binomial probability function.
+Now at first I thought that we should somehow combine this distribution with the YELLOW distribution through addition or multiplication, but I realize that wouldn't be correct. The BLACK results really modify the probability of a success (\\(p\\)) in the binomial probability function.
 
 So this is actually fairly simple, I think, we must recompute the binomial distribution with a higher value for \\(p\\).
 
@@ -1119,19 +1119,15 @@ plt.bar(x_values, y_values, align='center', color=COLOR_LOOKUP["YELLOW"], width=
 
     <BarContainer object of 11 artists>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_45_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_45_1.png" | absolute_url }})
 
 So we see that this has shifted the distribution to the right a bit by approximately 1 hit.
 
-#### How to Add WHITE Results?
+### How to Add WHITE Results?
 
-This seems tricky, and I have not had time to figure out the mathematical formulation for this.
+This one is really tricky because WHITE results are _not_ independent of YELLOW and BLACK results. They can only be counted in cases where one of the others is already present. In the simulation I accounted for this by clipping the number of WHITE results to be less than or equal to the total of COLOR + BLACK results.
 
-It's tricky because WHITE results are _not_ independent of YELLOW and BLACK results. They can only be counted in cases where one of the others is already present. In the simulation I accounted for this by clipping the number of WHITE results based on the number of hits after adding BLACK results.
-
-If I have time I'll revisit this.
-
-##### The Impact of Adding WHITE Results
+### The Impact of Adding WHITE Results
 
 Looking at the simulation results, it seems like adding white results shifts the distribution to the right and also "crushes" the center of the distribution, resulting in a flatter peak and less overall variability around the center.
 
@@ -1188,6 +1184,165 @@ plt.show()
 
     <Figure size 640x480 with 0 Axes>
 
-![png]({{ "/static/images/posts/2024-02-18-war-room/main_50_1.png" | absolute_url }})
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_50_1.png" | absolute_url }})
 
-Looking back at the YELLOW graph from our simulation results above, we can clearly see the shape of this distribution is more "sharp" at the peak than it should be, while the simulation resulted in a flatter peak. This shows that there must be a better way to mathematically model the impact of WHITE results. I'll have to come back to this.
+Looking back at the YELLOW graph from our simulation results above, we can clearly see the shape of this distribution is more "sharp" at the peak than it should be, while the simulation resulted in a flatter peak. This shows that there must be a better way to mathematically model the impact of WHITE results.
+
+### Using a Multinomial Distribution to Model the Impact of White Results
+
+After a lot of flailing around ([Python notebook on GitHub](https://github.com/whusterj/war-room/blob/main/2024-02-18%20including%20white%20results.ipynb)), I figured out that the multinomial distribution is the right tool to model the impact of WHITE results. [I found this stats page from Penn State particular really helpful](https://online.stat.psu.edu/stat504/book/export/html/667).
+
+As you will see, I had to go a few steps beyond that page and anything I could find online. I won't go into detail here about all the failed paths I tried. But I will say that I could not have figured this out without those failures and the small "breadcrumbs" they left me along the way. That's always worth appreciating.
+
+Adapting some notation from the Penn State page, let's call our multinomial distribution \\(Z\\) and define a distribution function \\(m\\). The distribution function is the probability that \\(Z = (Z_c,Z_w,Z_o)\\) takes a particular value \\(z = (z_c,z_w,z_o)\\) and has corresponding probabilities \\(p = (p_c,p_w,p_o)\\).
+
+$$ m(z) = \frac{n!}{z_c!z_w!z_o!} \cdot {p_y}^{z_c}{p_w}^{z_w}{p_o}^{z_o} $$
+
+where:
+
+- \\(n\\) represents the total number of trials
+- \\(z_c\\), \\(z_w\\), \\(z_o\\) represent the number of colored, white, and other outcomes, respectively
+- \\(p_c\\), \\(p_w\\), \\(p_o\\) represent the probability of a colored, white, and other outcome, respectively
+
+So that is the core of our solution. But we're not done, because what we really want is to get the probability of \\(Z\\) for a given number of hits \\(k\\). For this we need to iterate over the combinations of \\(c\\) and \\(w\\) and sum their probabilities.
+
+$$P(Z = k) = \sum\limits_{c=0}^{n+1} \sum\limits_{w=0}^{n+1} m(z) \cdot [c + c \vee w = k] \cdot [c + w < n]$$
+
+where:
+
+- \\(n\\) represents the total number of trials
+- \\(c\\) represents the number of colored outcomes
+- \\(p_c\\) represents the probability of a colored outcome
+- \\(w\\) represents the number of white outcomes
+- \\(p_w\\) represents the probability of a white outcome
+- \\(k\\) represents the desired value of the sum of colored and minimum of colored and white outcomes and \\(0 \leq k \leq n\\)
+- \\(\vee\\) represents the min function
+
+#### Mathematical `if` Statements
+
+The last two expressions in [Iverson brackets](https://en.wikipedia.org/wiki/Iverson_bracket) are the equivalent of `if` statements in our code. They are also known as indicator functions. If the expression is true, the value is 1, otherwise it is 0.
+
+It also helps to think of these expressions as filters. If they are false, they multiply the entire expression by 0, effectively discounting it from the sum. This is very similar to passing the same expression as a lambda function to a filter in Python or JavaScript.
+
+The first expression is doing two things. First, we only want to count cases where \\(c + w\\) match our \\(k\\) value. And second, we also want to reflect the rule that white only counts when paired with another color. So we take the lesser of the two values with \\(c \vee w\\) so that cases where the number of white results exceeds the number of colored results is also ignored.
+
+$$ [c + c \vee w = k] $$
+
+The second expression prevents us from counting cases where the number of colored and white results exceeds the total number of dice. It's not possible to have more hits than dice.
+
+$$ [c + w < n] $$
+
+#### Visualizing the Combinations
+
+In my exploration of the problem, I found it helpful to visualize all the possible \\(k\\) outcomes of combinations of \\(c\\) and \\(w\\) as a matrix. Like this:
+
+```python
+n = 10
+c = [i for i in range(n + 1)]
+w = [i for i in range(n + 1)]
+
+data = [[None if c_val + w_val > n else c_val + min(w_val, c_val) for w_val in w] for c_val in c]
+
+# Create a DataFrame from the list of lists
+df = pd.DataFrame(data, index=c, columns=w)
+
+# Display the DataFrame
+print(df)
+```
+
+        0     1     2     3     4     5    6    7    8    9    10
+    0    0   0.0   0.0   0.0   0.0   0.0  0.0  0.0  0.0  0.0  0.0
+    1    1   2.0   2.0   2.0   2.0   2.0  2.0  2.0  2.0  2.0  NaN
+    2    2   3.0   4.0   4.0   4.0   4.0  4.0  4.0  4.0  NaN  NaN
+    3    3   4.0   5.0   6.0   6.0   6.0  6.0  6.0  NaN  NaN  NaN
+    4    4   5.0   6.0   7.0   8.0   8.0  8.0  NaN  NaN  NaN  NaN
+    5    5   6.0   7.0   8.0   9.0  10.0  NaN  NaN  NaN  NaN  NaN
+    6    6   7.0   8.0   9.0  10.0   NaN  NaN  NaN  NaN  NaN  NaN
+    7    7   8.0   9.0  10.0   NaN   NaN  NaN  NaN  NaN  NaN  NaN
+    8    8   9.0  10.0   NaN   NaN   NaN  NaN  NaN  NaN  NaN  NaN
+    9    9  10.0   NaN   NaN   NaN   NaN  NaN  NaN  NaN  NaN  NaN
+    10  10   NaN   NaN   NaN   NaN   NaN  NaN  NaN  NaN  NaN  NaN
+
+In building the dataframe, you can see the same filters in action: We take the minimum of \\(c\\) and \\(w\\) before computing \\(k\\) and any combinations of \\(c\\) and \\(w\\) that would exceed \\(n=10\\) is set to NaN, because it's not possible.
+
+#### Translating to Python
+
+Now that we've defined this formally, let's translate it to code. We start with our distribution function \\(m(z)\\):
+
+```python
+def m(n, cb, cb_prob, wh, wh_prob=1/12):
+    n_fact = math.factorial(n)
+    denom = math.factorial(cb) * math.factorial(wh) * math.factorial(n - cb - wh)
+    return (n_fact / denom) * math.pow(cb_prob, cb) * math.pow(wh_prob, wh) * math.pow(1 - cb_prob - wh_prob, n - cb - wh)
+```
+
+Note that our Python version of \\(m\\) takes in all possible parameters. Math notation allows us to gloss over this, but code does not. This is also useful if ever we want to customize any of them.
+
+Next, we'll translate \\(P(Z = k)\\) to Python:
+
+```python
+def PZk(k, n, c_prob, w_prob):
+    return sum([
+        m(n, c, c_prob, w, w_prob)
+        for c in range(n + 1)
+        for w in range(n + 1)
+        if c + w <= n and c + min(c, w) == k
+    ])
+```
+
+It's in a slightly different order from the mathematical expression, but we see that all the same pieces are there. The \\(\sum\\) symbols are for loops, \\(m(z)\\) is a function call, and expressions in Iverson brackets are `if` statements.
+
+### Trying Out the "Pure Math" Solution
+
+Let's take it for a spin! Let's see how it does computing the entire probability distribution for each of the colors. We'll compute each distribution and then graph them, exactly as we did above in the simulation:
+
+```python
+# Set up the same parameters as above
+n = 10
+w_prob = 1/12
+
+# Define probabilities for each color
+# NOTE: Each is bumped by one to include BLACK results
+c_probs = {
+    "YELLOW": 5/12,
+    "BLUE": 4/12,
+    "GREEN": 3/12,
+    "RED": 2/12,
+}
+
+plt.clf()
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+axes = axes.flatten()
+
+for i, (color, c_prob) in enumerate(c_probs.items()):
+    # Calculate the distribution for this color
+    distro = [(k, PZk(k, n, c_prob, w_prob)) for k in range(n + 1)]
+
+    x_values, y_values = zip(*distro)
+    axes[i].set_title(f"Distribution of {color} dice")
+    axes[i].bar(x_values, y_values, align='center', width=1, color=COLOR_LOOKUP[color])
+    axes[i].set_xlim(right=n)
+
+plt.suptitle("After adding black and white dice")
+plt.show()
+```
+
+    <Figure size 640x480 with 0 Axes>
+
+![png]({{ "/static/images/posts/2024-02-18-war-room/2024-02-18-war-room_63_1.png" | absolute_url }})
+
+That looks like a pretty EXACT match to the graphs of our simulation results!
+
+### How Does the Math Compare to Simulation?
+
+In terms of computational efficiency and flexibility, the mathematical solution definitely has an edge over simulation. It does involve some for-loops that scale exponentially with values of \\(n\\). In this case, computing \\(P(Z = k)\\) requires \\(10^2 = 100\\) iterations, and computing the entire distribution for a color is \\(10^3 = 1000\\) iterations.
+
+1000 iterations is a lot, but it's still far less than the 10,000 simulation iterations. The math formula also gives us results directly, and we can grab a probability for one \\(k\\) value at a time. By contrast, the simulation is all-or-nothing and we have to collect results in a dataframe with additional steps to aggregate them. Finally, the math formula gives a precise, rather than estimated result.
+
+The math solution has one big drawback to me, and that is its lack of clarity. It only took me a couple of hours to whip up a complete simulation, but it took the better part of a day to research, derive, and test the math.
+
+Part of that is down to my lack of experience. But I've now spent a lot of time with the problem, and looking back at the code I still think the simulation is easier to comprehend. A proper understanding of the mathy code requires background knowledge of probability and combinatorics. It also helps to recognize the abstract patterns in how these sorts of problems are usually formulated and solved, for instance, the roles of factorials and exponents.
+
+The simulation on the other hand requires no such grounding. I think in both cases you need to understand the rules of how War Room battles are resolved, but from there following along with the simulation code is straightforward, because the steps concretely match what you would experience in the real world, while the math is too abstract.
+
+What do you think?
