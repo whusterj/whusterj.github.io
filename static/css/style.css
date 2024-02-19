@@ -209,10 +209,10 @@ ul li {
 }
 @supports (color-scheme: dark light) {
   @media screen and (prefers-color-scheme: dark) {
-    .header__title {
+    .main-nav > a {
       color: white;
     }
-    .header__subtitle {
+    .main-nav > a:visited {
       color: white;
     }
   }
