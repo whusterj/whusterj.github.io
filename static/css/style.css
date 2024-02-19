@@ -273,6 +273,10 @@ ul li {
   overflow-x: auto;
 }
 
+.MathJax_Display {
+  overflow-x: auto;
+}
+
 /* Photos Page */
 .photo-container {
 }

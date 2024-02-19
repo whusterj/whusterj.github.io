@@ -343,7 +343,7 @@ df_by_color.fillna(0, inplace=True)
 df_by_color
 ```
 
-<div>
+<div class="table-wrapper">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -481,7 +481,7 @@ df_white = df_by_color.pop("WHITE")
 df_by_color
 ```
 
-<div>
+<div class="table-wrapper">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -631,7 +631,7 @@ df_by_color
 
 ```
 
-<div>
+<div class="table-wrapper">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -751,7 +751,7 @@ for color in df_by_color.columns:
 df_by_color
 ```
 
-<div>
+<div class="table-wrapper">
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
