@@ -69,7 +69,7 @@ p {
 }
 
 a {
-  color: rgba(34, 194, 255);
+  color: rgb(24, 127, 168);
   text-decoration: none;
   word-wrap: break-word;
 }
@@ -81,6 +81,13 @@ a.no-highlight {
 }
 a.no-highlight:hover {
   background: none;
+}
+@supports (color-scheme: dark light) {
+  @media screen and (prefers-color-scheme: dark) {
+    a {
+      color: rgb(34, 194, 255);
+    }
+  }
 }
 
 img, video {

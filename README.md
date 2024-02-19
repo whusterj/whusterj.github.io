@@ -12,6 +12,14 @@ jekyll serve
 
 Github pages is integrated with Jekyll. It builds and deploys this site: [See documentation here](https://help.github.com/en/articles/about-github-pages-and-jekyll).
 
+## Hash Styles
+
+I know I should automate this, but for now I append a hash to style.css in the default.html template:
+
+```bash
+md5 static/css/style.css
+```
+
 ## Handling Python Notebooks
 
 I've started doing more work in Python notebooks and would like to develop a publishing workflow to this blog. Here are the steps I'm taking right now, but it's a bit manual:
