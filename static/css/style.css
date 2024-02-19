@@ -189,11 +189,11 @@ ul li {
   text-align: center;
 }
 .main-nav > a {
-  color: white;
+  color: black;
   margin: 0 0.33rem;
 }
 .main-nav > a:visited {
-  color: white;
+  color: black;
 }
 .main-nav__icon {
   display: inline-block;
@@ -205,6 +205,16 @@ ul li {
 @media (min-width: 768px) {
   .main-nav > a {
     margin: 0 1rem;
+  }
+}
+@supports (color-scheme: dark light) {
+  @media screen and (prefers-color-scheme: dark) {
+    .header__title {
+      color: white;
+    }
+    .header__subtitle {
+      color: white;
+    }
   }
 }
 
