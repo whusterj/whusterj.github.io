@@ -3,7 +3,7 @@ layout: post
 title: How I Ham (🍖📻 Ham Radio) - Part 1
 date: 2024-06-01 12:00
 description: I've been a licensed ham radio operator for five years now, so I thought I'd reflect on my progress and how I am doing ham radio today in 2024.
-image: https://williamhuster.com/static/images/posts/2024-06-01-how-i-ham/20200428-ic-7300-rails-and-handle.jpg
+image: /static/images/posts/2024-06-01-how-i-ham/20200428-ic-7300-rails-and-handle.jpg
 tags:
   - hamradio
   - life

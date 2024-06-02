@@ -4,7 +4,7 @@ title: Focus Stacking is My New Favorite Photo Thing
 date: 2022-03-28 09:45
 description: "It's my first time owning a camera with a focus stacking / bracketing feature - and it's awesome!"
 tags: photography
-image: https://williamhuster.com/static/images/posts/focus-bracketing/canon-m6.jpg
+image: /static/images/posts/focus-bracketing/canon-m6.jpg
 readtime: 4 min
 ---
 

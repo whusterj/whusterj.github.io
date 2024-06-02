@@ -5,7 +5,7 @@ date: 2018-05-05 12:00
 description: Let's write a command line tool in Python to record WTF moments during code reviews.
 category: blog
 tags: python programming command-line
-image: https://williamhuster.com/static/images/posts/2018-05-05_wtf_table_flip.png
+image: /static/images/posts/2018-05-05_wtf_table_flip.png
 readtime: 7 min
 ---
 

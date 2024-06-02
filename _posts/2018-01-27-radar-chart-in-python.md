@@ -5,7 +5,7 @@ date: 2018-01-27 22:00
 description: Radar charts are a great way to visually compare sets of numbers. They also help us gain an intuitive understanding of the data structures and pattern matching processes that underpin almost all automated matching, pattern recognition, and machine learning algorithms.
 category: blog
 tags: python programming
-image: https://williamhuster.com/static/images/posts/2018-01-27_radar_chart.png
+image: /static/images/posts/2018-01-27_radar_chart.png
 readtime: 5 min
 ---
 
