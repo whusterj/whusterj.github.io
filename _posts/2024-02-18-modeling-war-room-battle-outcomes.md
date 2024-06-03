@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Exploring Battle Outcome Probabilities in "War Room", the Board Game by Larry Harris
+title: "Exploring Battle Outcome Probabilities in 'War Room', the Board Game by Larry Harris"
 date: 2024-02-18 12:00
 description: "Using Python to explore the probabilities of battle outcomes in War Room, a grand strategy board game similar to Axis and Allies."
 image: /static/images/posts/2024-02-18-war-room/WR_spread_640_1024x1024@2x.webp
