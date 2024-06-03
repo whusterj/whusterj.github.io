@@ -3,9 +3,12 @@ layout: post
 title: Exploring Battle Outcome Probabilities in "War Room", the Board Game by Larry Harris
 date: 2024-02-18 12:00
 description: "Using Python to explore the probabilities of battle outcomes in War Room, a grand strategy board game similar to Axis and Allies."
+image: /static/images/posts/2024-02-18-war-room/WR_spread_640_1024x1024@2x.webp
 tags: programming python data-science
 readtime: 22 min
 ---
+
+![The War Room board game fully set up - it is massive!]({{ "/static/images/posts/2024-02-18-war-room/WR_spread_640_1024x1024@2x.webp" | absolute_url }})
 
 War Room is a board game by Larry Harris, the designer of Axis and Allies. I see it as at least a spiritual successor to AA, if not a complete overhaul. Like AA, it's a grand strategy game set during World War II. Players control the major Axis and Allied powers and vie for the control of territories. The ultimate goals is to capture the opposing capitals and win the war.
 
