@@ -1,12 +1,12 @@
 default:
-    #!/bin/bash
+    #! /bin/bash
     echo "--------------------------"
     echo "WilliamHuster.com Justfile"
     echo "--------------------------"
     just --list
 
 gen_photo_frontmatter photo:
-    #!/bin/bash
+    #! /bin/bash
     echo "---"
     echo "layout: photo"
     echo "image: {{photo}}"
