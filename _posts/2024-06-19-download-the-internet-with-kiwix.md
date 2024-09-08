@@ -58,7 +58,7 @@ Very simple.
 
 ## Usage
 
-First, you want to make sure Transmission is installed and running on your server. I've tested this only on Ubuntu 22.04, and there are instructions here: https://help.ubuntu.com/community/TransmissionHowTo
+First, you want to make sure Transmission is installed and running on your server. I've tested this only on Ubuntu 22.04, and there are instructions here: [help.ubuntu.com/community/TransmissionHowTo](https://help.ubuntu.com/community/TransmissionHowTo)
 
 Next, clone the repo and `cd` into it:
 
