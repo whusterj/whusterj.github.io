@@ -14,7 +14,7 @@ I've always been a bit of a data hoarder. Ever since I heard of [Kiwix](https://
 
 If you want to skip the explanation, here is my code on GitHub:
 
-https://github.com/whusterj/kiwix-torrent-watcher
+[github.com/whusterj/kiwix-torrent-watcher](https://github.com/whusterj/kiwix-torrent-watcher)
 
 ## How it Works
 
