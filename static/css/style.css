@@ -327,6 +327,15 @@ ul li {
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
 }
 
+/* MathJAX Styles */
+.MJXc-display {
+  overflow-x: auto;
+}
+
+/**
+ * Syntax Highlighting
+ **/
+
 /* Custom syntax highlighting styles  */
 div.highlight {
   padding: 0 0.5rem;
@@ -359,9 +368,7 @@ pre[class="highlight"] > code {
   font-size: 0.9rem;
 }
 
-/**
- * Syntax Highlighting
- **/
+
 
 /* Ensure margins between consecutive code blocks */
 [class^="language-"] {

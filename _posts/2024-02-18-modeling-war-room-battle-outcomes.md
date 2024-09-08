@@ -917,7 +917,7 @@ Again, this effectively shows the maximum number of hits you _might_ be able to 
 
 I'm very familiar with simulation approaches at this point. Practical and imperative math like this also makes a lot of sense to me as a programmer.
 
-So next, I would like to take a more mathematical appraoch to the problem, which is not as natural to me.
+So next, I would like to take a more mathematical approach to the problem, which is not as natural to me.
 
 I was trying to derive the formula myself while in the shower this morning. It's clear that it's not as simple as looking at the probability of rolling a single color. We need to look at combined probabilities across any number of rolls.
 
