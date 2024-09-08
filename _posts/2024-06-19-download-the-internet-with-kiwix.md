@@ -38,7 +38,7 @@ Turns out, someone else had the same idea! I found this script by [Adrien Andre 
 
 First, you define the listings you want in a file called `zim.lib`. Mine looks like this:
 
-```txt
+```plaintext
 wikibooks_en_all_maxi
 wikipedia_en_all_maxi
 freecodecamp_en_javascript
