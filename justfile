@@ -6,7 +6,7 @@ default:
     just --list
 
 gen_photo_frontmatter photo:
-    #! /bin/bash
+    #!/bin/bash
     echo "---"
     echo "layout: photo"
     echo "image: {{photo}}"
@@ -22,3 +22,12 @@ hash_css:
     #! /bin/bash
     md5 static/css/style.css
     echo "^ Paste into header of default.html"
+
+push:
+    #! /bin/bash
+    git add .
+    git commit -m "Update"
+    remotes=$(git remote)
+    for remote in $remotes; do
+        git push $remote
+    done
