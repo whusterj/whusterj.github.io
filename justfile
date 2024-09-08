@@ -14,3 +14,11 @@ gen_photo_frontmatter photo:
     echo "date: "
     exiftool {{photo}} -S -Title -ImageWidth -ImageHeight -Make -Model -FNumber -ExposureTime -ISO -LensID -Keywords -DateTimeOriginal -Description -d "%Y-%m-%d %H:%M:%S"
     echo "---"
+
+run:
+    jekyll serve --port 4001
+
+css_hash:
+    #! /bin/bash
+    md5 static/css/style.css
+    echo "^ Paste into header of default.html"
