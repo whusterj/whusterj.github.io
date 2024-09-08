@@ -18,7 +18,7 @@ gen_photo_frontmatter photo:
 run:
     jekyll serve --port 4001
 
-css_hash:
+hash_css:
     #! /bin/bash
     md5 static/css/style.css
     echo "^ Paste into header of default.html"

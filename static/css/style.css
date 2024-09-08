@@ -353,6 +353,7 @@ code.highlighter-rouge {
   padding: 0.1rem 0.25rem;
   background-color: rgb(230, 230, 230);
   color: #1f779a;
+  word-wrap: break-word;
 }
 @supports (color-scheme: dark light) {
   @media screen and (prefers-color-scheme: dark) {
