@@ -42,4 +42,240 @@ layout: default
 XCH: xch1cznqqlfqj4hd2a3kyn2ryn806epsmvt0leupda3u744ykvnhswls4v44h5
 BTC: 1PMzFUpHbuBMyhtDuDqKX6vVk1cmHvjb2T</code></pre></div></div>
   </p>
+  
+  <div class="four-thousand-weeks">
+    <h2>My 4000 Weeks</h2>
+    <p>Born September 24, 1987</p>
+    <p class="stats">Week {{ weeks_lived }} of 4000 • {{ site.time | date: "%B %d, %Y" }}</p>
+    <style>
+      .four-thousand-weeks {
+        margin-top: 2rem;
+        text-align: center;
+      }
+      .four-thousand-weeks h2 {
+        margin-bottom: 0.5rem;
+      }
+      .stats {
+        font-size: 0.8rem;
+        color: var(--text-color, #666);
+        margin-bottom: 1rem;
+      }
+      .weeks-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 56rem;
+        margin: 1rem auto;
+        overflow-x: auto;
+        padding-bottom: 1rem; /* Add padding for scrollbar */
+      }
+      .week-labels-row {
+        display: flex;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        padding-bottom: 0.2rem;
+        min-width: 32rem; /* Match year-row width */
+      }
+      .year-label {
+        font-size: 0.8rem;
+        width: 3rem;
+        text-align: right;
+        margin-right: 0.5rem;
+        font-weight: bold;
+        flex-shrink: 0;
+      }
+      .year-row {
+        display: flex;
+        margin-bottom: 0.3rem;
+        height: 1.1rem;
+        align-items: center;
+        min-width: 32rem; /* Ensure minimum width for horizontal scrolling */
+      }
+      .half-year {
+        display: flex;
+        min-width: 15rem; /* Ensure minimum width for dots */
+      }
+      .half-separator {
+        width: 0.7rem;
+        flex-shrink: 0;
+      }
+      .week-dot {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        margin: 0 0.05rem;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+      .week-label {
+        font-size: 0.7rem;
+        color: var(--text-color, #666);
+        font-weight: bold;
+      }
+      .week-lived {
+        background-color: var(--text-color, #333);
+        border: 1px solid var(--text-color, #333);
+      }
+      .week-current {
+        background-color: #ff5252;
+        border: 1px solid #ff5252;
+        position: relative;
+        z-index: 1;
+      }
+      .week-birth {
+        background-color: #52a9ff;
+        border: 1px solid #52a9ff;
+        position: relative;
+        z-index: 1;
+      }
+      .week-remaining {
+        background-color: transparent;
+        border: 1px solid var(--text-color, #333);
+      }
+      @media (prefers-color-scheme: dark) {
+        .week-lived {
+          background-color: var(--text-color, #eee);
+          border: 1px solid var(--text-color, #eee);
+        }
+        .week-current {
+          background-color: #ff5252;
+          border: 1px solid #ff5252;
+        }
+        .week-birth {
+          background-color: #52a9ff;
+          border: 1px solid #52a9ff;
+        }
+        .week-remaining {
+          background-color: transparent;
+          border: 1px solid var(--text-color, #eee);
+        }
+      }
+    </style>
+    <div class="weeks-container">
+      <!-- Week labels -->
+      <div class="week-labels-row">
+        <div class="year-label"></div>
+        
+        <div class="half-year" style="position: relative;">
+          <span class="week-label" style="position: absolute; left: 0.1rem;">1</span>
+          <span class="week-label" style="position: absolute; right: 0.1rem;">26</span>
+          {% for week_num in (1..26) %}
+            <span class="week-dot" style="visibility: hidden;"></span>
+          {% endfor %}
+        </div>
+        
+        <div class="half-separator"></div>
+        
+        <div class="half-year" style="position: relative;">
+          <span class="week-label" style="position: absolute; left: 0.1rem;">27</span>
+          <span class="week-label" style="position: absolute; right: 0.1rem;">52</span>
+          {% for week_num in (1..26) %}
+            <span class="week-dot" style="visibility: hidden;"></span>
+          {% endfor %}
+        </div>
+      </div>
+      
+      {% comment %}
+      Calculate date values and week numbers
+      {% endcomment %}
+      {% comment %}
+      Get birth date and current date in seconds
+      {% endcomment %}
+      {% assign birth_timestamp = "1987-09-24" | date: "%s" | plus: 0 %}
+      {% assign current_timestamp = site.time | date: "%s" | plus: 0 %}
+      
+      {% comment %}
+      Calculate seconds lived and convert to days then weeks
+      Divide by seconds in a day (86400) then divide by 7 for weeks
+      {% endcomment %}
+      {% assign seconds_lived = current_timestamp | minus: birth_timestamp %}
+      {% assign days_lived = seconds_lived | divided_by: 86400 %}
+      {% assign weeks_lived = days_lived | divided_by: 7 %}
+      
+      {% comment %}
+      For debugging, you can uncomment this and hardcode values when testing locally
+      But the above calculation will be dynamic based on site.time when deployed
+      {% endcomment %}
+      {% comment %}
+      {% assign weeks_lived = 1949 %}
+      {% endcomment %}
+
+      {% comment %}
+      Calculate absolute week number where birth is week 1
+      {% endcomment %}
+      {% assign total_weeks = 4000 %}
+      {% assign weeks_per_year = 52 %}
+      {% assign half_year = 26 %}
+      {% assign total_years = total_weeks | divided_by: weeks_per_year %}
+
+      {% comment %}
+      Calculate birth week position within first year (1987) dynamically
+      {% endcomment %}
+      {% assign jan1_1987 = "1987-01-01" | date: "%s" | plus: 0 %}
+      {% assign seconds_to_birth = birth_timestamp | minus: jan1_1987 %}
+      {% assign days_to_birth = seconds_to_birth | divided_by: 86400 %}
+      {% assign birth_week_of_year = days_to_birth | divided_by: 7 | plus: 1 %}
+      
+      {% comment %}
+      Create a week counter starting from 1
+      {% endcomment %}
+      {% assign absolute_week = 1 %}
+      
+      {% for year in (1987..2063) %}
+        {% assign week_in_year = 1 %}
+        
+        <div class="year-row">
+          <div class="year-label">{{ year }}</div>
+          
+          <!-- First half of the year -->
+          <div class="half-year">
+            {% for week_num in (1..26) %}
+              {% if year == 1987 and week_num < birth_week_of_year %}
+                <span class="week-dot week-remaining" title="Before birth ({{ year }}, Week {{ week_num }})"></span>
+              {% elsif year == 1987 and week_num == birth_week_of_year %}
+                <span class="week-dot week-birth" title="Birth Week! ({{ year }}, Week {{ week_num }})"></span>
+                {% assign absolute_week = absolute_week | plus: 1 %}
+              {% elsif absolute_week <= weeks_lived %}
+                {% if absolute_week == weeks_lived %}
+                  <span class="week-dot week-current" title="Current Week {{ absolute_week }} of 4000 ({{ year }}, Week {{ week_num }})"></span>
+                {% else %}
+                  <span class="week-dot week-lived" title="Week {{ absolute_week }} of 4000 ({{ year }}, Week {{ week_num }})"></span>
+                {% endif %}
+                {% assign absolute_week = absolute_week | plus: 1 %}
+              {% else %}
+                <span class="week-dot week-remaining" title="Week {{ absolute_week }} of 4000 ({{ year }}, Week {{ week_num }})"></span>
+                {% assign absolute_week = absolute_week | plus: 1 %}
+              {% endif %}
+              {% assign week_in_year = week_in_year | plus: 1 %}
+            {% endfor %}
+          </div>
+          
+          <!-- Separator between half years -->
+          <div class="half-separator"></div>
+          
+          <!-- Second half of the year -->
+          <div class="half-year">
+            {% for week_num in (27..52) %}
+              {% if year == 1987 and week_num < birth_week_of_year %}
+                <span class="week-dot week-remaining" title="Before birth ({{ year }}, Week {{ week_num }})"></span>
+              {% elsif year == 1987 and week_num == birth_week_of_year %}
+                <span class="week-dot week-birth" title="Birth Week! ({{ year }}, Week {{ week_num }})"></span>
+                {% assign absolute_week = absolute_week | plus: 1 %}
+              {% elsif absolute_week <= weeks_lived %}
+                {% if absolute_week == weeks_lived %}
+                  <span class="week-dot week-current" title="Current Week {{ absolute_week }} of 4000 ({{ year }}, Week {{ week_num }})"></span>
+                {% else %}
+                  <span class="week-dot week-lived" title="Week {{ absolute_week }} of 4000 ({{ year }}, Week {{ week_num }})"></span>
+                {% endif %}
+                {% assign absolute_week = absolute_week | plus: 1 %}
+              {% else %}
+                <span class="week-dot week-remaining" title="Week {{ absolute_week }} of 4000 ({{ year }}, Week {{ week_num }})"></span>
+                {% assign absolute_week = absolute_week | plus: 1 %}
+              {% endif %}
+              {% assign week_in_year = week_in_year | plus: 1 %}
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
 </main>
