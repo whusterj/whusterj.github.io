@@ -4,3 +4,4 @@ _site/
 _config_dev.yml
 r2-blog-images/
 .DS_Store
+.env
