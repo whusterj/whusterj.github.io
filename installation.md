@@ -33,7 +33,7 @@ rbenv global 2.5.0
 ruby -v
 
 # Install jekyll and bundler
-gem install jekyll bundler
+gem install jekyll jekyll-paginate bundler
 rbenv rehash
 ```
 
