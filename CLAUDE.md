@@ -11,7 +11,7 @@
 ## Code Style Guidelines
 
 - **Markdown**: Use frontmatter with layout, title, date, description, image, tags
-- **HTML/Templates**: 2-space indentation, use includes via `{% include file.html %}`
+- **HTML/Templates**: 2-space indentation
 - **CSS**: 2-space indentation, consistent class naming
 - **Images**: Reference using `{{ "/path/to/image" | absolute_url }}`
 - **JavaScript**: Import via CDN, keep post-specific JS in /static/js/posts/
