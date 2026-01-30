@@ -38,6 +38,11 @@
         content="{{site.url}}{{site.baseurl}}{% if page.image %}{{page.image}}{% else %}{{site.image}}{% endif %}" />
     <meta name="twitter:url" value="{{site.url}}" />
 
+    <!-- Canonical URL -->
+    {% if page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url }}" />
+    {% endif %}
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ "/static/images/favicon.png" | absolute_url }}" />
 
