@@ -241,6 +241,29 @@ ul li {
   font-weight: 300;
 }
 
+/* Credits Section */
+.credits-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.credits-section h2 {
+  margin-bottom: 0.5rem;
+}
+.credits-section details {
+  margin-bottom: 0.5rem;
+}
+.credits-section summary {
+  cursor: pointer;
+  padding: 0.3rem 0;
+}
+.credits-section ul {
+  margin: 0.5rem 0 0.5rem 1.5rem;
+  padding: 0;
+}
+.credits-section li {
+  margin-bottom: 0.3rem;
+}
+
 /* Post Styles */
 .post-preview {
   padding: 1rem 0.5rem;
