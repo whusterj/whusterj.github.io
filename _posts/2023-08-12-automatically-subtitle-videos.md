@@ -7,6 +7,10 @@ tags: programming artificial-intelligence video accessibility
 readtime: 5 min
 ---
 
+**Update, 2026:** This post describes the original [v0.0.1](https://github.com/whusterj/whisper-transcribe/releases/tag/v0.0.1) setup. I've since overhauled the repo to handle long multi-speaker recordings using WhisperX with chunked diarization — see the [updated repo](https://github.com/whusterj/whisper-transcribe) and the new blog post (coming soon).
+
+---
+
 Big video handlers like YouTube and even Slack use AI to automatically caption videos that you upload. This is a great win for accessibility, and the AI is extremely accurate. It sometimes stumbles on uncommon words and bad audio signals, but these can be easily fixed by a human. I think most would agree that the benefit and cost savings of generating 95% accurate captions greatly outweighs the cost of having none at all!
 
 So at work we were talking about how we could build this feature ourselves using open source tools. I came up with this suggestion that uses [OpenAI's Whisper](https://github.com/openai/whisper) and the venerable [`ffmpeg`](https://www.ffmpeg.org/).
