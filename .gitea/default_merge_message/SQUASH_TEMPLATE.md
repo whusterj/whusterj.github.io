@@ -1,3 +1,3 @@
 ${PullRequestTitle}
 
-Gitea-PR: ${PullRequestIndex}
+PR: ${PullRequestIndex}
