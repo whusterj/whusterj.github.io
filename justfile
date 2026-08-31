@@ -18,19 +18,34 @@ gen_photo_frontmatter photo:
 run:
     jekyll serve --port 4001
 
+# Serve with unpublished posts from _drafts/ included.
+draft:
+    jekyll serve --port 4001 --drafts --livereload
+
 hash_css:
     #! /bin/bash
     md5 static/css/style.css
     echo "^ Paste into header of default.html"
 
-push:
+# Publish to GitHub Pages. `origin` (the private gitea server) is primary:
+# branch, open a PR there, squash-merge it, then run this to go public.
+# GitHub is downstream only. Never merge on GitHub, or the two diverge.
+publish:
     #! /bin/bash
-    git add .
-    git commit -m "Update"
-    remotes=$(git remote)
-    for remote in $remotes; do
-        git push $remote
-    done
+    set -euo pipefail
+    git fetch --quiet origin
+    git fetch --quiet github
+    if [ -n "$(git log --oneline origin/main..github/main)" ]; then
+        echo "Refusing to publish: github/main has commits origin/main does not."
+        echo "Something was merged on GitHub. Bring it back to origin first:"
+        echo ""
+        git log --oneline origin/main..github/main
+        echo ""
+        echo "  git checkout main && git merge --ff-only github/main && git push origin main"
+        exit 1
+    fi
+    git push github origin/main:refs/heads/main
+    echo "Published origin/main to GitHub Pages (williamhuster.com)"
 
 install:
     #! /bin/bash
