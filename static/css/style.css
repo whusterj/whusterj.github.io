@@ -65,7 +65,7 @@ hr {
 }
 
 p {
-  line-height: 1.45;
+  line-height: 1.6;
 }
 
 a {
@@ -103,7 +103,7 @@ blockquote {
 
 ol li,
 ul li {
-  line-height: 1.45;
+  line-height: 1.6;
   margin-bottom: 0.2rem;
 }
 
@@ -278,6 +278,18 @@ ul li {
 
 .post-body {
   margin-bottom: 2rem;
+}
+
+/* A footnote marker must not change the height of the line it sits on. The
+   browser default is vertical-align: super plus the element's own line-height,
+   and both grow the line box. Shifting with position instead keeps the marker
+   out of the layout. */
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
 }
 
 .post-body .footnotes {
