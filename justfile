@@ -27,9 +27,9 @@ hash_css:
     md5 static/css/style.css
     echo "^ Paste into header of default.html"
 
-# Publish to GitHub Pages. `origin` (the private gitea server) is primary:
-# branch, open a PR there, squash-merge it, then run this to go public.
-# GitHub is downstream only. Never merge on GitHub, or the two diverge.
+# Publish to GitHub Pages. `origin` is primary: branch, open a PR there,
+# squash-merge it, then run this to go public. GitHub is downstream only.
+# Never merge on GitHub, or the two diverge.
 publish:
     #! /bin/bash
     set -euo pipefail

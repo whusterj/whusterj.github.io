@@ -65,7 +65,7 @@ hr {
 }
 
 p {
-  line-height: 1.6;
+  line-height: 1.45;
 }
 
 a {
@@ -103,7 +103,7 @@ blockquote {
 
 ol li,
 ul li {
-  line-height: 1.6;
+  line-height: 1.45;
   margin-bottom: 0.2rem;
 }
 
