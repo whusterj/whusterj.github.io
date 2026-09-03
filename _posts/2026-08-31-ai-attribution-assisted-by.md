@@ -46,28 +46,30 @@ Assisted-by: opencode:claude-opus-5 spekk
 
 This is the most reasonable standard that properly reflects the role of LLM assistants as a tool, and also gives us traceability on what models and harnesses were used to produce the code.[^2]
 
-## Set up a Git hook for reliable "Assisted-by" trailers
+## Set up a script for reliable "Assisted-by" trailers
 
-I added instructions to my system prompt that inform agents about the "Assisted-by" trailer, but I still ask agents to NEVER add AI attribution to any of their commits or other messages. I wanted to make sure the trailer was always consistent.
+I added instructions to my system prompt that inform agents about the "Assisted-by" trailer, but I still ask agents to NEVER write the attribution themselves. I wanted to make sure the trailer was always consistent.
 
-For this, Claude helped me cook up a `prepare-commit-msg` hook that reads the harness and the model out of the agent's own session record and writes the trailer consistently and deterministically. I use both Claude Code and opencode, and they store their sessions differently. Any commits I write by hand don't have the trailer unless I add it.
-
-I put the hook in a gist if you want it: <a href="https://gist.github.com/whusterj/01be8cde934ed45ea5264c30163d9cf5" target="_blank" rel="noopener noreferrer">Assisted-by git hook</a>
+For this, Claude helped me cook up an `assisted-by` script that reads the harness and the model out of the agent's own session record and prints the trailer consistently and deterministically. The agent calls it when it commits:
 
 ```sh
-HOOKS="$(git config --global core.hooksPath || echo ~/.git-hooks)"
-if [ -e "$HOOKS/prepare-commit-msg" ]; then
-  echo "You already have a prepare-commit-msg in $HOOKS. Merge the two by hand."
-else
-  mkdir -p "$HOOKS"
-  curl -fsSL https://gist.githubusercontent.com/whusterj/01be8cde934ed45ea5264c30163d9cf5/raw/prepare-commit-msg -o "$HOOKS/prepare-commit-msg"
-  chmod +x "$HOOKS/prepare-commit-msg"
-  git config --global core.hooksPath "$HOOKS"
-  echo "Installed to $HOOKS"
-fi
+git commit --trailer "$(assisted-by)" -m "..."
 ```
 
-Note this installs the Git hook globally. It should install safely alongside any hooks you may already have.
+I use both Claude Code and opencode, and they store their sessions differently. Any commits I write by hand don't have the trailer unless I add it.
+
+I put the script in a gist if you want it: <a href="https://gist.github.com/whusterj/01be8cde934ed45ea5264c30163d9cf5" target="_blank" rel="noopener noreferrer">Assisted-by script</a>
+
+```sh
+mkdir -p ~/.local/bin
+curl -fsSL https://gist.githubusercontent.com/whusterj/01be8cde934ed45ea5264c30163d9cf5/raw/assisted-by -o ~/.local/bin/assisted-by
+chmod +x ~/.local/bin/assisted-by
+git config --global trailer.assisted-by.ifExists addIfDifferent
+```
+
+The last line keeps an amend or a rebase from adding a second copy of the trailer.
+
+The same script can put the trailer at the end of a PR description, in a repository that opts in with `git config assisted-by.pr true`.
 
 ---
 
