@@ -210,8 +210,8 @@ ul li {
 }
 .main-nav__icon {
   display: inline-flex;
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .main-nav__icon svg {
   display: block;
@@ -221,6 +221,10 @@ ul li {
 @media (min-width: 768px) {
   .main-nav {
     gap: 0 2rem;
+  }
+  .main-nav__icon {
+    width: 1.75rem;
+    height: 1.75rem;
   }
 }
 @supports (color-scheme: dark light) {
