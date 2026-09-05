@@ -11,7 +11,7 @@ image: /static/images/essays/verification-complexity-barrier-chart.png
 canonical_url: https://research.thinknimble.com/essays/verification-complexity-barrier/
 ---
 
-_Originally published on [research.thinknimble.com](https://research.thinknimble.com/essays/verification-complexity-barrier/), which is the canonical version. A formal theorem: verification cost grows superlinearly with a system's components, so past a certain count you can never fully verify it, and cheap AI code generation makes you hit that wall sooner._
+_Originally published on [research.thinknimble.com](https://research.thinknimble.com/essays/verification-complexity-barrier/)._
 
 I am developing a formal theorem I call the Verification Complexity Barrier.
 

@@ -10,7 +10,7 @@ image: /static/images/essays/infinite-ui-og.png
 canonical_url: https://research.thinknimble.com/essays/infinite-ui/
 ---
 
-_Originally published on [research.thinknimble.com](https://research.thinknimble.com/essays/infinite-ui/). This post explores how GenAI fundamentally changes software design by creating massive, explorable state spaces._
+_Originally published on [research.thinknimble.com](https://research.thinknimble.com/essays/infinite-ui/)._
 
 People keep saying the paradigm shift with GenAI is about determinism versus nondeterminism, and I'll admit that it bothers me. I think they're pointing at the right thing but using the wrong words. The real difference is the sheer size of the state space of the user interface.
 

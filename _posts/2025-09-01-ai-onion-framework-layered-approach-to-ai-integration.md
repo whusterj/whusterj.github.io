@@ -10,7 +10,7 @@ image: /static/images/essays/ai-onion.png
 canonical_url: https://research.thinknimble.com/essays/ai-onion-framework/
 ---
 
-_Originally published on [research.thinknimble.com](https://research.thinknimble.com/essays/ai-onion-framework/). This framework helps founders and product teams sequence AI integration decisions from simple to complex._
+_Originally published on [research.thinknimble.com](https://research.thinknimble.com/essays/ai-onion-framework/)._
 
 ## An Inspiration
 
