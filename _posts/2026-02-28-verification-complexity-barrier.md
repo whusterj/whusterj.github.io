@@ -676,6 +676,8 @@ Therefore $$T(n) \to \infty$$ as $$n \to n^*$$. The barrier cannot be reached in
 
 **Corollary 4 (Recursive barrier).** Capacity $$W$$ is itself produced by a team of $$m$$ people with coordination cost $$C(m)$$ growing superlinearly. By the same argument, there exists $$m^*$$ beyond which adding people decreases effective $$W$$. The barrier is self-similar across levels of organization.
 
+---
+
 _First shared as [a post on X](https://x.com/whusterj/status/2027771813346820349) on February 28, 2026. The [canonical version](https://research.thinknimble.com/essays/verification-complexity-barrier/) lives on the ThinkNimble Research site._
 
 [^1]: [Lehman's laws of software evolution](https://en.wikipedia.org/wiki/Lehman%27s_laws_of_software_evolution), Wikipedia.
