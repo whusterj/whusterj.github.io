@@ -21,9 +21,566 @@ After a while, because it's superlinear, the verification complexity takes off a
 
 ### An interactive model
 
-[![The Verification Complexity Barrier model: cumulative dev time against component count, with the verification curve going vertical at the barrier n* = 28.5](/static/images/essays/verification-complexity-barrier-chart.png)](https://research.thinknimble.com/essays/verification-complexity-barrier/)
+<div id="cb-viz">
+  <div class="cb-card">
+    <div class="cb-card-header">
+      <div class="cb-legend">
+        <div class="cb-legend-item">
+          <div class="cb-legend-line cb-legend-ideal"></div>
+          Ideal (no verification)
+        </div>
+        <div class="cb-legend-item">
+          <div class="cb-legend-line cb-legend-curve"></div>
+          With verification
+        </div>
+        <div class="cb-legend-item">
+          <div class="cb-legend-line cb-dashed"></div>
+          Asymptote n*
+        </div>
+      </div>
+      <div class="cb-stats">
+        <span><span class="cb-stat-label">n* = </span><span class="cb-stat-val" id="cb-nstar-val">28.5</span></span>
+        <span><span class="cb-stat-label">g_eff = </span><span class="cb-stat-val" id="cb-geff-val">1.9</span></span>
+      </div>
+    </div>
 
-_The "with verification" curve climbs and goes vertical at the barrier, here n\* = 28.5. [Open the interactive model on the research site](https://research.thinknimble.com/essays/verification-complexity-barrier/) to drag the sliders and watch the barrier move._
+    <div class="cb-chart-wrap" id="cb-chart-wrap">
+      <canvas id="cb-chart"></canvas>
+      <div class="cb-zoom-hint">drag axes to zoom</div>
+    </div>
+
+    <div class="cb-controls">
+      <div class="cb-ctrl">
+        <div class="cb-ctrl-label">Team capacity (W)</div>
+        <div class="cb-ctrl-inner">
+          <input type="range" id="cb-sl-w" min="50" max="600" value="250" step="5">
+          <div class="cb-ctrl-val" id="cb-v-w">250</div>
+        </div>
+      </div>
+      <div class="cb-ctrl">
+        <div class="cb-ctrl-label">Generation rate (g)</div>
+        <div class="cb-ctrl-inner">
+          <input type="range" id="cb-sl-g" min="1" max="50" value="3.5" step="0.5">
+          <div class="cb-ctrl-val" id="cb-v-g">3.5</div>
+        </div>
+      </div>
+      <div class="cb-ctrl">
+        <div class="cb-ctrl-label">Test setup cost (S)</div>
+        <div class="cb-ctrl-inner">
+          <input type="range" id="cb-sl-s" min="0" max="2" value="0.8" step="0.05">
+          <div class="cb-ctrl-val" id="cb-v-s">0.80</div>
+        </div>
+      </div>
+      <div class="cb-ctrl">
+        <div class="cb-ctrl-label">Automated coverage (%)</div>
+        <div class="cb-ctrl-inner">
+          <input type="range" id="cb-sl-cov" min="0" max="95" value="70" step="1">
+          <div class="cb-ctrl-val" id="cb-v-cov">70%</div>
+        </div>
+      </div>
+      <div class="cb-ctrl">
+        <div class="cb-ctrl-label">Residual V exponent</div>
+        <div class="cb-ctrl-inner">
+          <input type="range" id="cb-sl-exp" min="1.2" max="3" value="2.0" step="0.1">
+          <div class="cb-ctrl-val" id="cb-v-exp">2.0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  #cb-viz {
+    --cb-card-bg: #f6f7f9;
+    --cb-card-border: #cfd4db;
+    --cb-text: #1f2328;
+    --cb-muted: #57606a;
+    --cb-stat: #0b5fbf;
+    --cb-ideal: #0f766e;
+    --cb-curve: #1d4ed8;
+    --cb-asym: rgba(29, 78, 216, 0.55);
+    --cb-asym-text: #1d4ed8;
+    --cb-region: rgba(29, 78, 216, 0.06);
+    --cb-grid: rgba(0, 0, 0, 0.08);
+    --cb-axis: rgba(0, 0, 0, 0.45);
+    --cb-tick: #57606a;
+    --cb-axis-title: #3d444d;
+    --cb-track: #cfd4db;
+    --cb-thumb: #ffffff;
+    --cb-thumb-border: #57606a;
+    --cb-font-sans: var(--font-sans, sans-serif);
+    --cb-font-mono: var(--font-mono, monospace);
+    margin: 2rem 0;
+    font-family: var(--cb-font-sans);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) #cb-viz {
+      --cb-card-bg: #202329;
+      --cb-card-border: #3b3f47;
+      --cb-text: #e6e8ec;
+      --cb-muted: #b3b8c2;
+      --cb-stat: #8ec1ff;
+      --cb-ideal: #4fd1c5;
+      --cb-curve: #7ab6ff;
+      --cb-asym: rgba(122, 182, 255, 0.6);
+      --cb-asym-text: #a9cdff;
+      --cb-region: rgba(122, 182, 255, 0.07);
+      --cb-grid: rgba(255, 255, 255, 0.1);
+      --cb-axis: rgba(255, 255, 255, 0.45);
+      --cb-tick: #b3b8c2;
+      --cb-axis-title: #cfd3da;
+      --cb-track: rgba(255, 255, 255, 0.2);
+      --cb-thumb: #3a3f48;
+      --cb-thumb-border: #b3b8c2;
+    }
+  }
+  [data-theme="dark"] #cb-viz {
+    --cb-card-bg: #202329;
+    --cb-card-border: #3b3f47;
+    --cb-text: #e6e8ec;
+    --cb-muted: #b3b8c2;
+    --cb-stat: #8ec1ff;
+    --cb-ideal: #4fd1c5;
+    --cb-curve: #7ab6ff;
+    --cb-asym: rgba(122, 182, 255, 0.6);
+    --cb-asym-text: #a9cdff;
+    --cb-region: rgba(122, 182, 255, 0.07);
+    --cb-grid: rgba(255, 255, 255, 0.1);
+    --cb-axis: rgba(255, 255, 255, 0.45);
+    --cb-tick: #b3b8c2;
+    --cb-axis-title: #cfd3da;
+    --cb-track: rgba(255, 255, 255, 0.2);
+    --cb-thumb: #3a3f48;
+    --cb-thumb-border: #b3b8c2;
+  }
+  #cb-viz * { box-sizing: border-box; }
+  .cb-card {
+    background: var(--cb-card-bg);
+    border: 1px solid var(--cb-card-border);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem 1.2rem;
+    color: var(--cb-text);
+  }
+  .cb-card-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .cb-stats {
+    display: flex;
+    gap: 1.2rem;
+    font-family: var(--cb-font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .cb-stat-label { color: var(--cb-muted); }
+  .cb-stat-val { color: var(--cb-stat); }
+  .cb-legend {
+    display: flex;
+    gap: 1.3rem;
+    flex-wrap: wrap;
+  }
+  .cb-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--cb-muted);
+  }
+  .cb-legend-line {
+    width: 18px;
+    height: 2.5px;
+    border-radius: 1px;
+  }
+  .cb-legend-ideal { background: var(--cb-ideal); }
+  .cb-legend-curve { background: var(--cb-curve); }
+  .cb-legend-line.cb-dashed {
+    height: 0;
+    border-top: 2px dashed var(--cb-asym);
+  }
+  .cb-chart-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.7;
+    margin-bottom: 1rem;
+    cursor: default;
+  }
+  .cb-chart-wrap canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .cb-zoom-hint {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size: 0.7rem;
+    color: var(--cb-muted);
+    opacity: 0.7;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .cb-chart-wrap:hover .cb-zoom-hint { opacity: 1; }
+  .cb-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--cb-card-border);
+  }
+  .cb-ctrl {
+    display: flex;
+    flex-direction: column;
+    gap: 0.12rem;
+    flex: 1 1 140px;
+    min-width: 130px;
+  }
+  .cb-ctrl .cb-ctrl-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cb-muted);
+  }
+  .cb-ctrl .cb-ctrl-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cb-ctrl .cb-ctrl-val {
+    font-family: var(--cb-font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    min-width: 3.2em;
+    text-align: right;
+    color: var(--cb-text);
+  }
+  #cb-viz input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--cb-track);
+    outline: none;
+    flex: 1;
+    min-width: 0;
+  }
+  #cb-viz input[type="range"]:focus-visible {
+    outline: 2px solid var(--cb-stat);
+    outline-offset: 4px;
+  }
+  #cb-viz input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cb-thumb);
+    border: 2px solid var(--cb-thumb-border);
+    cursor: pointer;
+  }
+  #cb-viz input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--cb-thumb);
+    border: 2px solid var(--cb-thumb-border);
+    cursor: pointer;
+  }
+  #cb-viz input[type="range"]::-webkit-slider-thumb:hover { background: var(--cb-stat); }
+  #cb-viz input[type="range"]::-moz-range-thumb:hover { background: var(--cb-stat); }
+</style>
+<script>
+(function() {
+  const dpr = window.devicePixelRatio || 1;
+  const margin = { top: 24, right: 24, bottom: 40, left: 56 };
+  const state = { W: 250, g: 3.5, S: 0.8, cov: 0.70, exp: 2.0, xMax: 50, yMax: 80 };
+
+  const $ = id => document.getElementById(id);
+  const canvas = $('cb-chart');
+  const wrap = $('cb-chart-wrap');
+
+  function vFunc(n) {
+    return (1 - state.cov) * Math.pow(n, state.exp);
+  }
+
+  function findAsymptote(budget, hi) {
+    if (budget <= 0) return 0;
+    let lo = 0;
+    for (let i = 0; i < 60; i++) {
+      const mid = (lo + hi) / 2;
+      vFunc(mid) < budget ? lo = mid : hi = mid;
+    }
+    return (lo + hi) / 2;
+  }
+
+  function computeCurve(budget, gEff, nStar) {
+    const pts = [];
+    if (budget <= 0 || gEff <= 0) return pts;
+    const limit = Math.min(nStar * 0.999, state.xMax);
+    const steps = 1800;
+    let T = 0, prevN = 0;
+    for (let i = 0; i <= steps; i++) {
+      const n = limit * (i / steps);
+      if (n > 0) {
+        const dn = n - prevN;
+        const vel = gEff * (1 - vFunc((prevN + n) / 2) / budget);
+        if (vel <= 0.0001) break;
+        T += dn / vel;
+      }
+      pts.push({ n, T });
+      prevN = n;
+    }
+    return pts;
+  }
+
+  function sizeCanvas() {
+    const r = canvas.parentElement.getBoundingClientRect();
+    canvas.width = r.width * dpr;
+    canvas.height = r.height * dpr;
+    canvas.style.width = r.width + 'px';
+    canvas.style.height = r.height + 'px';
+  }
+
+  function niceStep(range, target) {
+    const rough = range / target;
+    const mag = Math.pow(10, Math.floor(Math.log10(rough)));
+    const norm = rough / mag;
+    let s;
+    if (norm < 1.5) s = 1;
+    else if (norm < 3.5) s = 2;
+    else if (norm < 7.5) s = 5;
+    else s = 10;
+    return Math.max(1, s * mag);
+  }
+
+  function palette() {
+    const cs = getComputedStyle($('cb-viz'));
+    const v = name => cs.getPropertyValue(name).trim();
+    return {
+      region: v('--cb-region'), grid: v('--cb-grid'), asym: v('--cb-asym'), asymText: v('--cb-asym-text'),
+      ideal: v('--cb-ideal'), curve: v('--cb-curve'), axis: v('--cb-axis'), tick: v('--cb-tick'),
+      axisTitle: v('--cb-axis-title'), mono: v('--cb-font-mono') || 'monospace', sans: v('--cb-font-sans') || 'sans-serif'
+    };
+  }
+
+  function draw(curve, nStar, gEff) {
+    const C = palette();
+    const ctx = canvas.getContext('2d');
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const w = canvas.width / dpr;
+    const h = canvas.height / dpr;
+    const pw = w - margin.left - margin.right;
+    const ph = h - margin.top - margin.bottom;
+    ctx.clearRect(0, 0, w, h);
+
+    const xMax = state.xMax;
+    const yMaxT = state.yMax;
+    const toX = n => margin.left + (n / xMax) * pw;
+    const toY = t => margin.top + ph - (t / yMaxT) * ph;
+
+    if (nStar > 0 && nStar <= xMax) {
+      const ax = toX(nStar);
+      ctx.fillStyle = C.region;
+      ctx.fillRect(ax, margin.top, w - margin.right - ax, ph);
+    }
+
+    ctx.strokeStyle = C.grid;
+    ctx.lineWidth = 1;
+    const yStep = niceStep(yMaxT, 5);
+    for (let v = 0; v <= yMaxT; v += yStep) {
+      const y = toY(v);
+      if (y < margin.top - 1) continue;
+      ctx.beginPath(); ctx.moveTo(margin.left, y); ctx.lineTo(w - margin.right, y); ctx.stroke();
+    }
+    const xStep = niceStep(xMax, 8);
+    for (let n = 0; n <= xMax; n += xStep) {
+      const x = toX(n);
+      ctx.beginPath(); ctx.moveTo(x, margin.top); ctx.lineTo(x, margin.top + ph); ctx.stroke();
+    }
+
+    if (nStar > 0 && nStar <= xMax * 1.3) {
+      const ax = toX(nStar);
+      ctx.strokeStyle = C.asym;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath(); ctx.moveTo(ax, margin.top); ctx.lineTo(ax, margin.top + ph); ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = C.asymText;
+      ctx.font = '500 11px ' + C.mono;
+      ctx.textAlign = 'center';
+      const lx = Math.min(Math.max(ax, margin.left + 28), w - margin.right - 28);
+      ctx.fillText('n* = ' + nStar.toFixed(1), lx, margin.top - 7);
+    }
+
+    if (gEff > 0) {
+      ctx.strokeStyle = C.ideal;
+      ctx.lineWidth = 1.8;
+      ctx.globalAlpha = 0.85;
+      ctx.beginPath();
+      let started = false;
+      for (let i = 0; i <= 300; i++) {
+        const n = (xMax / 300) * i;
+        const t = n / gEff;
+        const x = toX(n); const y = toY(t);
+        if (y < margin.top) break;
+        if (!started) { ctx.moveTo(x, y); started = true; }
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+
+    ctx.strokeStyle = C.curve;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    let started = false;
+    for (const pt of curve) {
+      const x = toX(pt.n); const y = toY(pt.T);
+      if (y < margin.top - 2) break;
+      if (x > w - margin.right + 2) break;
+      if (!started) { ctx.moveTo(x, y); started = true; }
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    ctx.strokeStyle = C.axis;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(margin.left, margin.top);
+    ctx.lineTo(margin.left, margin.top + ph);
+    ctx.lineTo(w - margin.right, margin.top + ph);
+    ctx.stroke();
+
+    ctx.fillStyle = C.tick;
+    ctx.font = '400 10px ' + C.mono;
+    ctx.textAlign = 'center';
+    for (let n = 0; n <= xMax; n += xStep) {
+      ctx.fillText(n, toX(n), margin.top + ph + 17);
+    }
+    ctx.fillStyle = C.axisTitle;
+    ctx.font = '500 11px ' + C.sans;
+    ctx.fillText('components (n)', margin.left + pw / 2, h - 4);
+
+    ctx.fillStyle = C.tick;
+    ctx.font = '400 10px ' + C.mono;
+    ctx.textAlign = 'right';
+    const yStepL = niceStep(yMaxT, 5);
+    for (let v = 0; v <= yMaxT; v += yStepL) {
+      const y = toY(v);
+      if (y < margin.top - 1) continue;
+      ctx.fillText(v, margin.left - 7, y + 3);
+    }
+
+    ctx.save();
+    ctx.translate(13, margin.top + ph / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillStyle = C.axisTitle;
+    ctx.font = '500 11px ' + C.sans;
+    ctx.textAlign = 'center';
+    ctx.fillText('cumulative dev time (sprints)', 0, 0);
+    ctx.restore();
+  }
+
+  function update() {
+    state.W = +$('cb-sl-w').value;
+    state.g = +$('cb-sl-g').value;
+    state.S = +$('cb-sl-s').value;
+    state.cov = +$('cb-sl-cov').value / 100;
+    state.exp = +$('cb-sl-exp').value;
+
+    $('cb-v-w').textContent = state.W;
+    $('cb-v-g').textContent = state.g.toFixed(1);
+    $('cb-v-s').textContent = state.S.toFixed(2);
+    $('cb-v-cov').textContent = Math.round(state.cov * 100) + '%';
+    $('cb-v-exp').textContent = state.exp.toFixed(1);
+
+    const gEff = state.g / (1 + state.S);
+    const prodCost = state.g * (1 + state.S);
+    const budget = state.W - prodCost;
+    const nStar = budget > 0 ? findAsymptote(budget, 5000) : 0;
+
+    $('cb-nstar-val').textContent = budget > 0
+      ? (nStar > 999 ? '999+' : nStar.toFixed(1)) : '0';
+    $('cb-geff-val').textContent = gEff.toFixed(1);
+
+    sizeCanvas();
+    const curve = budget > 0 ? computeCurve(budget, gEff, nStar) : [];
+    draw(curve, nStar, gEff);
+  }
+
+  ['cb-sl-w', 'cb-sl-g', 'cb-sl-s', 'cb-sl-cov', 'cb-sl-exp'].forEach(id =>
+    $(id).addEventListener('input', update)
+  );
+
+  // Axis drag zoom
+  {
+    let dragging = null;
+    let startPos = 0, startMax = 0;
+    const cxe = e => e.touches ? e.touches[0].clientX : e.clientX;
+    const cye = e => e.touches ? e.touches[0].clientY : e.clientY;
+
+    function hitZone(e) {
+      const r = canvas.getBoundingClientRect();
+      const ex = cxe(e) - r.left;
+      const ey = cye(e) - r.top;
+      if (ey > r.height - margin.bottom - 12) return 'x';
+      if (ex < margin.left + 12) return 'y';
+      return null;
+    }
+
+    function onDown(e) {
+      const zone = hitZone(e);
+      if (!zone) return;
+      dragging = zone;
+      if (zone === 'x') { startPos = cxe(e); startMax = state.xMax; }
+      else { startPos = cye(e); startMax = state.yMax; }
+      wrap.style.cursor = zone === 'x' ? 'ew-resize' : 'ns-resize';
+      e.preventDefault();
+    }
+
+    function onMove(e) {
+      if (!dragging) return;
+      const r = canvas.getBoundingClientRect();
+      if (dragging === 'x') {
+        const dx = cxe(e) - startPos;
+        const pw = r.width - margin.left - margin.right;
+        state.xMax = Math.max(5, Math.min(500, Math.round(startMax * Math.pow(2, -dx / pw * 2))));
+      } else {
+        const dy = cye(e) - startPos;
+        const ph = r.height - margin.top - margin.bottom;
+        state.yMax = Math.max(5, Math.min(10000, Math.round(startMax * Math.pow(2, dy / ph * 2))));
+      }
+      update(); e.preventDefault();
+    }
+
+    function onUp() {
+      dragging = null;
+      wrap.style.cursor = 'default';
+    }
+
+    wrap.addEventListener('mousedown', onDown);
+    wrap.addEventListener('touchstart', onDown, { passive: false });
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('mouseup', onUp);
+    window.addEventListener('touchend', onUp);
+
+    wrap.addEventListener('mousemove', e => {
+      if (dragging) return;
+      const zone = hitZone(e);
+      wrap.style.cursor = zone === 'x' ? 'ew-resize' : zone === 'y' ? 'ns-resize' : 'default';
+    });
+  }
+
+  window.addEventListener('resize', update);
+  new MutationObserver(update).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', update);
+  update();
+})();
+</script>
+
+_Drag the sliders and watch where the barrier lands. ([Same model, on the canonical essay](https://research.thinknimble.com/essays/verification-complexity-barrier/).)_
 
 We all have finite capacity - even AI agents - so there will always be a certain number of components `n` where the wall is hit. You must spend more and more effort on verification for each new component in the system.
 
